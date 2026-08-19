@@ -163,7 +163,7 @@ export function About() {
             <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 bg-gradient-to-l from-background to-transparent" />
             
             <div className="flex animate-marquee items-center gap-8">
-              {[...PARTNERS, ...PARTNERS].map((p, i) => (
+              {[...PARTNERS, ...PARTNERS, ...PARTNERS, ...PARTNERS].map((p, i) => (
                 <a
                   key={`${p.name}-${i}`}
                   href={p.href}
