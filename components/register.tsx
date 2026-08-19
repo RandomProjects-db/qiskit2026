@@ -121,7 +121,7 @@ export function Register() {
                 setFormat('in-person')
                 setTimeout(() => document.getElementById('reg-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100)
               }}
-              className={`group relative flex flex-col items-center rounded-2xl border p-6 text-center transition-all duration-300 ${
+              className={`group relative flex cursor-pointer flex-col items-center rounded-2xl border p-6 text-center transition-all duration-300 ${
                 format === 'in-person'
                   ? 'border-[#FF006B] bg-white/10 shadow-[0_0_30px_-5px_rgba(255,0,107,0.3)]'
                   : 'border-white/10 bg-white/5 hover:border-white/30 hover:bg-white/10'
@@ -135,6 +135,7 @@ export function Register() {
                 <li>• Face-to-face networking & swag</li>
                 <li>• Compete on-site with your team</li>
               </ul>
+              <p className="mt-4 text-xs text-cream/40 group-hover:text-cream/70 transition-colors">↑ Tap to select</p>
             </button>
 
             <button
@@ -143,7 +144,7 @@ export function Register() {
                 setFormat('virtual')
                 setTimeout(() => document.getElementById('reg-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100)
               }}
-              className={`group relative flex flex-col items-center rounded-2xl border p-6 text-center transition-all duration-300 ${
+              className={`group relative flex cursor-pointer flex-col items-center rounded-2xl border p-6 text-center transition-all duration-300 ${
                 format === 'virtual'
                   ? 'border-[#0084BD] bg-white/10 shadow-[0_0_30px_-5px_rgba(0,132,189,0.3)]'
                   : 'border-white/10 bg-white/5 hover:border-white/30 hover:bg-white/10'
@@ -157,6 +158,7 @@ export function Register() {
                 <li>• Cloud access to IBM Quantum</li>
                 <li>• Remote competition track</li>
               </ul>
+              <p className="mt-4 text-xs text-cream/40 group-hover:text-cream/70 transition-colors">↑ Tap to select</p>
             </button>
           </div>
         </Reveal>
