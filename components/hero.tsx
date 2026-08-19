@@ -2,7 +2,6 @@
 
 import { motion, useReducedMotion } from 'motion/react'
 import { ArrowRight, Sparkles } from 'lucide-react'
-import { QuantumBg } from '@/components/quantum-bg'
 
 const STATS = [
   { value: 'Hybrid', label: 'In-Person & Virtual' },
@@ -32,8 +31,6 @@ export function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy/80" />
       </div>
-
-      <QuantumBg />
 
       <div className="relative mx-auto w-full max-w-5xl px-4 py-16 text-center md:py-20">
         <motion.div
