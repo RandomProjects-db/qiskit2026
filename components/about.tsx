@@ -159,10 +159,10 @@ export function About() {
           <p className="text-center text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
             In Collaboration With
           </p>
-          <div className="flex relative overflow-hidden mt-6 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:bg-gradient-to-r before:from-background before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-10 after:bg-gradient-to-l after:from-background after:to-transparent after:content-['']">
+          <div className="mx-auto max-w-sm flex relative overflow-hidden mt-6 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:bg-gradient-to-r before:from-background before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-10 after:bg-gradient-to-l after:from-background after:to-transparent after:content-['']">
             <motion.div
               transition={{
-                duration: 10,
+                duration: 5,
                 ease: 'linear',
                 repeat: Infinity,
               }}
