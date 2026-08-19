@@ -58,19 +58,19 @@ export function QuantumBg() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
       <motion.div
-        className="absolute -left-10 top-[12%] text-cyan/25 sm:left-[4%]"
+        className="absolute -left-10 top-[12%] text-white/30 sm:left-[4%]"
         {...float(9, -18)}
       >
         <AtomGlyph className="size-40 sm:size-56" />
       </motion.div>
       <motion.div
-        className="absolute -right-8 top-[8%] text-gold/20 sm:right-[6%]"
+        className="absolute -right-8 top-[8%] text-white/25 sm:right-[6%]"
         {...float(11, 20)}
       >
         <CircuitGlyph className="w-48 sm:w-72" />
       </motion.div>
       <motion.div
-        className="absolute bottom-[10%] right-[8%] text-pink/20 sm:bottom-[14%]"
+        className="absolute bottom-[10%] right-[8%] text-white/25 sm:bottom-[14%]"
         {...float(13, -22)}
       >
         <AtomGlyph className="size-28 sm:size-40" />

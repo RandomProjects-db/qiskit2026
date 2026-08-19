@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from 'motion/react'
 import { ArrowRight, Sparkles } from 'lucide-react'
+import { QuantumBg } from '@/components/quantum-bg'
 
 const STATS = [
   { value: 'Hybrid', label: 'In-Person & Virtual' },
@@ -32,6 +33,8 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy/80" />
       </div>
 
+      <QuantumBg />
+
       <div className="relative mx-auto w-full max-w-5xl px-4 py-16 text-center md:py-20">
         <motion.div
           initial="hidden"
@@ -42,10 +45,11 @@ export function Hero() {
           <motion.span
             variants={item}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-medium text-cream backdrop-blur-xl sm:text-sm"
+            className="inline-flex items-center gap-2 rounded-full border border-[#FF006B]/30 bg-gradient-to-r from-[#FF006B]/10 via-white/10 to-[#6929C4]/10 px-5 py-2.5 text-xs font-semibold text-cream shadow-lg shadow-[#FF006B]/10 backdrop-blur-xl sm:text-sm"
           >
-            <Sparkles className="size-4 text-gold" />
+            <Sparkles className="size-4 text-[#FF006B]" />
             Hosted by NC A&amp;T State University
+            <span className="size-2 animate-pulse rounded-full bg-[#FF006B]" />
           </motion.span>
 
           <motion.div
@@ -53,7 +57,7 @@ export function Hero() {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="mt-6 flex justify-center"
           >
-            <img src="/qiskit-fallfest-2026-black.png" alt="Qiskit Fall Fest 2026" className="size-44 drop-shadow-2xl sm:size-56" />
+            <img src="/qiskit-fallfest-2026-black.png" alt="Qiskit Fall Fest 2026" className="size-52 drop-shadow-2xl sm:size-64" />
           </motion.div>
 
           <motion.h1
