@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { supabase } from '@/lib/supabase'
+import emailjs from '@emailjs/browser'
 import { Reveal } from '@/components/reveal'
 import { CheckCircle2, AlertCircle, Loader2, MapPin, Globe } from 'lucide-react'
 
@@ -36,16 +36,43 @@ export function Register() {
       interest: (data.get('interest') as string) || null,
     }
 
-    const { error: dbError } = await supabase.from('registrations').insert(payload)
+    try {
+      const res = await fetch('/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
 
-    if (dbError) {
-      if (dbError.code === '23505') {
-        setError('This email is already registered. See you at the event!')
+      const result = await res.json()
+
+      if (!res.ok) {
+        setError(result.error || 'Something went wrong. Please try again.')
       } else {
-        setError('Something went wrong. Please try again.')
+        // Send confirmation email via EmailJS
+        const formatLabel = payload.attendance_format === 'in-person' ? 'In-Person' : 'Virtual'
+        const location = payload.attendance_format === 'in-person'
+          ? 'NC A&T State University, Greensboro, NC'
+          : 'Virtual — link will be shared before the event'
+
+        await emailjs.send(
+          'service_whdopde',
+          'template_hlv309k',
+          {
+            email: payload.email,
+            first_name: payload.first_name,
+            attendance_format: formatLabel,
+            location: location,
+          },
+          '9cRF0h_ATqBj-SFKc'
+        ).catch((err) => {
+          console.error('EmailJS error:', err)
+          // Don't block registration if email fails
+        })
+
+        setSuccess(true)
       }
-    } else {
-      setSuccess(true)
+    } catch {
+      setError('Network error. Please check your connection and try again.')
     }
 
     setLoading(false)
@@ -90,7 +117,10 @@ export function Register() {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <button
               type="button"
-              onClick={() => setFormat('in-person')}
+              onClick={() => {
+                setFormat('in-person')
+                setTimeout(() => document.getElementById('reg-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100)
+              }}
               className={`group relative flex flex-col items-center rounded-2xl border p-6 text-center transition-all duration-300 ${
                 format === 'in-person'
                   ? 'border-[#FF006B] bg-white/10 shadow-[0_0_30px_-5px_rgba(255,0,107,0.3)]'
@@ -109,7 +139,10 @@ export function Register() {
 
             <button
               type="button"
-              onClick={() => setFormat('virtual')}
+              onClick={() => {
+                setFormat('virtual')
+                setTimeout(() => document.getElementById('reg-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100)
+              }}
               className={`group relative flex flex-col items-center rounded-2xl border p-6 text-center transition-all duration-300 ${
                 format === 'virtual'
                   ? 'border-[#0084BD] bg-white/10 shadow-[0_0_30px_-5px_rgba(0,132,189,0.3)]'
@@ -132,8 +165,9 @@ export function Register() {
         {format && (
           <Reveal className="mt-8">
             <form
+              id="reg-form"
               onSubmit={handleSubmit}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl sm:p-8"
+              className="scroll-mt-20 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl sm:p-8"
             >
               <input type="hidden" name="attendance_format" value={format} />
 
