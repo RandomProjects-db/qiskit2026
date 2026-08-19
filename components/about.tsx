@@ -1,5 +1,7 @@
 'use client'
 
+import React from 'react'
+import { motion } from 'motion/react'
 import { CircuitBoard, Users, Trophy, Layers, Atom, BriefcaseBusiness, Zap, FlaskConical, Handshake, Swords } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 
@@ -157,25 +159,34 @@ export function About() {
           <p className="text-center text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
             In Collaboration With
           </p>
-          <div className="relative mx-auto mt-6 max-w-md overflow-hidden">
-            {/* Fade edges */}
-            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 bg-gradient-to-r from-background to-transparent" />
-            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 bg-gradient-to-l from-background to-transparent" />
-            
-            <div className="flex animate-marquee items-center gap-8">
-              {[...PARTNERS, ...PARTNERS, ...PARTNERS, ...PARTNERS].map((p, i) => (
-                <a
-                  key={`${p.name}-${i}`}
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex shrink-0 items-center gap-3 rounded-full border border-border/50 bg-secondary/50 px-6 py-3 font-display font-semibold text-navy transition-all duration-300 hover:border-[#6929C4]/40 hover:bg-white hover:shadow-lg"
-                >
-                  <span className="transition-colors group-hover:text-[#6929C4]">{p.name}</span>
-                  <span className="text-[#FF006B] opacity-50 transition-opacity group-hover:opacity-100">•</span>
-                </a>
+          <div className="relative mx-auto mt-6 max-w-md overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-12 before:bg-gradient-to-r before:from-background before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-12 after:bg-gradient-to-l after:from-background after:to-transparent after:content-['']">
+            <motion.div
+              transition={{
+                duration: 8,
+                ease: 'linear',
+                repeat: Infinity,
+              }}
+              initial={{ translateX: 0 }}
+              animate={{ translateX: '-50%' }}
+              className="flex flex-none gap-8 pr-8"
+            >
+              {[...new Array(2)].fill(0).map((_, index) => (
+                <React.Fragment key={index}>
+                  {PARTNERS.map((p) => (
+                    <a
+                      key={`${p.name}-${index}`}
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex shrink-0 items-center gap-3 rounded-full border border-border/50 bg-secondary/50 px-6 py-3 font-display font-semibold text-navy transition-all duration-300 hover:border-[#6929C4]/40 hover:bg-white hover:shadow-lg"
+                    >
+                      <span className="transition-colors group-hover:text-[#6929C4]">{p.name}</span>
+                      <span className="text-[#FF006B] opacity-50 transition-opacity group-hover:opacity-100">•</span>
+                    </a>
+                  ))}
+                </React.Fragment>
               ))}
-            </div>
+            </motion.div>
           </div>
         </Reveal>
       </div>
