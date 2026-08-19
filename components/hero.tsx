@@ -42,11 +42,11 @@ export function Hero() {
           <motion.span
             variants={item}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#FF006B]/30 bg-gradient-to-r from-[#FF006B]/10 via-white/10 to-[#6929C4]/10 px-5 py-2.5 text-xs font-semibold text-cream shadow-lg shadow-[#FF006B]/10 backdrop-blur-xl sm:text-sm"
+            className="inline-flex items-center gap-2 rounded-full border border-[#00E5FF]/30 bg-gradient-to-r from-[#00E5FF]/10 via-white/10 to-[#00BCD4]/10 px-5 py-2.5 text-xs font-semibold text-cream shadow-lg shadow-[#00E5FF]/10 backdrop-blur-xl sm:text-sm"
           >
-            <Sparkles className="size-4 text-[#FF006B]" />
+            <Sparkles className="size-4 text-[#00E5FF]" />
             Hosted by NC A&amp;T State University
-            <span className="size-2 animate-pulse rounded-full bg-[#FF006B]" />
+            <span className="size-2 animate-pulse rounded-full bg-[#00E5FF]" />
           </motion.span>
 
           <motion.div
