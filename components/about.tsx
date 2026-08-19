@@ -152,24 +152,30 @@ export function About() {
           </Reveal>
         </div>
 
-        {/* Partners */}
+        {/* Partners - Infinite scroll marquee */}
         <Reveal className="mt-16 md:mt-20">
           <p className="text-center text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
             In Collaboration With
           </p>
-          <div className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:flex-wrap md:justify-center md:overflow-visible">
-            {PARTNERS.map((p) => (
-              <a
-                key={p.name}
-                href={p.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex min-w-[10rem] shrink-0 snap-center items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-8 py-5 font-display font-semibold text-navy backdrop-blur-sm transition-all duration-300 hover:border-[#6929C4]/30 hover:bg-white hover:shadow-[0_0_20px_-5px_rgba(105,41,196,0.1)] md:min-w-0"
-              >
-                <span className="transition-colors group-hover:text-[#6929C4]">{p.name}</span>
-                <span className="text-xs text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100">↗</span>
-              </a>
-            ))}
+          <div className="relative mx-auto mt-6 max-w-md overflow-hidden">
+            {/* Fade edges */}
+            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 bg-gradient-to-r from-background to-transparent" />
+            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 bg-gradient-to-l from-background to-transparent" />
+            
+            <div className="flex animate-marquee items-center gap-8">
+              {[...PARTNERS, ...PARTNERS].map((p, i) => (
+                <a
+                  key={`${p.name}-${i}`}
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex shrink-0 items-center gap-3 rounded-full border border-border/50 bg-secondary/50 px-6 py-3 font-display font-semibold text-navy transition-all duration-300 hover:border-[#6929C4]/40 hover:bg-white hover:shadow-lg"
+                >
+                  <span className="transition-colors group-hover:text-[#6929C4]">{p.name}</span>
+                  <span className="text-[#FF006B] opacity-50 transition-opacity group-hover:opacity-100">•</span>
+                </a>
+              ))}
+            </div>
           </div>
         </Reveal>
       </div>
