@@ -55,7 +55,7 @@ export function Register() {
           : 'Virtual — link will be shared before the event'
 
         await emailjs.send(
-          'service_whdopde',
+          'service_8beckth',
           'template_hlv309k',
           {
             email: payload.email,
