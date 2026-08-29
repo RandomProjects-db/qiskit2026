@@ -21,6 +21,18 @@ export function Register() {
     const form = e.currentTarget
     const data = new FormData(form)
 
+    // Validate hackathon interest for in-person registrants (field is required
+    // but only rendered for in-person, so enforce it here as defense-in-depth).
+    const hackathonInterest = data.get('hackathon_interest') as string
+    if (format === 'in-person') {
+      const allowed = ['yes', 'maybe', 'no']
+      if (!hackathonInterest || !allowed.includes(hackathonInterest)) {
+        setError('Please let us know if you would like to participate in the hackathon.')
+        setLoading(false)
+        return
+      }
+    }
+
     const payload = {
       first_name: data.get('first_name') as string,
       last_name: data.get('last_name') as string,
@@ -319,14 +331,17 @@ export function Register() {
                     </div>
                   </div>
 
-                  {/* Hackathon interest — in-person only */}
+                  {/* Hackathon interest — in-person only (required) */}
                   <div className="mt-4">
                     <label htmlFor="hackathon_interest" className="block text-xs font-medium text-cream/70">
-                      Would you like to participate in the hackathon?
+                      Would you like to participate in the hackathon? *
                     </label>
                     <select
                       id="hackathon_interest"
                       name="hackathon_interest"
+                      required
+                      onInvalid={(e) => e.currentTarget.setCustomValidity('Verify Hackathon Attendance')}
+                      onChange={(e) => e.currentTarget.setCustomValidity('')}
                       className="mt-1 w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-cream outline-none focus:border-[#FF006B]"
                     >
                       <option value="" className="bg-[#1B365D]">Select...</option>

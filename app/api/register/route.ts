@@ -10,6 +10,18 @@ export async function POST(request: Request) {
   try {
     const payload = await request.json()
 
+    // Validate hackathon_interest for in-person registrants (server-side guard).
+    // Virtual registrants don't see the field, so null is allowed for them.
+    if (payload.attendance_format === 'in-person') {
+      const allowed = ['yes', 'maybe', 'no']
+      if (!allowed.includes(payload.hackathon_interest)) {
+        return NextResponse.json(
+          { error: 'Please select a hackathon participation option.' },
+          { status: 400 }
+        )
+      }
+    }
+
     // Insert into Supabase
     const { error: dbError } = await supabase.from('registrations').insert(payload)
 
