@@ -34,6 +34,7 @@ export function Register() {
       emergency_contact_phone: (data.get('emergency_contact_phone') as string) || null,
       how_heard: (data.get('how_heard') as string) || null,
       interest: (data.get('interest') as string) || null,
+      hackathon_interest: (data.get('hackathon_interest') as string) || null,
     }
 
     try {
@@ -156,7 +157,7 @@ export function Register() {
               <ul className="mt-4 space-y-1 text-left text-xs text-cream/50">
                 <li>• Live-streamed workshops & talks</li>
                 <li>• Cloud access to IBM Quantum</li>
-                <li>• Remote competition track</li>
+                <li>• Q&amp;A with speakers & mentors</li>
               </ul>
               <p className="mt-4 text-xs text-cream/40 group-hover:text-cream/70 transition-colors">↑ Tap to select</p>
             </button>
@@ -316,6 +317,26 @@ export function Register() {
                         placeholder="+1 (555) 987-6543"
                       />
                     </div>
+                  </div>
+
+                  {/* Hackathon interest — in-person only */}
+                  <div className="mt-4">
+                    <label htmlFor="hackathon_interest" className="block text-xs font-medium text-cream/70">
+                      Would you like to participate in the hackathon?
+                    </label>
+                    <select
+                      id="hackathon_interest"
+                      name="hackathon_interest"
+                      className="mt-1 w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-cream outline-none focus:border-[#FF006B]"
+                    >
+                      <option value="" className="bg-[#1B365D]">Select...</option>
+                      <option value="yes" className="bg-[#1B365D]">Yes — count me in</option>
+                      <option value="maybe" className="bg-[#1B365D]">Maybe / still deciding</option>
+                      <option value="no" className="bg-[#1B365D]">No — just attending sessions</option>
+                    </select>
+                    <p className="mt-1 text-xs text-cream/40">
+                      Beginner-friendly, no experience needed. This just helps us plan groups.
+                    </p>
                   </div>
                 </div>
               )}
