@@ -282,10 +282,6 @@ export function Team() {
                 <div className="mt-5">
                   <SocialLinks member={m} />
                 </div>
-
-                <p className="mt-4 text-xs text-muted-foreground/60 transition-colors group-hover:text-[#FF006B]">
-                  Tap to view →
-                </p>
               </article>
             </Reveal>
           ))}
