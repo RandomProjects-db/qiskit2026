@@ -45,7 +45,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-[#00E5FF]/30 bg-gradient-to-r from-[#00E5FF]/10 via-white/10 to-[#00BCD4]/10 px-5 py-2.5 text-xs font-semibold text-cream shadow-lg shadow-[#00E5FF]/10 backdrop-blur-xl sm:text-sm"
           >
             <Sparkles className="size-4 text-[#00E5FF]" />
-            Hosted by NC A&amp;T State University
+            at NC A&amp;T State University
             <span className="size-2 animate-pulse rounded-full bg-[#00E5FF]" />
           </motion.span>
 
