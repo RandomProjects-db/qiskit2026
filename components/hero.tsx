@@ -1,6 +1,7 @@
 'use client'
 
-import { motion, useReducedMotion } from 'motion/react'
+import { useRef } from 'react'
+import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { ArrowRight, Sparkles } from 'lucide-react'
 
 const STATS = [
@@ -11,6 +12,16 @@ const STATS = [
 
 export function Hero() {
   const reduce = useReducedMotion()
+  const sectionRef = useRef<HTMLElement>(null)
+
+  // Subtle scroll parallax: the video drifts and fades slightly as you scroll past.
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  })
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '18%'])
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.12])
+  const bgOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.5])
 
   const item = {
     hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 20 },
@@ -19,18 +30,37 @@ export function Hero() {
 
   return (
     <section
+      ref={sectionRef}
       id="top"
       className="relative flex min-h-[100svh] items-center overflow-hidden pt-16 md:pt-20"
     >
-      {/* Official Qiskit Fall Fest hero background */}
-      <div className="absolute inset-0">
-        <img
-          src="/hero-bg.png"
-          alt=""
-          className="h-full w-full object-cover"
-        />
+      {/* Quantum hero background video with scroll parallax */}
+      <motion.div
+        className="absolute inset-0"
+        style={reduce ? undefined : { y: bgY, scale: bgScale, opacity: bgOpacity }}
+      >
+        {reduce ? (
+          // Reduced-motion users get the static poster frame, no autoplay video.
+          <img
+            src="/hero/quantum-hero-poster.jpg"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <video
+            className="h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/hero/quantum-hero-poster.jpg"
+          >
+            <source src="/hero/quantum-hero.webm" type="video/webm" />
+            <source src="/hero/quantum-hero.mp4" type="video/mp4" />
+          </video>
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy/80" />
-      </div>
+      </motion.div>
 
       <div className="relative mx-auto w-full max-w-5xl px-4 py-16 text-center md:py-20">
         <motion.div
