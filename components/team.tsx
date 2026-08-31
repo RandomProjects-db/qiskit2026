@@ -43,6 +43,20 @@ const TEAM: Organizer[] = [
     photo: '/team-emmanuel.png',
   },
   {
+    name: 'Anika Akther',
+    title: 'Co-Organizer',
+    affiliation: 'Industrial & Systems Engineering, NC A&T',
+    bio: 'Organizer and lead for the technical workshops.',
+    photo: '/team-anika.jpg',
+  },
+  {
+    name: 'Timilehin Gloria Adedeji',
+    title: 'Co-Organizer',
+    affiliation: 'Industrial & Systems Engineering, NC A&T',
+    bio: 'Supporting event planning, coordination, and engagement efforts to help bring quantum computing education and opportunities to the NC A&T community.',
+    photo: '/team-timilehin.jpg',
+  },
+  {
     name: 'Temitope Odeyomi Adeniyi',
     title: 'Co-Organizer & Advisor',
     affiliation: 'Cleveland State University',
