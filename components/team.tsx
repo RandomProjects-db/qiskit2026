@@ -26,6 +26,9 @@ type Organizer = {
   affiliation: string
   bio: string
   photo?: string
+  linkedin?: string
+  github?: string
+  email?: string
 }
 
 const TEAM: Organizer[] = [
@@ -35,6 +38,7 @@ const TEAM: Organizer[] = [
     affiliation: 'Computational Data Science & Engineering, NC A&T',
     bio: 'Leading the team and coordinating with IBM, faculty, and campus partners to bring quantum computing to NC A&T.',
     photo: '/team-godwin.jpg',
+    linkedin: 'https://www.linkedin.com/in/godwinmicahsmart/',
   },
   {
     name: 'Emmanuel Umukoro',
@@ -42,6 +46,7 @@ const TEAM: Organizer[] = [
     affiliation: 'Computational Data Science & Engineering, NC A&T',
     bio: 'Driving speaker outreach, program design, and partnership development. Connected the team with Duke Quantum Center.',
     photo: '/team-emmanuel.png',
+    linkedin: 'https://www.linkedin.com/in/emmanuel-umukoro-415373127',
   },
   {
     name: 'Anika Akther',
@@ -49,6 +54,7 @@ const TEAM: Organizer[] = [
     affiliation: 'Industrial & Systems Engineering, NC A&T',
     bio: 'Organizer and lead for the technical workshops.',
     photo: '/team-anika.jpg',
+    linkedin: 'https://www.linkedin.com/in/anika-akther/',
   },
   {
     name: 'Timilehin Gloria Adedeji',
@@ -56,6 +62,7 @@ const TEAM: Organizer[] = [
     affiliation: 'Industrial & Systems Engineering, NC A&T',
     bio: 'Supporting event planning, coordination, and engagement efforts to help bring quantum computing education and opportunities to the NC A&T community.',
     photo: '/team-timilehin.jpg',
+    linkedin: 'https://www.linkedin.com/in/timilehin-gloria-adedeji-94a609198/',
   },
   {
     name: 'Temitope Odeyomi Adeniyi',
@@ -69,6 +76,7 @@ const TEAM: Organizer[] = [
     affiliation: 'Lebanese American University',
     bio: 'Qiskit developer handling the event website and technical platform decisions.',
     photo: '/team-fahed.png',
+    linkedin: 'https://www.linkedin.com/in/fahed-daibes',
   },
   {
     name: 'Ayobami Taiwo',
@@ -98,36 +106,44 @@ function avatarUrl(name: string) {
 function SocialLinks({ member, size = 'sm' }: { member: Organizer; size?: 'sm' | 'lg' }) {
   const dim = size === 'lg' ? 'size-11' : 'size-10'
   const icon = size === 'lg' ? 'size-5' : 'size-4'
+  const hasAny = member.email || member.linkedin || member.github
+  if (!hasAny) return null
   return (
     <div className="flex items-center gap-3">
-      <a
-        href={`mailto:${member.name.split(' ')[0].toLowerCase()}@aggies.ncat.edu`}
-        aria-label={`Email ${member.name}`}
-        onClick={(e) => e.stopPropagation()}
-        className={`inline-flex ${dim} items-center justify-center rounded-full bg-gradient-to-br from-[#6929C4]/10 to-[#6929C4]/5 text-[#6929C4] transition-all duration-200 hover:from-[#6929C4] hover:to-[#4C1D95] hover:text-white hover:shadow-lg hover:shadow-[#6929C4]/25`}
-      >
-        <Mail className={icon} />
-      </a>
-      <a
-        href="https://www.linkedin.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`${member.name} on LinkedIn`}
-        onClick={(e) => e.stopPropagation()}
-        className={`inline-flex ${dim} items-center justify-center rounded-full bg-gradient-to-br from-[#0084BD]/10 to-[#0084BD]/5 text-[#0084BD] transition-all duration-200 hover:from-[#0084BD] hover:to-[#005F87] hover:text-white hover:shadow-lg hover:shadow-[#0084BD]/25`}
-      >
-        <LinkedInIcon className={icon} />
-      </a>
-      <a
-        href="https://github.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`${member.name} on GitHub`}
-        onClick={(e) => e.stopPropagation()}
-        className={`inline-flex ${dim} items-center justify-center rounded-full bg-gradient-to-br from-[#FF006B]/10 to-[#FF006B]/5 text-[#FF006B] transition-all duration-200 hover:from-[#FF006B] hover:to-[#C4004E] hover:text-white hover:shadow-lg hover:shadow-[#FF006B]/25`}
-      >
-        <GitHubIcon className={icon} />
-      </a>
+      {member.email && (
+        <a
+          href={`mailto:${member.email}`}
+          aria-label={`Email ${member.name}`}
+          onClick={(e) => e.stopPropagation()}
+          className={`inline-flex ${dim} items-center justify-center rounded-full bg-gradient-to-br from-[#6929C4]/10 to-[#6929C4]/5 text-[#6929C4] transition-all duration-200 hover:from-[#6929C4] hover:to-[#4C1D95] hover:text-white hover:shadow-lg hover:shadow-[#6929C4]/25`}
+        >
+          <Mail className={icon} />
+        </a>
+      )}
+      {member.linkedin && (
+        <a
+          href={member.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${member.name} on LinkedIn`}
+          onClick={(e) => e.stopPropagation()}
+          className={`inline-flex ${dim} items-center justify-center rounded-full bg-gradient-to-br from-[#0084BD]/10 to-[#0084BD]/5 text-[#0084BD] transition-all duration-200 hover:from-[#0084BD] hover:to-[#005F87] hover:text-white hover:shadow-lg hover:shadow-[#0084BD]/25`}
+        >
+          <LinkedInIcon className={icon} />
+        </a>
+      )}
+      {member.github && (
+        <a
+          href={member.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${member.name} on GitHub`}
+          onClick={(e) => e.stopPropagation()}
+          className={`inline-flex ${dim} items-center justify-center rounded-full bg-gradient-to-br from-[#FF006B]/10 to-[#FF006B]/5 text-[#FF006B] transition-all duration-200 hover:from-[#FF006B] hover:to-[#C4004E] hover:text-white hover:shadow-lg hover:shadow-[#FF006B]/25`}
+        >
+          <GitHubIcon className={icon} />
+        </a>
+      )}
     </div>
   )
 }
