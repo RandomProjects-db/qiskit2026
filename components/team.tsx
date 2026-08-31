@@ -1,6 +1,7 @@
 'use client'
 
-import { Mail } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { Mail, X } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 
 function LinkedInIcon({ className }: { className?: string }) {
@@ -94,7 +95,120 @@ function avatarUrl(name: string) {
   return `https://ui-avatars.com/api/?name=${encoded}&background=1B365D&color=E3E0D2&size=160&bold=true&format=png`
 }
 
+function SocialLinks({ member, size = 'sm' }: { member: Organizer; size?: 'sm' | 'lg' }) {
+  const dim = size === 'lg' ? 'size-11' : 'size-10'
+  const icon = size === 'lg' ? 'size-5' : 'size-4'
+  return (
+    <div className="flex items-center gap-3">
+      <a
+        href={`mailto:${member.name.split(' ')[0].toLowerCase()}@aggies.ncat.edu`}
+        aria-label={`Email ${member.name}`}
+        onClick={(e) => e.stopPropagation()}
+        className={`inline-flex ${dim} items-center justify-center rounded-full bg-gradient-to-br from-[#6929C4]/10 to-[#6929C4]/5 text-[#6929C4] transition-all duration-200 hover:from-[#6929C4] hover:to-[#4C1D95] hover:text-white hover:shadow-lg hover:shadow-[#6929C4]/25`}
+      >
+        <Mail className={icon} />
+      </a>
+      <a
+        href="https://www.linkedin.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${member.name} on LinkedIn`}
+        onClick={(e) => e.stopPropagation()}
+        className={`inline-flex ${dim} items-center justify-center rounded-full bg-gradient-to-br from-[#0084BD]/10 to-[#0084BD]/5 text-[#0084BD] transition-all duration-200 hover:from-[#0084BD] hover:to-[#005F87] hover:text-white hover:shadow-lg hover:shadow-[#0084BD]/25`}
+      >
+        <LinkedInIcon className={icon} />
+      </a>
+      <a
+        href="https://github.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${member.name} on GitHub`}
+        onClick={(e) => e.stopPropagation()}
+        className={`inline-flex ${dim} items-center justify-center rounded-full bg-gradient-to-br from-[#FF006B]/10 to-[#FF006B]/5 text-[#FF006B] transition-all duration-200 hover:from-[#FF006B] hover:to-[#C4004E] hover:text-white hover:shadow-lg hover:shadow-[#FF006B]/25`}
+      >
+        <GitHubIcon className={icon} />
+      </a>
+    </div>
+  )
+}
+
+function MemberModal({ member, onClose }: { member: Organizer; onClose: () => void }) {
+  const closeRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') onClose()
+    }
+    document.addEventListener('keydown', onKey)
+    // Lock body scroll while the modal is open
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    // Move focus to the close button for keyboard/screen-reader users
+    closeRef.current?.focus()
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = prevOverflow
+    }
+  }, [onClose])
+
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="member-modal-name"
+      onClick={onClose}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-md"
+      style={{ backgroundColor: 'rgba(15, 20, 40, 0.7)' }}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-md overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#1B365D] to-[#4C1D95] p-8 text-center shadow-2xl"
+      >
+        {/* Close button */}
+        <button
+          ref={closeRef}
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute right-4 top-4 inline-flex size-9 items-center justify-center rounded-full bg-white/10 text-cream/80 transition-colors hover:bg-white/20 hover:text-white"
+        >
+          <X className="size-5" />
+        </button>
+
+        {/* Decorative glow */}
+        <div className="pointer-events-none absolute -right-8 -top-8 size-32 rounded-full bg-gradient-to-br from-[#6929C4]/30 to-transparent blur-2xl" />
+        <div className="pointer-events-none absolute -bottom-8 -left-8 size-32 rounded-full bg-gradient-to-tr from-[#FF006B]/30 to-transparent blur-2xl" />
+
+        {/* Large photo */}
+        <div className="relative mx-auto mt-2 w-fit">
+          <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-[#6929C4] via-[#FF006B] to-[#0084BD] opacity-60 blur-sm" />
+          <img
+            src={member.photo || avatarUrl(member.name)}
+            alt={member.name}
+            width={160}
+            height={160}
+            className="relative size-40 rounded-full border-2 border-white/20 object-cover"
+          />
+        </div>
+
+        <h3 id="member-modal-name" className="mt-5 font-display text-2xl font-bold text-cream">
+          {member.name}
+        </h3>
+        <p className="mt-1 text-sm font-semibold text-[#FF006B]">{member.title}</p>
+        <p className="mt-1 text-xs text-cream/60">{member.affiliation}</p>
+        <p className="mt-4 text-sm leading-relaxed text-cream/80">{member.bio}</p>
+
+        <div className="mt-6 flex justify-center">
+          <SocialLinks member={member} size="lg" />
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function Team() {
+  const [selected, setSelected] = useState<Organizer | null>(null)
+
   return (
     <section id="team" className="scroll-mt-20 bg-background py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
@@ -113,7 +227,19 @@ export function Team() {
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM.map((m, i) => (
             <Reveal key={m.name} delay={(i % 3) * 0.08}>
-              <article className="group relative flex h-full flex-col items-center overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-[#1B365D]/5 to-[#6929C4]/5 p-6 text-center shadow-lg transition-all duration-300 hover:border-[#FF006B]/30 hover:shadow-[0_0_30px_-5px_rgba(255,0,107,0.15)]">
+              <article
+                onClick={() => setSelected(m)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    setSelected(m)
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                aria-label={`View details for ${m.name}`}
+                className="group relative flex h-full cursor-pointer flex-col items-center overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-[#1B365D]/5 to-[#6929C4]/5 p-6 text-center shadow-lg transition-all duration-300 hover:border-[#FF006B]/30 hover:shadow-[0_0_30px_-5px_rgba(255,0,107,0.15)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF006B]/50"
+              >
                 {/* Quantum circuit decoration */}
                 <div className="absolute -right-4 -top-4 size-24 rounded-full bg-gradient-to-br from-[#6929C4]/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <div className="absolute -bottom-2 -left-2 size-16 rounded-full bg-gradient-to-tr from-[#FF006B]/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -137,38 +263,20 @@ export function Team() {
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
 
                 {/* Social links */}
-                <div className="mt-5 flex items-center gap-3">
-                  <a
-                    href={`mailto:${m.name.split(' ')[0].toLowerCase()}@aggies.ncat.edu`}
-                    aria-label={`Email ${m.name}`}
-                    className="inline-flex size-10 items-center justify-center rounded-full bg-gradient-to-br from-[#6929C4]/10 to-[#6929C4]/5 text-[#6929C4] transition-all duration-200 hover:from-[#6929C4] hover:to-[#4C1D95] hover:text-white hover:shadow-lg hover:shadow-[#6929C4]/25"
-                  >
-                    <Mail className="size-4" />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${m.name} on LinkedIn`}
-                    className="inline-flex size-10 items-center justify-center rounded-full bg-gradient-to-br from-[#0084BD]/10 to-[#0084BD]/5 text-[#0084BD] transition-all duration-200 hover:from-[#0084BD] hover:to-[#005F87] hover:text-white hover:shadow-lg hover:shadow-[#0084BD]/25"
-                  >
-                    <LinkedInIcon className="size-4" />
-                  </a>
-                  <a
-                    href="https://github.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${m.name} on GitHub`}
-                    className="inline-flex size-10 items-center justify-center rounded-full bg-gradient-to-br from-[#FF006B]/10 to-[#FF006B]/5 text-[#FF006B] transition-all duration-200 hover:from-[#FF006B] hover:to-[#C4004E] hover:text-white hover:shadow-lg hover:shadow-[#FF006B]/25"
-                  >
-                    <GitHubIcon className="size-4" />
-                  </a>
+                <div className="mt-5">
+                  <SocialLinks member={m} />
                 </div>
+
+                <p className="mt-4 text-xs text-muted-foreground/60 transition-colors group-hover:text-[#FF006B]">
+                  Tap to view →
+                </p>
               </article>
             </Reveal>
           ))}
         </div>
       </div>
+
+      {selected && <MemberModal member={selected} onClose={() => setSelected(null)} />}
     </section>
   )
 }
