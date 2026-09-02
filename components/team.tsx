@@ -81,8 +81,9 @@ const TEAM: Organizer[] = [
   {
     name: 'Biswas Asha Rahman',
     title: 'Event Operations & Participant Experience',
-    affiliation: 'Industrial & Systems Engineering, NC A&T',
-    bio: 'Supports participant registration, attendee guidance, venue navigation, session coordination, guest assistance, and general on-site logistics throughout the three-day event.',
+    affiliation: 'PhD Student, Industrial & Systems Engineering, NC A&T',
+    bio: 'Helping the team with organizing, registration, and event setup.',
+    photo: '/team-biswas.jpg',
   },
   {
     name: 'Oluwatobi Aiyewunmi',
