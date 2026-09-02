@@ -84,6 +84,7 @@ const TEAM: Organizer[] = [
     affiliation: 'PhD Student, Industrial & Systems Engineering, NC A&T',
     bio: 'Helping the team with organizing, registration, and event setup.',
     photo: '/team-biswas.jpg',
+    linkedin: 'https://www.linkedin.com/in/biswas-asha-rahman-458a66209/',
   },
   {
     name: 'Oluwatobi Aiyewunmi',
