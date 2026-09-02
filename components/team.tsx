@@ -35,34 +35,26 @@ const TEAM: Organizer[] = [
   {
     name: 'Godwin Micah Smart',
     title: 'Lead Organizer',
-    affiliation: 'Computational Data Science & Engineering, NC A&T',
-    bio: 'Leading the team and coordinating with IBM, faculty, and campus partners to bring quantum computing to NC A&T.',
+    affiliation: 'Physicist, Computational Data Science & Engineering, NC A&T',
+    bio: 'Leading the planning and coordination of Qiskit Fall Fest 2026, working with IBM Quantum/Qiskit, faculty, speakers, and campus partners to expand quantum computing education and opportunities at NC A&T.',
     photo: '/team-godwin.jpg',
     linkedin: 'https://www.linkedin.com/in/godwinmicahsmart/',
   },
   {
-    name: 'Emmanuel Umukoro',
+    name: 'Emmanuel E. Umukoro',
     title: 'Co-Organizer',
-    affiliation: 'Computational Data Science & Engineering, NC A&T',
-    bio: 'Driving speaker outreach, program design, and partnership development. Connected the team with Duke Quantum Center.',
+    affiliation: 'Physics, NCCU · Electrical & Computer Engineering, Duke University',
+    bio: 'Driving speaker outreach, program design, and partnership development for Qiskit Fall Fest 2026.',
     photo: '/team-emmanuel.png',
     linkedin: 'https://www.linkedin.com/in/emmanuel-umukoro-415373127',
   },
   {
-    name: 'Anika Akther',
-    title: 'Co-Organizer',
-    affiliation: 'Industrial & Systems Engineering, NC A&T',
-    bio: 'Organizer and lead for the technical workshops.',
-    photo: '/team-anika.jpg',
-    linkedin: 'https://www.linkedin.com/in/anika-akther/',
-  },
-  {
-    name: 'Timilehin Gloria Adedeji',
-    title: 'Co-Organizer',
-    affiliation: 'Industrial & Systems Engineering, NC A&T',
-    bio: 'Supporting event planning, coordination, and engagement efforts to help bring quantum computing education and opportunities to the NC A&T community.',
-    photo: '/team-timilehin.jpg',
-    linkedin: 'https://www.linkedin.com/in/timilehin-gloria-adedeji-94a609198/',
+    name: 'Fahed Daibes',
+    title: 'Hackathon Coordinator · Web',
+    affiliation: 'Lebanese American University',
+    bio: 'Qiskit developer in charge of the hackathon, and handling the event website and technical platform decisions.',
+    photo: '/team-fahed.png',
+    linkedin: 'https://www.linkedin.com/in/fahed-daibes',
   },
   {
     name: 'Temitope Odeyomi Adeniyi',
@@ -71,18 +63,26 @@ const TEAM: Organizer[] = [
     bio: 'Qiskit developer with prior Fall Fest organizing experience. Advising on hackathon structure and event logistics.',
   },
   {
-    name: 'Fahed Daibes',
-    title: 'Co-Organizer · Web & Hackathon',
-    affiliation: 'Lebanese American University',
-    bio: 'Qiskit developer handling the event website and technical platform decisions.',
-    photo: '/team-fahed.png',
-    linkedin: 'https://www.linkedin.com/in/fahed-daibes',
+    name: 'Anika Akther',
+    title: 'Event Operations & Participant Experience',
+    affiliation: 'Industrial & Systems Engineering, NC A&T',
+    bio: 'Supports participant registration, attendee guidance, venue navigation, session coordination, guest assistance, and general on-site logistics throughout the three-day event.',
+    photo: '/team-anika.jpg',
+    linkedin: 'https://www.linkedin.com/in/anika-akther/',
   },
   {
-    name: 'Ayobami Taiwo',
-    title: 'Co-Organizer',
-    affiliation: 'Computational Data Science & Engineering, NC A&T',
-    bio: 'Supporting event planning and community outreach to engage the NC A&T student body.',
+    name: 'Timilehin Gloria Adedeji',
+    title: 'Event Operations & Participant Experience',
+    affiliation: 'Industrial & Systems Engineering, NC A&T',
+    bio: 'Supports volunteer recruiting, participant registration, attendee guidance, venue navigation, session coordination, guest assistance, and general on-site logistics throughout the three-day event.',
+    photo: '/team-timilehin.jpg',
+    linkedin: 'https://www.linkedin.com/in/timilehin-gloria-adedeji-94a609198/',
+  },
+  {
+    name: 'Biswas Asha Rahman',
+    title: 'Event Operations & Participant Experience',
+    affiliation: 'Industrial & Systems Engineering, NC A&T',
+    bio: 'Supports participant registration, attendee guidance, venue navigation, session coordination, guest assistance, and general on-site logistics throughout the three-day event.',
   },
   {
     name: 'Oluwatobi Aiyewunmi',
@@ -230,13 +230,13 @@ export function Team() {
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
-            Organizing Team
+            The Team
           </p>
           <h2 className="mt-3 text-balance font-display text-2xl font-bold text-navy sm:text-4xl">
-            The Aggies making it happen
+            The people making it happen
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-            A dedicated crew of students and faculty bringing quantum computing to campus.
+            A dedicated crew of students, researchers, and mentors across institutions bringing quantum computing to campus.
           </p>
         </Reveal>
 
