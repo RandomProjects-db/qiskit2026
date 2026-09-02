@@ -10,21 +10,29 @@ const FEATURES = [
     icon: CircuitBoard,
     title: 'Hands-on Qiskit',
     desc: 'Write and run real quantum circuits on IBM Quantum hardware.',
+    gradient: 'from-[#6929C4] to-[#4C1D95]',
+    glow: 'rgba(105,41,196,0.25)',
   },
   {
     icon: Users,
     title: 'Community',
     desc: 'Meet students, faculty, and researchers exploring quantum.',
+    gradient: 'from-[#00E5FF] to-[#0084BD]',
+    glow: 'rgba(0,229,255,0.25)',
   },
   {
     icon: Trophy,
     title: 'Competition',
     desc: 'Team up for a friendly quantum coding challenge with prizes.',
+    gradient: 'from-[#FF006B] to-[#C4004E]',
+    glow: 'rgba(255,0,107,0.25)',
   },
   {
     icon: Layers,
     title: 'All Levels',
     desc: 'Curated tracks for beginners through advanced builders.',
+    gradient: 'from-[#F5A623] to-[#D48806]',
+    glow: 'rgba(245,166,35,0.25)',
   },
 ]
 
@@ -33,16 +41,19 @@ const ACCOMPLISH = [
     icon: FlaskConical,
     title: 'Workshops',
     desc: 'Guided labs walk you from your first qubit to multi-gate algorithms using Qiskit.',
+    gradient: 'from-[#00E5FF] to-[#0084BD]',
   },
   {
     icon: Handshake,
     title: 'Networking',
     desc: 'Connect with the quantum community — peers, mentors, and IBM Quantum advocates.',
+    gradient: 'from-[#6929C4] to-[#4C1D95]',
   },
   {
     icon: Swords,
     title: 'Competition',
     desc: 'Put your new skills to the test in a timed challenge with recognition and prizes.',
+    gradient: 'from-[#FF006B] to-[#C4004E]',
   },
 ]
 
@@ -51,16 +62,19 @@ const WHY = [
     icon: Atom,
     title: 'The Next Frontier',
     desc: 'Quantum computing is reshaping cryptography, chemistry, and optimization.',
+    gradient: 'from-[#6929C4] to-[#4C1D95]',
   },
   {
     icon: BriefcaseBusiness,
     title: 'Career Ready',
     desc: 'Early quantum skills set you apart as the industry scales rapidly.',
+    gradient: 'from-[#F5A623] to-[#D48806]',
   },
   {
     icon: Zap,
     title: 'Real Impact',
     desc: 'Tackle problems classical computers simply cannot solve efficiently.',
+    gradient: 'from-[#FF006B] to-[#C4004E]',
   },
 ]
 
@@ -89,15 +103,26 @@ export function About() {
         </Reveal>
 
         {/* Feature cards */}
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURES.map((f, i) => (
             <Reveal key={f.title} delay={i * 0.08}>
-              <article className="h-full rounded-2xl border border-border bg-card p-6 shadow-lg transition-shadow hover:shadow-xl">
-                <span className="flex size-11 items-center justify-center rounded-xl bg-navy text-cream">
-                  <f.icon className="size-5" />
+              <article
+                className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl"
+                style={{ '--glow': f.glow } as React.CSSProperties}
+              >
+                {/* Hover glow */}
+                <div
+                  className="pointer-events-none absolute -right-8 -top-8 size-28 rounded-full opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100"
+                  style={{ background: `radial-gradient(circle, var(--glow), transparent 70%)` }}
+                />
+                {/* Gradient accent bar */}
+                <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${f.gradient}`} />
+
+                <span className={`relative flex size-12 items-center justify-center rounded-xl bg-gradient-to-br ${f.gradient} text-white shadow-md transition-transform duration-300 group-hover:scale-110`}>
+                  <f.icon className="size-6" />
                 </span>
-                <h3 className="mt-4 font-display text-lg font-bold text-navy">{f.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
+                <h3 className="relative mt-4 font-display text-lg font-bold text-navy">{f.title}</h3>
+                <p className="relative mt-2 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
               </article>
             </Reveal>
           ))}
@@ -106,16 +131,19 @@ export function About() {
         {/* Accomplish + Why */}
         <div className="mt-16 grid grid-cols-1 gap-10 md:mt-20 md:grid-cols-2 md:gap-12">
           <Reveal>
-            <h3 className="font-display text-xl font-bold text-navy sm:text-2xl">
-              What Will We Accomplish?
-            </h3>
+            <div className="flex items-center gap-3">
+              <span className="h-8 w-1 rounded-full bg-gradient-to-b from-[#00E5FF] to-[#6929C4]" />
+              <h3 className="font-display text-xl font-bold text-navy sm:text-2xl">
+                What Will We Accomplish?
+              </h3>
+            </div>
             <div className="mt-6 flex flex-col gap-4">
               {ACCOMPLISH.map((a) => (
                 <div
                   key={a.title}
-                  className="flex gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm"
+                  className="group flex gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:border-transparent hover:shadow-lg hover:translate-x-1"
                 >
-                  <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-cyan/10 text-cyan">
+                  <span className={`flex size-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${a.gradient} text-white shadow-md transition-transform duration-300 group-hover:scale-110`}>
                     <a.icon className="size-5" />
                   </span>
                   <div>
@@ -130,16 +158,19 @@ export function About() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h3 className="font-display text-xl font-bold text-navy sm:text-2xl">
-              Why Quantum?!
-            </h3>
+            <div className="flex items-center gap-3">
+              <span className="h-8 w-1 rounded-full bg-gradient-to-b from-[#FF006B] to-[#F5A623]" />
+              <h3 className="font-display text-xl font-bold text-navy sm:text-2xl">
+                Why Quantum?!
+              </h3>
+            </div>
             <div className="mt-6 flex flex-col gap-4">
               {WHY.map((w) => (
                 <div
                   key={w.title}
-                  className="flex gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm"
+                  className="group flex gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:border-transparent hover:shadow-lg hover:translate-x-1"
                 >
-                  <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold">
+                  <span className={`flex size-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${w.gradient} text-white shadow-md transition-transform duration-300 group-hover:scale-110`}>
                     <w.icon className="size-5" />
                   </span>
                   <div>
