@@ -72,7 +72,7 @@ export function Hero() {
           <motion.span
             variants={item}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#00E5FF]/30 bg-gradient-to-r from-[#00E5FF]/10 via-white/10 to-[#00BCD4]/10 px-5 py-2.5 text-xs font-semibold text-cream shadow-lg shadow-[#00E5FF]/10 backdrop-blur-xl sm:text-sm"
+            className="inline-flex items-center gap-2 rounded-full border border-[#00E5FF]/30 bg-gradient-to-r from-[#00E5FF]/10 via-white/10 to-[#00BCD4]/10 px-7 py-3 text-sm font-semibold tracking-wide text-cream shadow-lg shadow-[#00E5FF]/10 backdrop-blur-xl sm:px-9 sm:text-base"
           >
             <Sparkles className="size-4 text-[#00E5FF]" />
             at NC A&amp;T State University
