@@ -24,7 +24,7 @@ type Organizer = {
   name: string
   title: string
   affiliation: string
-  bio: string
+  bio?: string
   photo?: string
   linkedin?: string
   github?: string
@@ -57,10 +57,16 @@ const TEAM: Organizer[] = [
     linkedin: 'https://www.linkedin.com/in/fahed-daibes',
   },
   {
+    name: 'Ikenna Odezuligbo',
+    title: 'Co-Organizer',
+    affiliation: 'University of the Cumberlands',
+  },
+  {
     name: 'Temitope Odeyomi Adeniyi',
     title: 'Co-Organizer & Advisor',
     affiliation: 'Cleveland State University',
     bio: 'Qiskit developer with prior Fall Fest organizing experience. Advising on hackathon structure and event logistics.',
+    photo: '/team-temitope.jpg',
   },
   {
     name: 'Anika Akther',
@@ -91,12 +97,6 @@ const TEAM: Organizer[] = [
     title: 'Co-Organizer',
     affiliation: 'Computational Data Science & Engineering, NC A&T',
     bio: 'Contributing to event coordination, volunteer management, and day-of operations.',
-  },
-  {
-    name: 'Precious Anavberokhai',
-    title: 'Co-Organizer',
-    affiliation: 'Computational Data Science & Engineering, NC A&T',
-    bio: 'Assisting with publicity, registration logistics, and participant engagement.',
   },
 ]
 
@@ -214,7 +214,7 @@ function MemberModal({ member, onClose }: { member: Organizer; onClose: () => vo
         </h3>
         <p className="mt-1 text-sm font-semibold text-[#FF006B]">{member.title}</p>
         <p className="mt-1 text-xs text-cream/60">{member.affiliation}</p>
-        <p className="mt-4 text-sm leading-relaxed text-cream/80">{member.bio}</p>
+        {member.bio && <p className="mt-4 text-sm leading-relaxed text-cream/80">{member.bio}</p>}
 
         <div className="mt-6 flex justify-center">
           <SocialLinks member={member} size="lg" />
@@ -278,7 +278,7 @@ export function Team() {
                 <h3 className="mt-4 font-display text-lg font-bold text-navy">{m.name}</h3>
                 <p className="mt-0.5 text-sm font-semibold text-[#FF006B]">{m.title}</p>
                 <p className="mt-0.5 text-xs text-muted-foreground">{m.affiliation}</p>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{m.bio ?? ''}</p>
 
                 {/* Social links */}
                 <div className="mt-5">
