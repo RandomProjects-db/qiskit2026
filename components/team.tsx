@@ -188,7 +188,7 @@ function MemberModal({ member, onClose }: { member: Organizer; onClose: () => vo
           type="button"
           onClick={onClose}
           aria-label="Close"
-          className="absolute right-4 top-4 inline-flex size-9 items-center justify-center rounded-full bg-white/10 text-cream/80 transition-colors hover:bg-white/20 hover:text-white"
+          className="absolute right-4 top-4 inline-flex size-9 items-center justify-center rounded-full bg-white/10 text-cream/85 transition-colors hover:bg-white/20 hover:text-white"
         >
           <X className="size-5" />
         </button>
@@ -213,8 +213,8 @@ function MemberModal({ member, onClose }: { member: Organizer; onClose: () => vo
           {member.name}
         </h3>
         <p className="mt-1 text-sm font-semibold text-[#FF006B]">{member.title}</p>
-        <p className="mt-1 text-xs text-cream/60">{member.affiliation}</p>
-        {member.bio && <p className="mt-4 text-sm leading-relaxed text-cream/80">{member.bio}</p>}
+        <p className="mt-1 text-xs text-cream/85">{member.affiliation}</p>
+        {member.bio && <p className="mt-4 text-sm leading-relaxed text-cream/85">{member.bio}</p>}
 
         <div className="mt-6 flex justify-center">
           <SocialLinks member={member} size="lg" />
@@ -228,16 +228,16 @@ export function Team() {
   const [selected, setSelected] = useState<Organizer | null>(null)
 
   return (
-    <section id="team" className="scroll-mt-20 bg-background py-20 md:py-28">
+    <section id="team" className="scroll-mt-20 bg-[#060914]/25 py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
             The Team
           </p>
-          <h2 className="mt-3 text-balance font-display text-2xl font-bold text-navy sm:text-4xl">
+          <h2 className="mt-3 text-balance font-display text-2xl font-bold text-white sm:text-4xl">
             The people making it happen
           </h2>
-          <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-pretty leading-relaxed text-white/85">
             A dedicated crew of students, researchers, and mentors across institutions bringing quantum computing to campus.
           </p>
         </Reveal>
@@ -256,7 +256,7 @@ export function Team() {
                 role="button"
                 tabIndex={0}
                 aria-label={`View details for ${m.name}`}
-                className="group relative flex h-full cursor-pointer flex-col items-center overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-[#1B365D]/5 to-[#6929C4]/5 p-6 text-center shadow-lg transition-all duration-300 hover:border-[#FF006B]/30 hover:shadow-[0_0_30px_-5px_rgba(255,0,107,0.15)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF006B]/50"
+                className="forge-card group relative flex h-full cursor-pointer flex-col items-center overflow-hidden p-6 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF006B]/50"
               >
                 {/* Quantum circuit decoration */}
                 <div className="absolute -right-4 -top-4 size-24 rounded-full bg-gradient-to-br from-[#6929C4]/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -275,10 +275,10 @@ export function Team() {
                   />
                 </div>
 
-                <h3 className="mt-4 font-display text-lg font-bold text-navy">{m.name}</h3>
-                <p className="mt-0.5 text-sm font-semibold text-[#FF006B]">{m.title}</p>
-                <p className="mt-0.5 text-xs text-muted-foreground">{m.affiliation}</p>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{m.bio ?? ''}</p>
+                <h3 className="mt-4 font-display text-lg font-bold text-white">{m.name}</h3>
+                <p className="mt-0.5 text-sm font-semibold text-[#FF4D8F]">{m.title}</p>
+                <p className="mt-0.5 text-xs text-white/85">{m.affiliation}</p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-white/85">{m.bio ?? ''}</p>
 
                 {/* Social links */}
                 <div className="mt-5">

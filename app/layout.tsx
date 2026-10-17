@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Space_Grotesk, Inter } from 'next/font/google'
+import { ParticleBackground } from '@/components/particle-background'
 import './globals.css'
 
 const spaceGrotesk = Space_Grotesk({
@@ -68,10 +69,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} bg-background scroll-smooth`}
+      className={`${spaceGrotesk.variable} ${inter.variable} scroll-smooth`}
     >
-      <body className="font-sans antialiased">
-        {children}
+      <body className="font-sans antialiased bg-[#060914]">
+        {/* Persistent particle background, fixed behind all content (z-0). */}
+        <ParticleBackground />
+        {/* All page content sits above the canvas. */}
+        <div className="relative z-10">{children}</div>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

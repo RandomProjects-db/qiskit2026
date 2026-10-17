@@ -184,14 +184,14 @@ function SubEvent({
   e: { time: string; title: string; desc: string; speaker: string }
 }) {
   return (
-    <div className="rounded-xl border border-border bg-card p-4">
+    <div className="forge-card p-4">
       <div className="flex items-center gap-2 text-sm font-semibold text-cyan">
         <Clock className="size-4" />
         {e.time}
       </div>
-      <h5 className="mt-2 font-display font-bold text-navy">{e.title}</h5>
-      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{e.desc}</p>
-      <div className="mt-3 flex items-center gap-2 text-sm text-navy">
+      <h5 className="mt-2 font-display font-bold text-white">{e.title}</h5>
+      <p className="mt-1 text-sm leading-relaxed text-white/85">{e.desc}</p>
+      <div className="mt-3 flex items-center gap-2 text-sm text-white">
         <User className="size-4 text-gold" />
         <span className="font-medium">{e.speaker}</span>
       </div>
@@ -201,16 +201,16 @@ function SubEvent({
 
 export function Schedule() {
   return (
-    <section id="schedule" className="scroll-mt-20 bg-secondary py-20 md:py-28">
+    <section id="schedule" className="scroll-mt-20 bg-[#060914]/25 py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
             Schedule
           </p>
-          <h2 className="mt-3 text-balance font-display text-2xl font-bold text-navy sm:text-4xl">
+          <h2 className="mt-3 text-balance font-display text-2xl font-bold text-white sm:text-4xl">
             Three days, one quantum leap
           </h2>
-          <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-pretty leading-relaxed text-white/85">
             Tap any day to explore its sessions and speakers. Final dates will be
             confirmed closer to the event.
           </p>
@@ -228,7 +228,7 @@ export function Schedule() {
               <AccordionItem
                 key={d.day}
                 value={d.day}
-                className="overflow-hidden rounded-2xl border border-border bg-card shadow-lg"
+                className="forge-card overflow-hidden"
               >
                 <AccordionTrigger className="px-5 py-5 text-left hover:no-underline sm:px-6">
                   <div className="flex flex-1 flex-col gap-3">
@@ -239,15 +239,15 @@ export function Schedule() {
                       <LevelBadge level={d.level} />
                     </div>
                     <div>
-                      <h3 className="font-display text-lg font-bold text-navy sm:text-xl">
+                      <h3 className="font-display text-lg font-bold text-white sm:text-xl">
                         {d.day}
                       </h3>
-                      <p className="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">
+                      <p className="mt-1 flex items-center gap-1.5 text-sm text-white/85">
                         <Calendar className="size-4" />
                         {d.date}
                       </p>
                     </div>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{d.desc}</p>
+                    <p className="text-sm leading-relaxed text-white/85">{d.desc}</p>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-5 pb-5 sm:px-6">
@@ -265,17 +265,17 @@ export function Schedule() {
         {/* Venue + Prerequisites */}
         <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
           <Reveal className="lg:col-span-1">
-            <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-lg">
+            <div className="forge-card flex h-full flex-col p-6">
               <span className="flex size-11 items-center justify-center rounded-xl bg-cyan/10 text-cyan">
                 <MapPin className="size-5" />
               </span>
-              <h3 className="mt-4 font-display text-lg font-bold text-navy">Venue</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <h3 className="mt-4 font-display text-lg font-bold text-white">Venue</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/85">
                 North Carolina A&amp;T State University
                 <br />
                 Greensboro, NC — exact building TBD.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-3 text-sm leading-relaxed text-white/85">
                 Can&apos;t make it in person? Every session streams live for virtual
                 attendees.
               </p>
