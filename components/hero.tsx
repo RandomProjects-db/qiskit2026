@@ -59,7 +59,7 @@ export function Hero() {
             <source src="/hero/quantum-hero.mp4" type="video/mp4" />
           </video>
         )}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-[#060914]" />
       </motion.div>
 
       <div className="relative mx-auto w-full max-w-5xl px-4 py-16 text-center md:py-20">

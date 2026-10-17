@@ -93,16 +93,16 @@ export function Register() {
 
   if (success) {
     return (
-      <section id="register" className="scroll-mt-20 bg-gradient-to-br from-[#1B365D] via-[#6929C4] to-[#4C1D95] py-20 md:py-28">
+      <section id="register" className="scroll-mt-20 bg-gradient-to-br from-[#1B365D]/80 via-[#6929C4]/80 to-[#4C1D95]/80 py-20 md:py-28">
         <div className="mx-auto max-w-2xl px-4 text-center">
           <Reveal>
             <div className="rounded-2xl border border-white/10 bg-white/5 p-12 backdrop-blur-xl">
               <CheckCircle2 className="mx-auto size-16 text-emerald-400" />
               <h2 className="mt-6 font-display text-3xl font-bold text-cream">You&apos;re registered!</h2>
-              <p className="mt-4 text-lg text-cream/70">
+              <p className="mt-4 text-lg text-cream/85">
                 Welcome to Qiskit Fall Fest 2026 at NC A&T. We&apos;ll send event details to your email as we get closer.
               </p>
-              <p className="mt-6 text-sm text-cream/50">See you at the quantum revolution 🚀</p>
+              <p className="mt-6 text-sm text-cream/85">See you at the quantum revolution 🚀</p>
             </div>
           </Reveal>
         </div>
@@ -111,7 +111,7 @@ export function Register() {
   }
 
   return (
-    <section id="register" className="scroll-mt-20 bg-gradient-to-br from-[#1B365D] via-[#6929C4] to-[#4C1D95] py-20 md:py-28">
+    <section id="register" className="scroll-mt-20 bg-gradient-to-br from-[#1B365D]/80 via-[#6929C4]/80 to-[#4C1D95]/80 py-20 md:py-28">
       <div className="mx-auto max-w-4xl px-4 md:px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-[#FF006B]">
@@ -120,7 +120,7 @@ export function Register() {
           <h2 className="mt-3 text-balance font-display text-2xl font-bold text-cream sm:text-4xl">
             Claim your spot at Fall Fest 2026
           </h2>
-          <p className="mt-4 text-pretty leading-relaxed text-cream/70">
+          <p className="mt-4 text-pretty leading-relaxed text-cream/85">
             Free to attend. Pick the format that works for you — both come with the full Qiskit experience.
           </p>
         </Reveal>
@@ -140,15 +140,15 @@ export function Register() {
                   : 'border-white/10 bg-white/5 hover:border-white/30 hover:bg-white/10'
               }`}
             >
-              <MapPin className={`size-8 ${format === 'in-person' ? 'text-[#FF006B]' : 'text-cream/60'}`} />
+              <MapPin className={`size-8 ${format === 'in-person' ? 'text-[#FF006B]' : 'text-cream/85'}`} />
               <h3 className="mt-3 font-display text-lg font-bold text-cream">In-Person</h3>
-              <p className="mt-1 text-sm text-cream/60">Greensboro, NC</p>
-              <ul className="mt-4 space-y-1 text-left text-xs text-cream/50">
+              <p className="mt-1 text-sm text-cream/85">Greensboro, NC</p>
+              <ul className="mt-4 space-y-1 text-left text-xs text-cream/85">
                 <li>• Hands-on lab access with mentors</li>
                 <li>• Face-to-face networking & swag</li>
                 <li>• Compete on-site with your team</li>
               </ul>
-              <p className="mt-4 text-xs text-cream/40 group-hover:text-cream/70 transition-colors">↑ Tap to select</p>
+              <p className="mt-4 text-xs text-cream/85 group-hover:text-cream/85 transition-colors">↑ Tap to select</p>
             </button>
 
             <button
@@ -163,15 +163,15 @@ export function Register() {
                   : 'border-white/10 bg-white/5 hover:border-white/30 hover:bg-white/10'
               }`}
             >
-              <Globe className={`size-8 ${format === 'virtual' ? 'text-[#0084BD]' : 'text-cream/60'}`} />
+              <Globe className={`size-8 ${format === 'virtual' ? 'text-[#0084BD]' : 'text-cream/85'}`} />
               <h3 className="mt-3 font-display text-lg font-bold text-cream">Virtual</h3>
-              <p className="mt-1 text-sm text-cream/60">Join from anywhere</p>
-              <ul className="mt-4 space-y-1 text-left text-xs text-cream/50">
+              <p className="mt-1 text-sm text-cream/85">Join from anywhere</p>
+              <ul className="mt-4 space-y-1 text-left text-xs text-cream/85">
                 <li>• Live-streamed workshops & talks</li>
                 <li>• Cloud access to IBM Quantum</li>
                 <li>• Q&amp;A with speakers & mentors</li>
               </ul>
-              <p className="mt-4 text-xs text-cream/40 group-hover:text-cream/70 transition-colors">↑ Tap to select</p>
+              <p className="mt-4 text-xs text-cream/85 group-hover:text-cream/85 transition-colors">↑ Tap to select</p>
             </button>
           </div>
         </Reveal>
@@ -189,7 +189,7 @@ export function Register() {
               {/* Name row */}
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="first_name" className="block text-sm font-medium text-cream/80">
+                  <label htmlFor="first_name" className="block text-sm font-medium text-cream/85">
                     First Name *
                   </label>
                   <input
@@ -202,7 +202,7 @@ export function Register() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="last_name" className="block text-sm font-medium text-cream/80">
+                  <label htmlFor="last_name" className="block text-sm font-medium text-cream/85">
                     Last Name *
                   </label>
                   <input
@@ -218,7 +218,7 @@ export function Register() {
 
               {/* Email */}
               <div className="mt-4">
-                <label htmlFor="email" className="block text-sm font-medium text-cream/80">
+                <label htmlFor="email" className="block text-sm font-medium text-cream/85">
                   Email Address *
                 </label>
                 <input
@@ -233,7 +233,7 @@ export function Register() {
 
               {/* Institution */}
               <div className="mt-4">
-                <label htmlFor="institution" className="block text-sm font-medium text-cream/80">
+                <label htmlFor="institution" className="block text-sm font-medium text-cream/85">
                   Institution / University *
                 </label>
                 <input
@@ -248,11 +248,11 @@ export function Register() {
 
               {/* Experience level */}
               <div className="mt-4">
-                <label htmlFor="experience_level" className="block text-sm font-medium text-cream/80">
+                <label htmlFor="experience_level" className="block text-sm font-medium text-cream/85">
                   Quantum Computing Experience (0 = beginner, 10 = expert) *
                 </label>
                 <div className="mt-2 flex items-center gap-3">
-                  <span className="text-xs text-cream/50">0</span>
+                  <span className="text-xs text-cream/85">0</span>
                   <input
                     id="experience_level"
                     name="experience_level"
@@ -266,7 +266,7 @@ export function Register() {
                     }}
                     className="h-2 flex-1 cursor-pointer appearance-none rounded-full bg-white/10 accent-[#FF006B]"
                   />
-                  <span className="text-xs text-cream/50">10</span>
+                  <span className="text-xs text-cream/85">10</span>
                   <span
                     id="exp-display"
                     className="ml-2 flex size-8 items-center justify-center rounded-lg bg-[#FF006B]/20 font-display text-sm font-bold text-[#FF006B]"
@@ -282,7 +282,7 @@ export function Register() {
                   <p className="text-sm font-medium text-[#FF006B]">In-Person Attendee Details</p>
                   <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div>
-                      <label htmlFor="phone" className="block text-xs font-medium text-cream/70">
+                      <label htmlFor="phone" className="block text-xs font-medium text-cream/85">
                         Phone Number
                       </label>
                       <input
@@ -294,7 +294,7 @@ export function Register() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="dietary_restrictions" className="block text-xs font-medium text-cream/70">
+                      <label htmlFor="dietary_restrictions" className="block text-xs font-medium text-cream/85">
                         Dietary Restrictions
                       </label>
                       <input
@@ -306,7 +306,7 @@ export function Register() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="emergency_contact_name" className="block text-xs font-medium text-cream/70">
+                      <label htmlFor="emergency_contact_name" className="block text-xs font-medium text-cream/85">
                         Emergency Contact Name
                       </label>
                       <input
@@ -318,7 +318,7 @@ export function Register() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="emergency_contact_phone" className="block text-xs font-medium text-cream/70">
+                      <label htmlFor="emergency_contact_phone" className="block text-xs font-medium text-cream/85">
                         Emergency Contact Phone
                       </label>
                       <input
@@ -333,7 +333,7 @@ export function Register() {
 
                   {/* Hackathon interest — in-person only (required) */}
                   <div className="mt-4">
-                    <label htmlFor="hackathon_interest" className="block text-xs font-medium text-cream/70">
+                    <label htmlFor="hackathon_interest" className="block text-xs font-medium text-cream/85">
                       Would you like to participate in the hackathon? *
                     </label>
                     <select
@@ -349,7 +349,7 @@ export function Register() {
                       <option value="maybe" className="bg-[#1B365D]">Maybe / still deciding</option>
                       <option value="no" className="bg-[#1B365D]">No — just attending sessions</option>
                     </select>
-                    <p className="mt-1 text-xs text-cream/40">
+                    <p className="mt-1 text-xs text-cream/85">
                       Beginner-friendly, no experience needed. This just helps us plan groups.
                     </p>
                   </div>
@@ -359,7 +359,7 @@ export function Register() {
               {/* Optional fields */}
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="how_heard" className="block text-sm font-medium text-cream/80">
+                  <label htmlFor="how_heard" className="block text-sm font-medium text-cream/85">
                     How did you hear about us?
                   </label>
                   <select
@@ -378,7 +378,7 @@ export function Register() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="interest" className="block text-sm font-medium text-cream/80">
+                  <label htmlFor="interest" className="block text-sm font-medium text-cream/85">
                     Primary Interest
                   </label>
                   <select
@@ -422,7 +422,7 @@ export function Register() {
                 )}
               </button>
 
-              <p className="mt-4 text-center text-xs text-cream/40">
+              <p className="mt-4 text-center text-xs text-cream/85">
                 By registering you agree to our code of conduct. We&apos;ll only use your info for event communications.
               </p>
             </form>
@@ -440,7 +440,7 @@ export function Register() {
               </span>
               <div>
                 <h4 className="font-display font-bold text-cream">Certificate</h4>
-                <p className="mt-1 text-sm text-cream/60">A shareable certificate of completion.</p>
+                <p className="mt-1 text-sm text-cream/85">A shareable certificate of completion.</p>
               </div>
             </div>
 
@@ -452,7 +452,7 @@ export function Register() {
               </span>
               <div>
                 <h4 className="font-display font-bold text-cream">Knowledge & Skills</h4>
-                <p className="mt-1 text-sm text-cream/60">Real, applied quantum programming experience.</p>
+                <p className="mt-1 text-sm text-cream/85">Real, applied quantum programming experience.</p>
               </div>
             </div>
 
@@ -464,7 +464,7 @@ export function Register() {
               </span>
               <div>
                 <h4 className="font-display font-bold text-cream">Networking</h4>
-                <p className="mt-1 text-sm text-cream/60">Connections across the quantum community.</p>
+                <p className="mt-1 text-sm text-cream/85">Connections across the quantum community.</p>
               </div>
             </div>
           </div>

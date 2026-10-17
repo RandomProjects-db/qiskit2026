@@ -86,16 +86,16 @@ const PARTNERS = [
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-20 bg-background py-20 md:py-28">
+    <section id="about" className="scroll-mt-20 bg-[#060914]/30 py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
             About the Event
           </p>
-          <h2 className="mt-3 text-balance font-display text-2xl font-bold text-navy sm:text-4xl">
+          <h2 className="mt-3 text-balance font-display text-2xl font-bold text-white sm:text-4xl">
             A week to fall in love with quantum computing
           </h2>
-          <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-pretty leading-relaxed text-white/85">
             Qiskit Fall Fest is a global celebration of quantum computing run by students,
             for students. At NC A&amp;T, we&apos;re bringing the Aggie community together
             for a hybrid experience packed with learning, building, and connecting.
@@ -107,7 +107,7 @@ export function About() {
           {FEATURES.map((f, i) => (
             <Reveal key={f.title} delay={i * 0.08}>
               <article
-                className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl"
+                className="forge-card group relative h-full overflow-hidden p-6"
                 style={{ '--glow': f.glow } as React.CSSProperties}
               >
                 {/* Hover glow */}
@@ -121,8 +121,8 @@ export function About() {
                 <span className={`relative flex size-12 items-center justify-center rounded-xl bg-gradient-to-br ${f.gradient} text-white shadow-md transition-transform duration-300 group-hover:scale-110`}>
                   <f.icon className="size-6" />
                 </span>
-                <h3 className="relative mt-4 font-display text-lg font-bold text-navy">{f.title}</h3>
-                <p className="relative mt-2 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
+                <h3 className="relative mt-4 font-display text-lg font-bold text-white">{f.title}</h3>
+                <p className="relative mt-2 text-sm leading-relaxed text-white/85">{f.desc}</p>
               </article>
             </Reveal>
           ))}
@@ -133,7 +133,7 @@ export function About() {
           <Reveal>
             <div className="flex items-center gap-3">
               <span className="h-8 w-1 rounded-full bg-gradient-to-b from-[#00E5FF] to-[#6929C4]" />
-              <h3 className="font-display text-xl font-bold text-navy sm:text-2xl">
+              <h3 className="font-display text-xl font-bold text-white sm:text-2xl">
                 What Will We Accomplish?
               </h3>
             </div>
@@ -141,14 +141,14 @@ export function About() {
               {ACCOMPLISH.map((a) => (
                 <div
                   key={a.title}
-                  className="group flex gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:border-transparent hover:shadow-lg hover:translate-x-1"
+                  className="forge-card group flex gap-4 p-5 hover:translate-x-1"
                 >
                   <span className={`flex size-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${a.gradient} text-white shadow-md transition-transform duration-300 group-hover:scale-110`}>
                     <a.icon className="size-5" />
                   </span>
                   <div>
-                    <h4 className="font-display font-bold text-navy">{a.title}</h4>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    <h4 className="font-display font-bold text-white">{a.title}</h4>
+                    <p className="mt-1 text-sm leading-relaxed text-white/85">
                       {a.desc}
                     </p>
                   </div>
@@ -160,7 +160,7 @@ export function About() {
           <Reveal delay={0.1}>
             <div className="flex items-center gap-3">
               <span className="h-8 w-1 rounded-full bg-gradient-to-b from-[#FF006B] to-[#F5A623]" />
-              <h3 className="font-display text-xl font-bold text-navy sm:text-2xl">
+              <h3 className="font-display text-xl font-bold text-white sm:text-2xl">
                 Why Quantum?!
               </h3>
             </div>
@@ -168,14 +168,14 @@ export function About() {
               {WHY.map((w) => (
                 <div
                   key={w.title}
-                  className="group flex gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:border-transparent hover:shadow-lg hover:translate-x-1"
+                  className="forge-card group flex gap-4 p-5 hover:translate-x-1"
                 >
                   <span className={`flex size-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${w.gradient} text-white shadow-md transition-transform duration-300 group-hover:scale-110`}>
                     <w.icon className="size-5" />
                   </span>
                   <div>
-                    <h4 className="font-display font-bold text-navy">{w.title}</h4>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    <h4 className="font-display font-bold text-white">{w.title}</h4>
+                    <p className="mt-1 text-sm leading-relaxed text-white/85">
                       {w.desc}
                     </p>
                   </div>
@@ -187,10 +187,10 @@ export function About() {
 
         {/* Partners - Infinite scroll marquee */}
         <Reveal className="mt-16 md:mt-20">
-          <p className="text-center text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
+          <p className="text-center text-sm font-medium uppercase tracking-[0.2em] text-white/85">
             In Collaboration With
           </p>
-          <div className="mx-auto max-w-sm flex relative overflow-hidden mt-6 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:bg-gradient-to-r before:from-background before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-10 after:bg-gradient-to-l after:from-background after:to-transparent after:content-['']">
+          <div className="mx-auto max-w-sm flex relative overflow-hidden mt-6 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:bg-gradient-to-r before:from-[#060914] before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-10 after:bg-gradient-to-l after:from-[#060914] after:to-transparent after:content-['']">
             <motion.div
               transition={{
                 duration: 5,
@@ -209,9 +209,9 @@ export function About() {
                       href={p.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex shrink-0 items-center gap-3 rounded-full border border-border/50 bg-secondary/50 px-6 py-3 font-display font-semibold text-navy transition-all duration-300 hover:border-[#6929C4]/40 hover:bg-white hover:shadow-lg"
+                      className="group flex shrink-0 items-center gap-3 rounded-full border border-white/15 bg-white/10 px-6 py-3 font-display font-semibold text-white transition-all duration-300 hover:border-[#FF006B]/50 hover:bg-white/20 hover:shadow-lg"
                     >
-                      <span className="transition-colors group-hover:text-[#6929C4]">{p.name}</span>
+                      <span className="transition-colors group-hover:text-[#FF4D8F]">{p.name}</span>
                       <span className="text-[#FF006B] opacity-50 transition-opacity group-hover:opacity-100">•</span>
                     </a>
                   ))}
