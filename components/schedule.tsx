@@ -283,18 +283,18 @@ export function Schedule() {
           </Reveal>
 
           <Reveal delay={0.1} className="lg:col-span-2">
-            <div className="h-full rounded-2xl bg-gradient-to-br from-[#4c1d95] via-[#6d28d9] to-[#1b365d] p-6 shadow-xl sm:p-8">
+            <div className="h-full rounded-2xl bg-gradient-to-br from-[#4c1d95]/40 via-[#6d28d9]/40 to-[#1b365d]/40 p-6 shadow-xl backdrop-blur-md sm:p-8">
               <h3 className="font-display text-lg font-bold text-cream sm:text-xl">
                 Prerequisites
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-cream/80">
+              <p className="mt-2 text-sm leading-relaxed text-cream/85">
                 Come as you are — here&apos;s all you really need.
               </p>
               <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
                 {PREREQS.map((p) => (
                   <div
                     key={p.title}
-                    className="rounded-xl border border-white/15 bg-white/10 p-4 backdrop-blur-xl"
+                    className="rounded-xl border border-white/15 bg-white/5 p-4 backdrop-blur-sm"
                   >
                     <span className="flex size-9 items-center justify-center rounded-lg bg-white/15 text-cream">
                       <p.icon className="size-5" />
@@ -302,7 +302,7 @@ export function Schedule() {
                     <h4 className="mt-3 font-display text-sm font-bold text-cream">
                       {p.title}
                     </h4>
-                    <p className="mt-1 text-xs leading-relaxed text-cream/70">{p.desc}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-cream/85">{p.desc}</p>
                   </div>
                 ))}
               </div>
