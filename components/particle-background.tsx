@@ -9,7 +9,6 @@
  * page. A small fixed caption reflects the current shape.
  */
 
-import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import type { Stage } from '@/components/ParticleMorph'
 
@@ -32,27 +31,11 @@ const COLORS = {
 }
 
 export function ParticleBackground() {
-  const [stage, setStage] = useState(0)
-
   return (
     <>
       {/* Fixed canvas behind everything. Progress starts at the hero's bottom
           (#top is the hero section id) and reaches 1 at the page bottom. */}
-      <ParticleMorph
-        stages={STAGES}
-        colors={COLORS}
-        theme="dark"
-        startAfterSelector="#top"
-        onStageChange={setStage}
-      />
-
-      {/* Small fixed caption, bottom-left, reflecting the active shape. */}
-      <div className="pointer-events-none fixed bottom-6 left-6 z-10 max-w-xs">
-        <h2 key={stage} className="animate-fade-up font-display text-sm font-semibold uppercase tracking-widest text-white/80">
-          {STAGES[stage].title}
-        </h2>
-        <p className="mt-1 text-xs leading-relaxed text-white/50">{STAGES[stage].description}</p>
-      </div>
+      <ParticleMorph stages={STAGES} colors={COLORS} theme="dark" startAfterSelector="#top" />
     </>
   )
 }
