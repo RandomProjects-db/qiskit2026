@@ -93,10 +93,13 @@ const TEAM: Organizer[] = [
     linkedin: 'https://www.linkedin.com/in/biswas-asha-rahman-458a66209/',
   },
   {
-    name: 'Oluwatobi Aiyewunmi',
+    name: 'Don McTaggart',
     title: 'Co-Organizer',
-    affiliation: 'Computational Data Science & Engineering, NC A&T',
-    bio: 'Contributing to event coordination, volunteer management, and day-of operations.',
+    affiliation: 'UNC Chemistry Alumni',
+    bio: '',
+    photo: '/team-don.jpg',
+    email: 'donmctaggart15@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/don-mctaggart/',
   },
 ]
 
