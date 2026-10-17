@@ -173,6 +173,8 @@
    ------------------------------------------------------------------ */
 .forge-card {
   background: rgba(8, 7, 10, 0.22);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 0, 107, 0.18);
   border-radius: 12px;
   box-shadow:
