@@ -283,7 +283,7 @@ export function Schedule() {
           </Reveal>
 
           <Reveal delay={0.1} className="lg:col-span-2">
-            <div className="h-full rounded-2xl bg-gradient-to-br from-[#4c1d95]/40 via-[#6d28d9]/40 to-[#1b365d]/40 p-6 shadow-xl backdrop-blur-md sm:p-8">
+            <div className="h-full rounded-2xl bg-gradient-to-br from-[#4c1d95]/40 via-[#6d28d9]/40 to-[#1b365d]/40 p-6 shadow-xl sm:p-8">
               <h3 className="font-display text-lg font-bold text-cream sm:text-xl">
                 Prerequisites
               </h3>
@@ -294,7 +294,7 @@ export function Schedule() {
                 {PREREQS.map((p) => (
                   <div
                     key={p.title}
-                    className="rounded-xl border border-white/15 bg-white/5 p-4 backdrop-blur-sm"
+                    className="rounded-xl border border-white/15 bg-white/5 p-4"
                   >
                     <span className="flex size-9 items-center justify-center rounded-lg bg-white/15 text-cream">
                       <p.icon className="size-5" />
