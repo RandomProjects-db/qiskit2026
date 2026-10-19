@@ -10,9 +10,20 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
+  // Server-side only: use the service role key so reads bypass RLS.
+  // The anon key must NOT be able to read this table (RLS SELECT is locked to
+  // service_role). SUPABASE_SERVICE_ROLE_KEY is server-only — never NEXT_PUBLIC_.
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+  if (!serviceRoleKey) {
+    return NextResponse.json(
+      { error: 'Export is not configured.' },
+      { status: 500 }
+    )
+  }
+
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    serviceRoleKey
   )
 
   const { data, error } = await supabase
