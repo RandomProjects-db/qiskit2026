@@ -21,6 +21,14 @@ export function Register() {
     const form = e.currentTarget
     const data = new FormData(form)
 
+    // Require at least one day selected (checkboxes can't be marked `required`).
+    const selectedDays = data.getAll('days_attending')
+    if (selectedDays.length === 0) {
+      setError('Please select at least one day you plan to attend.')
+      setLoading(false)
+      return
+    }
+
     // Validate hackathon interest for in-person registrants (field is required
     // but only rendered for in-person, so enforce it here as defense-in-depth).
     const hackathonInterest = data.get('hackathon_interest') as string
@@ -47,6 +55,11 @@ export function Register() {
       how_heard: (data.get('how_heard') as string) || null,
       interest: (data.get('interest') as string) || null,
       hackathon_interest: (data.get('hackathon_interest') as string) || null,
+      // New fields (item #8) — collected for both in-person and virtual.
+      days_attending: data.getAll('days_attending') as string[],
+      accessibility_needs: (data.get('accessibility_needs') as string) || null,
+      team_matching: data.get('team_matching') === 'on',
+      discord_username: (data.get('discord_username') as string) || null,
     }
 
     try {
@@ -274,6 +287,75 @@ export function Register() {
                     2
                   </span>
                 </div>
+              </div>
+
+              {/* Days attending — both formats */}
+              <div className="mt-6">
+                <span className="block text-sm font-medium text-cream/85">
+                  Which days do you plan to attend? *
+                </span>
+                <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
+                  {[
+                    { value: 'day1', label: 'Day 1 · Thu Nov 12' },
+                    { value: 'day2', label: 'Day 2 · Fri Nov 13' },
+                    { value: 'day3', label: 'Day 3 · Sat Nov 14' },
+                  ].map((d) => (
+                    <label
+                      key={d.value}
+                      className="flex cursor-pointer items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-cream transition-colors hover:border-white/30 has-[:checked]:border-[#FF006B] has-[:checked]:bg-[#FF006B]/10"
+                    >
+                      <input
+                        type="checkbox"
+                        name="days_attending"
+                        value={d.value}
+                        defaultChecked
+                        className="size-4 accent-[#FF006B]"
+                      />
+                      {d.label}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {/* Discord + team matching — both formats, always shown */}
+              <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="discord_username" className="block text-sm font-medium text-cream/85">
+                    Discord Username
+                  </label>
+                  <input
+                    id="discord_username"
+                    name="discord_username"
+                    type="text"
+                    className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-cream placeholder-cream/30 outline-none transition-colors focus:border-[#FF006B] focus:ring-1 focus:ring-[#FF006B]/50"
+                    placeholder="yourname"
+                  />
+                  <p className="mt-1 text-xs text-cream/85">We use Discord for announcements and team matching.</p>
+                </div>
+                <div className="flex items-start">
+                  <label className="mt-6 flex cursor-pointer items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-cream transition-colors hover:border-white/30 has-[:checked]:border-[#FF006B] has-[:checked]:bg-[#FF006B]/10">
+                    <input
+                      type="checkbox"
+                      name="team_matching"
+                      className="mt-0.5 size-4 accent-[#FF006B]"
+                    />
+                    <span>Help me find a hackathon team (we&apos;ll match you in Discord before the event)</span>
+                  </label>
+                </div>
+              </div>
+
+              {/* Accessibility — both formats */}
+              <div className="mt-4">
+                <label htmlFor="accessibility_needs" className="block text-sm font-medium text-cream/85">
+                  Accessibility needs
+                </label>
+                <input
+                  id="accessibility_needs"
+                  name="accessibility_needs"
+                  type="text"
+                  className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-cream placeholder-cream/30 outline-none transition-colors focus:border-[#FF006B] focus:ring-1 focus:ring-[#FF006B]/50"
+                  placeholder={format === 'in-person' ? 'Wheelchair access, seating, captioning, etc.' : 'Live captions, screen-reader support, etc.'}
+                />
               </div>
 
               {/* In-person only fields */}
