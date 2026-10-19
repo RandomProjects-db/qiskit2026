@@ -28,7 +28,7 @@ const DAYS: {
 }[] = [
   {
     day: 'Day 1 — Quantum Foundations & Community Launch',
-    date: 'Fall 2026 · Date TBD',
+    date: 'Thursday, Nov. 12, 2026 · 4:00 PM',
     format: 'Hybrid',
     level: 'All Levels',
     desc: 'Discover Quantum — opening keynote, guest speakers, career panel, and hackathon team formation.',
@@ -73,7 +73,7 @@ const DAYS: {
   },
   {
     day: 'Day 2 — Learn by Building',
-    date: 'Fall 2026 · Date TBD',
+    date: 'Friday, Nov. 13, 2026 · 4:00 PM',
     format: 'Hybrid',
     level: 'Beginner',
     desc: 'Build with Qiskit — hands-on workshops, guest talks, and the first hackathon build session.',
@@ -118,7 +118,7 @@ const DAYS: {
   },
   {
     day: 'Day 3 — Hack, Present & Connect',
-    date: 'Fall 2026 · Date TBD',
+    date: 'Saturday, Nov. 14, 2026 · 10:00 AM',
     format: 'In-Person',
     level: 'Intermediate',
     desc: 'Showcase the Future — final hackathon build, project presentations, judging, and awards.',
@@ -275,9 +275,9 @@ export function Schedule() {
               </span>
               <h3 className="mt-4 font-display text-lg font-bold text-white">Venue</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/85">
-                North Carolina A&amp;T State University
+                Joint School of Nanoscience and Nanoengineering (JSNN)
                 <br />
-                Greensboro, NC — exact building TBD.
+                2907 East Gate City Blvd, Greensboro, NC 27401
               </p>
               <p className="mt-3 text-sm leading-relaxed text-white/85">
                 Can&apos;t make it in person? Every session streams live for virtual

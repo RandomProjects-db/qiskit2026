@@ -64,8 +64,8 @@ export function Register() {
         // Send confirmation email via EmailJS
         const formatLabel = payload.attendance_format === 'in-person' ? 'In-Person' : 'Virtual'
         const location = payload.attendance_format === 'in-person'
-          ? 'NC A&T State University, Greensboro, NC'
-          : 'Virtual — link will be shared before the event'
+          ? 'JSNN — 2907 East Gate City Blvd, Greensboro, NC 27401'
+          : 'Virtual — a join link will be emailed to registered attendees before the event'
 
         await emailjs.send(
           'service_8beckth',
@@ -142,7 +142,7 @@ export function Register() {
             >
               <MapPin className={`size-8 ${format === 'in-person' ? 'text-[#FF006B]' : 'text-cream/85'}`} />
               <h3 className="mt-3 font-display text-lg font-bold text-cream">In-Person</h3>
-              <p className="mt-1 text-sm text-cream/85">Greensboro, NC</p>
+              <p className="mt-1 text-sm text-cream/85">JSNN · Greensboro, NC</p>
               <ul className="mt-4 space-y-1 text-left text-xs text-cream/85">
                 <li>• Hands-on lab access with mentors</li>
                 <li>• Face-to-face networking & swag</li>
@@ -168,8 +168,8 @@ export function Register() {
               <p className="mt-1 text-sm text-cream/85">Join from anywhere</p>
               <ul className="mt-4 space-y-1 text-left text-xs text-cream/85">
                 <li>• Live-streamed workshops & talks</li>
-                <li>• Cloud access to IBM Quantum</li>
-                <li>• Q&amp;A with speakers & mentors</li>
+                <li>• Browser-based Qiskit labs — no setup</li>
+                <li>• Join link emailed before the event</li>
               </ul>
               <p className="mt-4 text-xs text-cream/85 group-hover:text-cream/85 transition-colors">↑ Tap to select</p>
             </button>

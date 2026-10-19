@@ -6,7 +6,7 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 
 const STATS = [
   { value: 'Hybrid', label: 'In-Person & Virtual' },
-  { value: 'Fall 2026', label: 'Dates TBD' },
+  { value: 'Nov 12–14', label: '2026' },
   { value: 'Open to All', label: 'No Experience Needed' },
 ]
 

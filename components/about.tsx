@@ -9,7 +9,7 @@ const FEATURES = [
   {
     icon: CircuitBoard,
     title: 'Hands-on Qiskit',
-    desc: 'Write and run real quantum circuits on IBM Quantum hardware.',
+    desc: 'Hands-on, browser-based Qiskit labs — write and run real quantum circuits.',
     gradient: 'from-[#6929C4] to-[#4C1D95]',
     glow: 'rgba(105,41,196,0.25)',
   },
@@ -23,7 +23,7 @@ const FEATURES = [
   {
     icon: Trophy,
     title: 'Competition',
-    desc: 'Team up for a friendly quantum coding challenge with prizes.',
+    desc: 'Team up for a friendly quantum coding challenge — hackathon recognition and awards.',
     gradient: 'from-[#FF006B] to-[#C4004E]',
     glow: 'rgba(255,0,107,0.25)',
   },
@@ -52,7 +52,7 @@ const ACCOMPLISH = [
   {
     icon: Swords,
     title: 'Competition',
-    desc: 'Put your new skills to the test in a timed challenge with recognition and prizes.',
+    desc: 'Put your new skills to the test in a timed challenge — hackathon recognition and awards.',
     gradient: 'from-[#FF006B] to-[#C4004E]',
   },
 ]
@@ -94,7 +94,7 @@ export function About() {
             About the Event
           </p>
           <h2 className="mt-3 text-balance font-display text-2xl font-bold text-white sm:text-4xl">
-            A week to fall in love with quantum computing
+            Three days to take your quantum leap
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-white/85">
             Qiskit Fall Fest is a global celebration of quantum computing run by students,
@@ -189,7 +189,7 @@ export function About() {
         {/* Partners - Infinite scroll marquee */}
         <Reveal className="mt-16 md:mt-20">
           <p className="text-center text-sm font-medium uppercase tracking-[0.2em] text-white/85">
-            In Collaboration With
+            Supported By
           </p>
           <div className="mx-auto max-w-sm flex relative overflow-hidden mt-6 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:bg-gradient-to-r before:from-[#060914] before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-10 after:bg-gradient-to-l after:from-[#060914] after:to-transparent after:content-['']">
             <motion.div
