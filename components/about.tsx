@@ -82,6 +82,7 @@ const PARTNERS = [
   { name: 'IBM Quantum', href: 'https://quantum.ibm.com', color: 'from-[#6929C4] to-[#4C1D95]' },
   { name: 'Qiskit', href: 'https://qiskit.org', color: 'from-[#FF006B] to-[#C4004E]' },
   { name: 'NC A&T', href: 'https://www.ncat.edu', color: 'from-[#1B365D] to-[#0F2240]' },
+  { name: 'JSNN', href: 'https://jsnn.ncat.uncg.edu/', color: 'from-[#0084BD] to-[#005F87]' },
 ]
 
 export function About() {

@@ -221,7 +221,6 @@ export function Schedule() {
         {/* Mobile-first: accordion of days; expanded two-column feel on desktop via wide content */}
         <Reveal className="mt-10">
           <Accordion
-            defaultValue={['Day 1 — Quantum Foundations & Community Launch']}
             className="flex flex-col gap-4"
           >
             {DAYS.map((d) => (
@@ -249,6 +248,11 @@ export function Schedule() {
                     </div>
                     <p className="text-sm leading-relaxed text-white/85">{d.desc}</p>
                   </div>
+                  {/* Expand / Collapse hint next to the chevron */}
+                  <span className="ml-auto mr-1 self-center text-xs font-semibold uppercase tracking-wide text-[#FF4D8F]">
+                    <span className="group-aria-expanded/accordion-trigger:hidden">Expand</span>
+                    <span className="hidden group-aria-expanded/accordion-trigger:inline">Collapse</span>
+                  </span>
                 </AccordionTrigger>
                 <AccordionContent className="px-5 pb-5 sm:px-6">
                   <div className="grid grid-cols-1 gap-3 border-t border-border pt-4 lg:grid-cols-2">
