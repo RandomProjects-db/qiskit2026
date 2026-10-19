@@ -103,6 +103,20 @@ const TEAM: Organizer[] = [
   },
 ]
 
+// Faculty advisors — confirmed by Godwin (Oct 20): list the first two only.
+const ADVISORS: Organizer[] = [
+  {
+    name: 'Dr. Marwan Bikdash',
+    title: 'Faculty Advisor',
+    affiliation: 'Chair, Computational Data Science & Engineering, NC A&T',
+  },
+  {
+    name: 'Dr. Kristen Rhinehardt',
+    title: 'Faculty Advisor',
+    affiliation: 'Associate Professor & Assistant Chair, Computational Data Science & Engineering, NC A&T',
+  },
+]
+
 function avatarUrl(name: string) {
   const encoded = encodeURIComponent(name)
   return `https://ui-avatars.com/api/?name=${encoded}&background=1B365D&color=E3E0D2&size=160&bold=true&format=png`
@@ -291,6 +305,65 @@ export function Team() {
             </Reveal>
           ))}
         </div>
+
+        {/* Faculty Advisors */}
+        <Reveal className="mt-20">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
+              Advisors
+            </p>
+            <h3 className="mt-3 font-display text-xl font-bold text-white sm:text-2xl">
+              Faculty Advisors
+            </h3>
+            <p className="mt-3 text-pretty leading-relaxed text-white/85">
+              Guiding the program with deep expertise in computational and quantum science.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
+            {ADVISORS.map((a, i) => (
+              <Reveal key={a.name} delay={i * 0.08}>
+                <article className="forge-card flex h-full flex-col items-center p-6 text-center">
+                  <div className="relative">
+                    <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-[#6929C4] via-[#FF006B] to-[#0084BD] opacity-30 blur-sm" />
+                    <img
+                      src={a.photo || avatarUrl(a.name)}
+                      alt={a.name}
+                      width={96}
+                      height={96}
+                      loading="lazy"
+                      className="relative size-24 rounded-full border-2 border-white/20 object-cover"
+                    />
+                  </div>
+                  <h4 className="mt-4 font-display text-lg font-bold text-white">{a.name}</h4>
+                  <p className="mt-0.5 text-sm font-semibold text-[#FF4D8F]">{a.title}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-white/85">{a.affiliation}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </Reveal>
+
+        {/* Speakers */}
+        <Reveal className="mt-16">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
+              Speakers
+            </p>
+            <h3 className="mt-3 font-display text-xl font-bold text-white sm:text-2xl">
+              Speaker Lineup
+            </h3>
+          </div>
+          <div className="mx-auto mt-8 max-w-3xl">
+            <div className="forge-card flex flex-col items-center p-10 text-center">
+              <span className="font-display text-2xl font-bold text-white/90">To be announced</span>
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-white/85">
+                We&apos;re finalizing an exciting lineup of quantum researchers and industry
+                guests. Check back soon — speakers will be revealed here as they&apos;re confirmed.
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </div>
 
       {selected && <MemberModal member={selected} onClose={() => setSelected(null)} />}
