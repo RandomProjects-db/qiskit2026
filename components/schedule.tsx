@@ -3,6 +3,7 @@
 import { Calendar, MapPin, Clock, User, Code2, Cpu, Wrench, Heart } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Reveal } from '@/components/reveal'
+import { VenueMap } from '@/components/venue-map'
 import {
   Accordion,
   AccordionContent,
@@ -280,16 +281,10 @@ export function Schedule() {
                 2907 East Gate City Blvd, Greensboro, NC 27401
               </p>
 
-              {/* Embedded map — OpenStreetMap, no API key / dependency needed.
+              {/* Interactive dark map (Leaflet + OSM/CARTO tiles, no footer chrome).
                   JSNN exact building coordinates: 36.056860, -79.744424. */}
               <div className="mt-4 overflow-hidden rounded-xl border border-white/10">
-                <iframe
-                  title="JSNN location map"
-                  className="h-44 w-full"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=-79.7544%2C36.0519%2C-79.7344%2C36.0619&layer=mapnik&marker=36.056860%2C-79.744424"
-                />
+                <VenueMap lat={36.056860264209135} lng={-79.74442397439853} label="JSNN · Qiskit Fall Fest 2026" />
               </div>
               <a
                 href="https://www.google.com/maps/dir/?api=1&destination=36.056860264209135,-79.74442397439853"
