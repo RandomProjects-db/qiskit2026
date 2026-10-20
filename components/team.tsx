@@ -60,6 +60,7 @@ const TEAM: Organizer[] = [
     name: 'Ikenna Odezuligbo',
     title: 'Co-Organizer',
     affiliation: 'University of the Cumberlands',
+    photo: '/team-ikenna.jpg',
   },
   {
     name: 'Temitope Odeyomi Adeniyi',
