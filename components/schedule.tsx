@@ -279,6 +279,28 @@ export function Schedule() {
                 <br />
                 2907 East Gate City Blvd, Greensboro, NC 27401
               </p>
+
+              {/* Embedded map — OpenStreetMap, no API key / dependency needed.
+                  JSNN coordinates: 36.0567 N, -79.7402 W. */}
+              <div className="mt-4 overflow-hidden rounded-xl border border-white/10">
+                <iframe
+                  title="JSNN location map"
+                  className="h-44 w-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=-79.7502%2C36.0517%2C-79.7302%2C36.0617&layer=mapnik&marker=36.0567%2C-79.7402"
+                />
+              </div>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=36.0567,-79.7402"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#FF4D8F] transition-colors hover:text-[#FF006B]"
+              >
+                <MapPin className="size-4" />
+                Get directions
+              </a>
+
               <p className="mt-3 text-sm leading-relaxed text-white/85">
                 Can&apos;t make it in person? Every session streams live for virtual
                 attendees.
