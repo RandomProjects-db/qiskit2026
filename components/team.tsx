@@ -59,7 +59,8 @@ const TEAM: Organizer[] = [
   {
     name: 'Ikenna Odezuligbo',
     title: 'Co-Organizer',
-    affiliation: 'University of the Cumberlands',
+    affiliation: 'Artificial Intelligence, University of the Cumberlands',
+    bio: 'Pursuing Artificial Intelligence at the University of the Cumberlands; supporting Fall Fest hackathon organizing and outreach.',
     photo: '/team-ikenna.jpg',
   },
   {
