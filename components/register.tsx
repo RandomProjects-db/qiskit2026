@@ -80,6 +80,18 @@ export function Register() {
           ? 'JSNN — 2907 East Gate City Blvd, Greensboro, NC 27401'
           : 'Virtual — a join link will be emailed to registered attendees before the event'
 
+        // Map the selected day codes to readable dates for the email.
+        const dayLabels: Record<string, string> = {
+          day1: 'Thu, Nov 12',
+          day2: 'Fri, Nov 13',
+          day3: 'Sat, Nov 14',
+        }
+        const selectedDaysLabel =
+          (payload.days_attending || [])
+            .map((d) => dayLabels[d])
+            .filter(Boolean)
+            .join(', ') || 'All three days'
+
         await emailjs.send(
           'service_8beckth',
           'template_hlv309k',
@@ -88,6 +100,10 @@ export function Register() {
             first_name: payload.first_name,
             attendance_format: formatLabel,
             location: location,
+            event_name: 'Qiskit Fall Fest 2026',
+            event_dates: 'November 12–14, 2026 (Thursday–Saturday)',
+            days_attending: selectedDaysLabel,
+            website: 'https://qiskit-2026.vercel.app',
           },
           '9cRF0h_ATqBj-SFKc'
         ).catch((err) => {
