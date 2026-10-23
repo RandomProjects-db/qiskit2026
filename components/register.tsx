@@ -154,53 +154,59 @@ export function Register() {
           </p>
         </Reveal>
 
-        {/* Attendance format selector */}
+        {/* Attendance format selector — in-person is the recommended default */}
         <Reveal className="mt-10">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <p className="mb-4 text-center text-sm text-cream/85">
+            This is an on-campus event — <span className="font-semibold text-cream">in-person is recommended</span>. The hands-on labs and hackathon are the heart of it.
+          </p>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-5">
+            {/* In-person — primary (wider, highlighted, "Recommended" badge) */}
             <button
               type="button"
               onClick={() => {
                 setFormat('in-person')
                 setTimeout(() => document.getElementById('reg-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100)
               }}
-              className={`group relative flex cursor-pointer flex-col items-center rounded-2xl border p-6 text-center transition-all duration-300 ${
+              className={`group relative flex cursor-pointer flex-col items-center rounded-2xl border-2 p-6 text-center transition-all duration-300 sm:col-span-3 ${
                 format === 'in-person'
-                  ? 'border-[#FF006B] bg-white/10 shadow-[0_0_30px_-5px_rgba(255,0,107,0.3)]'
-                  : 'border-white/10 bg-white/5 hover:border-white/30 hover:bg-white/10'
+                  ? 'border-[#FF006B] bg-white/10 shadow-[0_0_40px_-5px_rgba(255,0,107,0.4)]'
+                  : 'border-[#FF006B]/60 bg-white/[0.07] hover:border-[#FF006B] hover:bg-white/10'
               }`}
             >
-              <MapPin className={`size-8 ${format === 'in-person' ? 'text-[#FF006B]' : 'text-cream/85'}`} />
-              <h3 className="mt-3 font-display text-lg font-bold text-cream">In-Person</h3>
+              <span className="absolute -top-3 rounded-full bg-[#FF006B] px-3 py-0.5 text-xs font-bold uppercase tracking-wide text-white shadow-lg">
+                Recommended
+              </span>
+              <MapPin className={`mt-2 size-10 ${format === 'in-person' ? 'text-[#FF006B]' : 'text-[#FF4D8F]'}`} />
+              <h3 className="mt-3 font-display text-xl font-bold text-cream">In-Person</h3>
               <p className="mt-1 text-sm text-cream/85">JSNN · Greensboro, NC</p>
               <ul className="mt-4 space-y-1 text-left text-xs text-cream/85">
                 <li>• Hands-on lab access with mentors</li>
                 <li>• Face-to-face networking & swag</li>
                 <li>• Compete on-site with your team</li>
               </ul>
-              <p className="mt-4 text-xs text-cream/85 group-hover:text-cream/85 transition-colors">↑ Tap to select</p>
+              <p className="mt-4 text-xs font-semibold text-[#FF4D8F] transition-colors">↑ Tap to select</p>
             </button>
 
+            {/* Virtual — secondary (narrower, de-emphasized, steering note) */}
             <button
               type="button"
               onClick={() => {
                 setFormat('virtual')
                 setTimeout(() => document.getElementById('reg-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100)
               }}
-              className={`group relative flex cursor-pointer flex-col items-center rounded-2xl border p-6 text-center transition-all duration-300 ${
+              className={`group relative flex cursor-pointer flex-col items-center rounded-2xl border p-6 text-center transition-all duration-300 sm:col-span-2 ${
                 format === 'virtual'
                   ? 'border-[#0084BD] bg-white/10 shadow-[0_0_30px_-5px_rgba(0,132,189,0.3)]'
-                  : 'border-white/10 bg-white/5 hover:border-white/30 hover:bg-white/10'
+                  : 'border-white/10 bg-white/[0.03] hover:border-white/30 hover:bg-white/[0.06]'
               }`}
             >
-              <Globe className={`size-8 ${format === 'virtual' ? 'text-[#0084BD]' : 'text-cream/85'}`} />
-              <h3 className="mt-3 font-display text-lg font-bold text-cream">Virtual</h3>
-              <p className="mt-1 text-sm text-cream/85">Join from anywhere</p>
-              <ul className="mt-4 space-y-1 text-left text-xs text-cream/85">
-                <li>• Live-streamed workshops & talks</li>
-                <li>• Browser-based Qiskit labs — no setup</li>
-                <li>• Join link emailed before the event</li>
-              </ul>
-              <p className="mt-4 text-xs text-cream/85 group-hover:text-cream/85 transition-colors">↑ Tap to select</p>
+              <Globe className={`size-8 ${format === 'virtual' ? 'text-[#0084BD]' : 'text-cream/60'}`} />
+              <h3 className="mt-3 font-display text-lg font-bold text-cream/90">Virtual</h3>
+              <p className="mt-1 text-sm text-cream/75">Join from anywhere</p>
+              <p className="mt-4 text-xs leading-relaxed text-cream/75">
+                Best for attendees <span className="font-semibold text-cream/90">outside NC / the U.S.</span> who can&apos;t travel. If you&apos;re local, we strongly encourage joining in person.
+              </p>
+              <p className="mt-4 text-xs text-cream/60 transition-colors">↑ Tap to select</p>
             </button>
           </div>
         </Reveal>
