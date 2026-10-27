@@ -232,7 +232,7 @@ function MemberModal({ member, onClose }: { member: Organizer; onClose: () => vo
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative max-h-[90dvh] w-full max-w-md overflow-y-auto overscroll-contain rounded-3xl border border-white/10 bg-gradient-to-b from-[#1B365D] to-[#4C1D95] p-8 text-center shadow-2xl"
+        className="relative max-h-[90dvh] w-full max-w-md overflow-y-auto overscroll-contain rounded-3xl border border-white/10 bg-gradient-to-b from-[#1B365D] to-[#4C1D95] p-8 text-center shadow-2xl sm:max-h-none sm:overflow-visible"
       >
         {/* Close button — sticky so it stays reachable while scrolling long bios */}
         <div className="sticky top-0 z-10 -mt-2 -mr-2 flex justify-end">
