@@ -100,7 +100,7 @@ const TEAM: Organizer[] = [
     name: 'Don McTaggart, PhD',
     title: 'Co-Organizer & Master of Ceremonies',
     affiliation: 'PhD in Chemistry, University of North Carolina at Chapel Hill',
-    bio: 'Supports event organizing and serves as master of ceremonies, guiding the program and keeping sessions, speakers, and the audience connected throughout the three-day event.',
+    bio: 'Materials scientist and NSF Graduate Research Fellow with a PhD in Chemistry from UNC Chapel Hill, where his research focused on battery materials and energy storage. As past President of the UNC Materials Research Society, he has organized multi-university research conferences and science-outreach programming, and hosts a podcast exploring careers in science. He brings that experience to Fall Fest as a co-organizer and master of ceremonies, guiding the program and keeping speakers, sessions, and the audience connected.',
     photo: '/team-don.jpg',
     email: 'donmctaggart15@gmail.com',
     linkedin: 'https://www.linkedin.com/in/don-mctaggart/',
