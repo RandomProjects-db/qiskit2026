@@ -299,7 +299,64 @@ export function Team() {
   return (
     <section id="team" className="scroll-mt-20 bg-[#060914]/25 py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <Reveal className="mx-auto max-w-2xl text-center">
+        {/* Speakers — shown first, before organizers */}
+        <div id="speakers" className="scroll-mt-24" />
+        <Reveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
+              Speakers
+            </p>
+            <h3 className="mt-3 font-display text-2xl font-bold text-white sm:text-4xl">
+              Speaker Lineup
+            </h3>
+          </div>
+          <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {SPEAKERS.map((s, i) => (
+              <Reveal key={s.name} delay={(i % 3) * 0.08}>
+                <article
+                  onClick={() => setSelected(s)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      setSelected(s)
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`View details for ${s.name}`}
+                  className="forge-card group flex h-full cursor-pointer flex-col overflow-hidden p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF006B]/50"
+                >
+                  {/* Square photo — distinguishes speakers from the round team avatars */}
+                  <div className="relative aspect-square w-full overflow-hidden">
+                    <img
+                      src={s.photo || avatarUrl(s.name)}
+                      alt={s.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#060914] to-transparent" />
+                  </div>
+                  <div className="flex flex-1 flex-col p-5">
+                    <h4 className="font-display text-lg font-bold text-white">{s.name}</h4>
+                    <p className="mt-0.5 text-sm font-semibold text-[#FF4D8F]">{s.title}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-white/85">{s.affiliation}</p>
+                    {s.talkTitle && (
+                      <p className="mt-3 text-sm italic leading-relaxed text-white/90">
+                        “{s.talkTitle}”
+                      </p>
+                    )}
+                    <span className="mt-auto pt-3 text-xs font-semibold text-[#FF4D8F]">
+                      Read bio →
+                    </span>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </Reveal>
+
+        {/* The Team */}
+        <Reveal className="mx-auto mt-24 max-w-2xl text-center">
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
             The Team
           </p>
@@ -390,62 +447,6 @@ export function Team() {
                   <h4 className="mt-4 font-display text-lg font-bold text-white">{a.name}</h4>
                   <p className="mt-0.5 text-sm font-semibold text-[#FF4D8F]">{a.title}</p>
                   <p className="mt-1 text-xs leading-relaxed text-white/85">{a.affiliation}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </Reveal>
-
-        {/* Speakers */}
-        <div id="speakers" className="scroll-mt-24" />
-        <Reveal className="mt-16">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
-              Speakers
-            </p>
-            <h3 className="mt-3 font-display text-xl font-bold text-white sm:text-2xl">
-              Speaker Lineup
-            </h3>
-          </div>
-          <div className="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {SPEAKERS.map((s, i) => (
-              <Reveal key={s.name} delay={(i % 3) * 0.08}>
-                <article
-                  onClick={() => setSelected(s)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault()
-                      setSelected(s)
-                    }
-                  }}
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`View details for ${s.name}`}
-                  className="forge-card group flex h-full cursor-pointer flex-col overflow-hidden p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF006B]/50"
-                >
-                  {/* Square photo — distinguishes speakers from the round team avatars */}
-                  <div className="relative aspect-square w-full overflow-hidden">
-                    <img
-                      src={s.photo || avatarUrl(s.name)}
-                      alt={s.name}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#060914] to-transparent" />
-                  </div>
-                  <div className="flex flex-1 flex-col p-5">
-                    <h4 className="font-display text-lg font-bold text-white">{s.name}</h4>
-                    <p className="mt-0.5 text-sm font-semibold text-[#FF4D8F]">{s.title}</p>
-                    <p className="mt-1 text-xs leading-relaxed text-white/85">{s.affiliation}</p>
-                    {s.talkTitle && (
-                      <p className="mt-3 text-sm italic leading-relaxed text-white/90">
-                        “{s.talkTitle}”
-                      </p>
-                    )}
-                    <span className="mt-auto pt-3 text-xs font-semibold text-[#FF4D8F]">
-                      Read bio →
-                    </span>
-                  </div>
                 </article>
               </Reveal>
             ))}
