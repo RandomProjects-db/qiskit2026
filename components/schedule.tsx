@@ -216,8 +216,6 @@ export function Schedule() {
           </p>
         </Reveal>
 
-        <div id="speakers" className="scroll-mt-20" />
-
         {/* Mobile-first: accordion of days; expanded two-column feel on desktop via wide content */}
         <Reveal className="mt-10">
           <Accordion

@@ -232,18 +232,20 @@ function MemberModal({ member, onClose }: { member: Organizer; onClose: () => vo
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-md overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#1B365D] to-[#4C1D95] p-8 text-center shadow-2xl"
+        className="relative max-h-[90dvh] w-full max-w-md overflow-y-auto overscroll-contain rounded-3xl border border-white/10 bg-gradient-to-b from-[#1B365D] to-[#4C1D95] p-8 text-center shadow-2xl"
       >
-        {/* Close button */}
-        <button
-          ref={closeRef}
-          type="button"
-          onClick={onClose}
-          aria-label="Close"
-          className="absolute right-4 top-4 inline-flex size-9 items-center justify-center rounded-full bg-white/10 text-cream/85 transition-colors hover:bg-white/20 hover:text-white"
-        >
-          <X className="size-5" />
-        </button>
+        {/* Close button — sticky so it stays reachable while scrolling long bios */}
+        <div className="sticky top-0 z-10 -mt-2 -mr-2 flex justify-end">
+          <button
+            ref={closeRef}
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            className="inline-flex size-9 items-center justify-center rounded-full bg-white/15 text-cream backdrop-blur-sm transition-colors hover:bg-white/25 hover:text-white"
+          >
+            <X className="size-5" />
+          </button>
+        </div>
 
         {/* Decorative glow */}
         <div className="pointer-events-none absolute -right-8 -top-8 size-32 rounded-full bg-gradient-to-br from-[#6929C4]/30 to-transparent blur-2xl" />
@@ -268,7 +270,7 @@ function MemberModal({ member, onClose }: { member: Organizer; onClose: () => vo
         <p className="mt-1 text-xs text-cream/85">{member.affiliation}</p>
         {member.talkTitle && (
           <p className="mt-3 rounded-lg border border-[#FF006B]/30 bg-[#FF006B]/10 px-3 py-2 text-sm font-semibold text-cream">
-            🎤 “{member.talkTitle}”
+            “{member.talkTitle}”
           </p>
         )}
         {member.bio && <p className="mt-4 text-sm leading-relaxed text-cream/85">{member.bio}</p>}
@@ -395,6 +397,7 @@ export function Team() {
         </Reveal>
 
         {/* Speakers */}
+        <div id="speakers" className="scroll-mt-24" />
         <Reveal className="mt-16">
           <div className="mx-auto max-w-2xl text-center">
             <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
@@ -436,7 +439,7 @@ export function Team() {
                     <p className="mt-1 text-xs leading-relaxed text-white/85">{s.affiliation}</p>
                     {s.talkTitle && (
                       <p className="mt-3 text-sm italic leading-relaxed text-white/90">
-                        🎤 “{s.talkTitle}”
+                        “{s.talkTitle}”
                       </p>
                     )}
                     <span className="mt-auto pt-3 text-xs font-semibold text-[#FF4D8F]">
