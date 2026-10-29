@@ -62,49 +62,100 @@ export function Speakers() {
           </p>
         </Reveal>
 
-        <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {SPEAKERS.map((s, i) => (
-            <Reveal key={s.name} delay={(i % 3) * 0.08}>
-              <article
-                onClick={() => setSelected(s)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault()
-                    setSelected(s)
-                  }
-                }}
-                role="button"
-                tabIndex={0}
-                aria-label={`View details for ${s.name}`}
-                className="forge-card group flex h-full cursor-pointer flex-col overflow-hidden p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF006B]/50"
-              >
-                {/* Square photo — distinguishes speakers from the round team avatars */}
-                <div className="relative aspect-square w-full overflow-hidden">
-                  <img
-                    src={s.photo || avatarUrl(s.name)}
-                    alt={s.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#060914] to-transparent" />
-                </div>
-                <div className="flex flex-1 flex-col p-5">
-                  <h3 className="font-display text-lg font-bold text-white">{s.name}</h3>
-                  <p className="mt-0.5 text-sm font-semibold text-[#FF4D8F]">{s.title}</p>
-                  <p className="mt-1 text-xs leading-relaxed text-white/85">{s.affiliation}</p>
-                  {s.talkTitle && (
-                    <p className="mt-3 text-sm italic leading-relaxed text-white/90">
-                      “{s.talkTitle}”
-                    </p>
-                  )}
-                  <span className="mt-auto pt-3 text-xs font-semibold text-[#FF4D8F]">
-                    Read bio →
-                  </span>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+        {/* Featured speaker (first) on top, the rest in a grid below.
+            On mobile everything stacks to a single column. */}
+        {(() => {
+          const [featured, ...rest] = SPEAKERS
+          return (
+            <>
+              {featured && (
+                <Reveal className="mx-auto mt-12 max-w-4xl">
+                  <article
+                    onClick={() => setSelected(featured)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        setSelected(featured)
+                      }
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`View details for ${featured.name}`}
+                    className="forge-card group flex h-full cursor-pointer flex-col overflow-hidden p-0 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF006B]/50 sm:flex-row"
+                  >
+                    <div className="relative aspect-square w-full shrink-0 overflow-hidden sm:w-72 sm:aspect-auto">
+                      <img
+                        src={featured.photo || avatarUrl(featured.name)}
+                        alt={featured.name}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#060914] to-transparent sm:hidden" />
+                    </div>
+                    <div className="flex flex-1 flex-col justify-center p-6 sm:p-8">
+                      <span className="mb-2 w-fit rounded-full bg-[#FF006B]/15 px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#FF4D8F]">
+                        Featured Speaker
+                      </span>
+                      <h3 className="font-display text-xl font-bold text-white sm:text-2xl">{featured.name}</h3>
+                      <p className="mt-1 text-sm font-semibold text-[#FF4D8F]">{featured.title}</p>
+                      <p className="mt-1 text-xs leading-relaxed text-white/85">{featured.affiliation}</p>
+                      {featured.talkTitle && (
+                        <p className="mt-3 text-sm italic leading-relaxed text-white/90">
+                          “{featured.talkTitle}”
+                        </p>
+                      )}
+                      <span className="mt-4 text-xs font-semibold text-[#FF4D8F]">Read bio →</span>
+                    </div>
+                  </article>
+                </Reveal>
+              )}
+
+              <div className="mx-auto mt-6 grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {rest.map((s, i) => (
+                  <Reveal key={s.name} delay={(i % 3) * 0.08}>
+                    <article
+                      onClick={() => setSelected(s)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault()
+                          setSelected(s)
+                        }
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`View details for ${s.name}`}
+                      className="forge-card group flex h-full cursor-pointer flex-col overflow-hidden p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF006B]/50"
+                    >
+                      {/* Square photo — distinguishes speakers from the round team avatars */}
+                      <div className="relative aspect-square w-full overflow-hidden">
+                        <img
+                          src={s.photo || avatarUrl(s.name)}
+                          alt={s.name}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#060914] to-transparent" />
+                      </div>
+                      <div className="flex flex-1 flex-col p-5">
+                        <h3 className="font-display text-lg font-bold text-white">{s.name}</h3>
+                        <p className="mt-0.5 text-sm font-semibold text-[#FF4D8F]">{s.title}</p>
+                        <p className="mt-1 text-xs leading-relaxed text-white/85">{s.affiliation}</p>
+                        {s.talkTitle && (
+                          <p className="mt-3 text-sm italic leading-relaxed text-white/90">
+                            “{s.talkTitle}”
+                          </p>
+                        )}
+                        <span className="mt-auto pt-3 text-xs font-semibold text-[#FF4D8F]">
+                          Read bio →
+                        </span>
+                      </div>
+                    </article>
+                  </Reveal>
+                ))}
+              </div>
+            </>
+          )
+        })()}
       </div>
 
       {selected && <MemberModal member={selected} onClose={() => setSelected(null)} />}
