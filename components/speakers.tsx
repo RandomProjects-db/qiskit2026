@@ -13,6 +13,7 @@ const SPEAKERS: Organizer[] = [
     talkTitle: 'Introduction to Quantum Computing & the IBM Quantum Platform',
     bio: 'Dr. Carolyn Hartley is the Emerging Technology Lead in IBM\u2019s Chief Sustainability Office and an IBM Quantum Ambassador. Based in Raleigh, North Carolina, she works at the intersection of emerging technology and sustainability, with a particular focus on quantum computing. Carolyn earned her Ph.D. in Chemistry from the University of North Carolina at Chapel Hill in 2021.',
     photo: '/speaker-carolyn.jpg',
+    linkedin: 'https://www.linkedin.com/in/carolyn-hartley-ph-d-2216a262/',
   },
   {
     name: 'Dr. Rachel Noek',
