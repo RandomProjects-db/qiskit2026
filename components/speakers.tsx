@@ -7,6 +7,14 @@ import { MemberModal, avatarUrl, type Organizer } from '@/components/team'
 // Confirmed featured speakers (Oct 27).
 const SPEAKERS: Organizer[] = [
   {
+    name: 'Dr. Carolyn Hartley',
+    title: 'Emerging Technology Lead, IBM Chief Sustainability Office · IBM Quantum Ambassador',
+    affiliation: 'IBM · Raleigh, North Carolina',
+    talkTitle: 'Introduction to Quantum Computing & the IBM Quantum Platform',
+    bio: 'Dr. Carolyn Hartley is the Emerging Technology Lead in IBM\u2019s Chief Sustainability Office and an IBM Quantum Ambassador. Based in Raleigh, North Carolina, she works at the intersection of emerging technology and sustainability, with a particular focus on quantum computing. Carolyn earned her Ph.D. in Chemistry from the University of North Carolina at Chapel Hill in 2021.',
+    photo: '/speaker-carolyn.jpg',
+  },
+  {
     name: 'Dr. Rachel Noek',
     title: 'Technical Program Manager / Senior Research Scientist',
     affiliation: 'Duke Quantum Center · Pratt School of Engineering, Duke University',
