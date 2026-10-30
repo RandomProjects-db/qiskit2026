@@ -226,13 +226,13 @@ function SubEvent({
       </div>
       <h5 className="mt-2 font-display font-bold text-white">{e.title}</h5>
       <p className="mt-1 text-sm leading-relaxed text-white/85">{e.desc}</p>
-      <div className="mt-3 flex items-center gap-2 text-sm text-white">
+      <div className="mt-3 flex items-center gap-2.5 text-sm text-white">
         {photo ? (
           <img
             src={photo}
             alt={e.speaker}
             loading="lazy"
-            className="size-7 shrink-0 rounded-full border border-white/20 object-cover"
+            className="size-11 shrink-0 rounded-full border border-white/20 object-cover"
           />
         ) : (
           <User className="size-4 text-gold" />
