@@ -42,6 +42,14 @@ const SPEAKERS: Organizer[] = [
     bio: 'Dr. Olusola T. Odeyomi is an Assistant Professor of Computer Science at North Carolina Agricultural and Technical State University. He received his Ph.D. in Electrical Engineering and Computer Science from Wichita State University, Kansas, and his M.Sc. and B.Sc. degrees in Electronic and Electrical Engineering from Obafemi Awolowo University in Nigeria. He is a member of the IEEE Information Theory Society and the IEEE Computer Science Society, the author of numerous high-ranking journal papers and conference proceedings, and a frequent reviewer for journals including IEEE and ACM. He has served as a guest editor and technical program committee member for numerous journals and conferences. He was a recipient of the National Science Foundation CAREER Award in 2025. His research interests include trustworthy machine learning, game theory, signal processing, and quantum information security.',
     photo: '/speaker-olusola.png',
   },
+  {
+    name: 'Dr. Krystal Maughan',
+    title: 'Quantum Mathematical Researcher',
+    affiliation: 'PhD in Computer Science, University of Vermont',
+    talkTitle: 'Quantum-Safe Cryptography: Where Number Theory Meets Quantum Computing',
+    bio: 'Dr. Krystal Maughan is a Quantum Mathematical Researcher who researches problems at the intersection of quantum computing, cryptography and number theory. Originally from Trinidad and Tobago, she earned her PhD in Computer Science in August 2026 from the University of Vermont, complementing her doctoral work with extensive graduate-level coursework in pure mathematics. She is interested in quantum-safe encryption that relies on hardness guarantees from mathematical problems that can be proven difficult for quantum computers to solve. She is also interested in questions that explore cryptanalysis for these protocols using quantum algorithms, and because of this she frequently works with both mathematicians and physicists.',
+    photo: '/speaker-krystal.png',
+  },
 ]
 
 export function Speakers() {
