@@ -83,6 +83,8 @@ const PARTNERS = [
   { name: 'Qiskit', href: 'https://qiskit.org', color: 'from-[#FF006B] to-[#C4004E]' },
   { name: 'NC A&T', href: 'https://www.ncat.edu', color: 'from-[#1B365D] to-[#0F2240]' },
   { name: 'JSNN', href: 'https://jsnn.ncat.uncg.edu/', color: 'from-[#0084BD] to-[#005F87]' },
+  { name: 'College of Engineering', href: 'https://www.ncat.edu/coe/index.php', color: 'from-[#1B365D] to-[#0F2240]' },
+  { name: 'Computational Data Science & Engineering', href: 'https://www.ncat.edu/coe/departments/cdse/index.php', color: 'from-[#0084BD] to-[#005F87]' },
 ]
 
 export function About() {
