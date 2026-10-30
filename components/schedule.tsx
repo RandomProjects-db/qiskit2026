@@ -196,11 +196,28 @@ function LevelBadge({ level }: { level: Level }) {
   )
 }
 
+// Maps a schedule speaker label to that speaker's headshot (shown as a small
+// circle next to their name). Only named speakers with photos appear here;
+// everyone else (Organizing Team, TBD, etc.) falls back to the user icon.
+const SPEAKER_PHOTOS: { match: string; photo: string }[] = [
+  { match: 'Carolyn Hartley', photo: '/speaker-carolyn.jpg' },
+  { match: 'Rachel Noek', photo: '/speaker-rachel.jpg' },
+  { match: 'Katanya', photo: '/speaker-katanya.png' },
+  { match: 'Olusola', photo: '/speaker-olusola.png' },
+  { match: 'Krystal', photo: '/speaker-krystal.png' },
+]
+
+function speakerPhoto(speaker: string): string | null {
+  const hit = SPEAKER_PHOTOS.find((s) => speaker.includes(s.match))
+  return hit ? hit.photo : null
+}
+
 function SubEvent({
   e,
 }: {
   e: { time: string; title: string; desc: string; speaker: string }
 }) {
+  const photo = speakerPhoto(e.speaker)
   return (
     <div className="forge-card p-4">
       <div className="flex items-center gap-2 text-sm font-semibold text-cyan">
@@ -210,7 +227,16 @@ function SubEvent({
       <h5 className="mt-2 font-display font-bold text-white">{e.title}</h5>
       <p className="mt-1 text-sm leading-relaxed text-white/85">{e.desc}</p>
       <div className="mt-3 flex items-center gap-2 text-sm text-white">
-        <User className="size-4 text-gold" />
+        {photo ? (
+          <img
+            src={photo}
+            alt={e.speaker}
+            loading="lazy"
+            className="size-7 shrink-0 rounded-full border border-white/20 object-cover"
+          />
+        ) : (
+          <User className="size-4 text-gold" />
+        )}
         <span className="font-medium">{e.speaker}</span>
       </div>
     </div>
