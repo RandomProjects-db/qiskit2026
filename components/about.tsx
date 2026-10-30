@@ -78,12 +78,12 @@ const WHY = [
 ]
 
 const PARTNERS = [
-  { name: 'IBM Quantum', href: 'https://quantum.ibm.com', color: 'from-[#6929C4] to-[#4C1D95]' },
-  { name: 'Qiskit', href: 'https://qiskit.org', color: 'from-[#FF006B] to-[#C4004E]' },
-  { name: 'NC A&T', href: 'https://www.ncat.edu', color: 'from-[#1B365D] to-[#0F2240]' },
-  { name: 'JSNN', href: 'https://jsnn.ncat.uncg.edu/', color: 'from-[#0084BD] to-[#005F87]' },
-  { name: 'College of Engineering', href: 'https://www.ncat.edu/coe/index.php', color: 'from-[#1B365D] to-[#0F2240]' },
-  { name: 'Computational Data Science & Engineering', href: 'https://www.ncat.edu/coe/departments/cdse/index.php', color: 'from-[#0084BD] to-[#005F87]' },
+  { name: 'IBM Quantum', href: 'https://quantum.ibm.com', brand: '#0F62FE' },
+  { name: 'Qiskit', href: 'https://qiskit.org', brand: '#6929C4' },
+  { name: 'NC A&T', href: 'https://www.ncat.edu', brand: '#004684' },
+  { name: 'JSNN', href: 'https://jsnn.ncat.uncg.edu/', brand: '#DF8738' },
+  { name: 'College of Engineering', href: 'https://www.ncat.edu/coe/index.php', brand: '#BC5C45' },
+  { name: 'Computational Data Science & Engineering', href: 'https://www.ncat.edu/coe/departments/cdse/index.php', brand: '#BC5C45' },
 ]
 
 export function About() {
@@ -202,10 +202,14 @@ export function About() {
                       href={p.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex shrink-0 items-center gap-3 rounded-full border border-white/15 bg-white/10 px-6 py-3 font-display font-semibold text-white transition-all duration-300 hover:border-[#FF006B]/50 hover:bg-white/20 hover:shadow-lg"
+                      style={{
+                        backgroundColor: `${p.brand}26`,
+                        borderColor: `${p.brand}66`,
+                      }}
+                      className="group flex shrink-0 items-center gap-3 rounded-full border px-6 py-3 font-display font-semibold text-white transition-all duration-300 hover:shadow-lg"
                     >
-                      <span className="transition-colors group-hover:text-[#FF4D8F]">{p.name}</span>
-                      <span className="text-[#FF006B] opacity-50 transition-opacity group-hover:opacity-100">•</span>
+                      <span className="transition-colors">{p.name}</span>
+                      <span className="opacity-70" style={{ color: p.brand }}>•</span>
                     </a>
                   ))}
                 </React.Fragment>
