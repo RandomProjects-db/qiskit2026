@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import { motion } from 'motion/react'
 import { CircuitBoard, Users, Trophy, Layers, Atom, BriefcaseBusiness, Zap, FlaskConical, Handshake, Swords } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 
@@ -193,17 +192,8 @@ export function About() {
           <p className="text-center text-sm font-medium uppercase tracking-[0.2em] text-white/85">
             Supported By
           </p>
-          <div className="mx-auto max-w-sm flex relative overflow-hidden mt-6 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:bg-gradient-to-r before:from-[#060914] before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-10 after:bg-gradient-to-l after:from-[#060914] after:to-transparent after:content-['']">
-            <motion.div
-              transition={{
-                duration: 5,
-                ease: 'linear',
-                repeat: Infinity,
-              }}
-              initial={{ translateX: 0 }}
-              animate={{ translateX: '-50%' }}
-              className="flex flex-none gap-16 pr-16"
-            >
+          <div className="mx-auto max-w-3xl flex relative overflow-hidden mt-6 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:bg-gradient-to-r before:from-[#060914] before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-10 after:bg-gradient-to-l after:from-[#060914] after:to-transparent after:content-['']">
+            <div className="animate-marquee flex flex-none gap-16 pr-16">
               {[...new Array(2)].fill(0).map((_, index) => (
                 <React.Fragment key={index}>
                   {PARTNERS.map((p) => (
@@ -220,7 +210,7 @@ export function About() {
                   ))}
                 </React.Fragment>
               ))}
-            </motion.div>
+            </div>
           </div>
         </Reveal>
       </div>
