@@ -49,6 +49,7 @@ const SPEAKERS: Organizer[] = [
     talkTitle: 'Quantum-Safe Cryptography: Where Number Theory Meets Quantum Computing',
     bio: 'Dr. Krystal Maughan is a Quantum Mathematical Researcher who researches problems at the intersection of quantum computing, cryptography and number theory. Originally from Trinidad and Tobago, she earned her PhD in Computer Science in August 2026 from the University of Vermont, complementing her doctoral work with extensive graduate-level coursework in pure mathematics. She is interested in quantum-safe encryption that relies on hardness guarantees from mathematical problems that can be proven difficult for quantum computers to solve. She is also interested in questions that explore cryptanalysis for these protocols using quantum algorithms, and because of this she frequently works with both mathematicians and physicists.',
     photo: '/speaker-krystal.png',
+    linkedin: 'https://www.linkedin.com/in/krystal-maughan-ph-d-3563a215',
   },
 ]
 
