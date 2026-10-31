@@ -84,6 +84,7 @@ const PARTNERS = [
   { name: 'JSNN', href: 'https://jsnn.ncat.uncg.edu/', brand: '#DF8738' },
   { name: 'College of Engineering', href: 'https://www.ncat.edu/coe/index.php', brand: '#BC5C45' },
   { name: 'Computational Data Science & Engineering', href: 'https://www.ncat.edu/coe/departments/cdse/index.php', brand: '#BC5C45' },
+  { name: 'qBraid', href: 'https://qbraid.com/', brand: '#8B5CF6' },
 ]
 
 export function About() {

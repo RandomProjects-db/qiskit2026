@@ -377,6 +377,25 @@ export function Schedule() {
             </div>
           </Reveal>
         </div>
+
+        {/* Hackathon platform credit — qBraid provides the hackathon environment. */}
+        <Reveal className="mt-8">
+          <a
+            href="https://qbraid.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-[#8B5CF6]/30 bg-[#8B5CF6]/10 px-6 py-6 text-center transition-all duration-300 hover:border-[#8B5CF6]/60 hover:bg-[#8B5CF6]/15 sm:flex-row sm:gap-5"
+          >
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
+              Hackathon powered by
+            </span>
+            <img
+              src="/logo-qbraid.png"
+              alt="qBraid"
+              className="h-7 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+          </a>
+        </Reveal>
       </div>
     </section>
   )
