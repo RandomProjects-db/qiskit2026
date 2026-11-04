@@ -75,7 +75,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-[#00E5FF]/30 bg-gradient-to-r from-[#00E5FF]/10 via-white/10 to-[#00BCD4]/10 px-7 py-3 text-sm font-semibold tracking-wide text-cream shadow-lg shadow-[#00E5FF]/10 backdrop-blur-xl sm:px-9 sm:text-base"
           >
             <MapPin className="size-4 text-[#00E5FF]" />
-            at NC A&amp;T State University
+            at NC A&amp;T State University · JSNN
           </motion.span>
 
           <motion.div
