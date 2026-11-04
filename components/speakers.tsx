@@ -51,6 +51,12 @@ const SPEAKERS: Organizer[] = [
     photo: '/speaker-krystal.png',
     linkedin: 'https://www.linkedin.com/in/krystal-maughan-ph-d-3563a215',
   },
+  {
+    name: 'Dr. Quinton Rice',
+    title: 'Teaching Assistant Professor of Electrical & Computer Engineering',
+    affiliation: 'North Carolina A&T State University',
+    bio: 'Dr. Quinton Rice is a Teaching Assistant Professor of Electrical and Computer Engineering at North Carolina A&T State University. He received his Ph.D. in Physics from Hampton University and has taught undergraduate physics for nine years. His work connects foundational physics with engineering problem solving through educational hardware demonstrations. His background in optics, condensed matter, and quantum cryptography has led to the development of experimental hardware involving charge-trapping and optical systems to encourage undergraduate interest in quantum technologies. Dr. Rice believes that quantum computing is the intersection of science and engineering, and that accessible education is critical to the growth of the field.',
+  },
 ]
 
 export function Speakers() {
