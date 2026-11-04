@@ -126,6 +126,17 @@ export function avatarUrl(name: string) {
   return `https://ui-avatars.com/api/?name=${encoded}&background=1B365D&color=E3E0D2&size=160&bold=true&format=png`
 }
 
+// Initials with honorifics stripped, e.g. "Dr. Quinton Rice" -> "QR".
+export function personInitials(name: string): string {
+  const cleaned = name
+    .replace(/\b(dr|prof|professor|mr|mrs|ms|mx|phd|ph\.?d\.?)\b\.?/gi, '')
+    .trim()
+  const parts = cleaned.split(/\s+/).filter(Boolean)
+  const first = parts[0]?.[0] ?? ''
+  const last = parts.length > 1 ? parts[parts.length - 1][0] : ''
+  return (first + last).toUpperCase()
+}
+
 function SocialLinks({ member, size = 'sm' }: { member: Organizer; size?: 'sm' | 'lg' }) {
   const dim = size === 'lg' ? 'size-11' : 'size-10'
   const icon = size === 'lg' ? 'size-5' : 'size-4'
@@ -220,16 +231,24 @@ export function MemberModal({ member, onClose }: { member: Organizer; onClose: (
         <div className="pointer-events-none absolute -right-8 -top-8 size-32 rounded-full bg-gradient-to-br from-[#6929C4]/30 to-transparent blur-2xl" />
         <div className="pointer-events-none absolute -bottom-8 -left-8 size-32 rounded-full bg-gradient-to-tr from-[#FF006B]/30 to-transparent blur-2xl" />
 
-        {/* Large photo */}
+        {/* Large photo (or initials tile when no headshot yet) */}
         <div className="relative mx-auto mt-2 w-fit">
           <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-[#6929C4] via-[#FF006B] to-[#0084BD] opacity-60 blur-sm" />
-          <img
-            src={member.photo || avatarUrl(member.name)}
-            alt={member.name}
-            width={160}
-            height={160}
-            className="relative size-40 rounded-full border-2 border-white/20 object-cover"
-          />
+          {member.photo ? (
+            <img
+              src={member.photo}
+              alt={member.name}
+              width={160}
+              height={160}
+              className="relative size-40 rounded-full border-2 border-white/20 object-cover"
+            />
+          ) : (
+            <div className="relative flex size-40 items-center justify-center rounded-full border-2 border-white/20 bg-gradient-to-br from-[#0b1733] to-[#161022]">
+              <span className="font-display text-5xl font-bold tracking-wide text-white drop-shadow-[0_0_14px_rgba(0,229,255,0.45)]">
+                {personInitials(member.name)}
+              </span>
+            </div>
+          )}
         </div>
 
         <h3 id="member-modal-name" className="mt-5 font-display text-2xl font-bold text-cream">
