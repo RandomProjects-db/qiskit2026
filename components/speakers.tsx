@@ -1,8 +1,33 @@
 'use client'
 
 import { useState } from 'react'
+import { Atom } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
-import { MemberModal, avatarUrl, type Organizer } from '@/components/team'
+import { MemberModal, type Organizer } from '@/components/team'
+
+/**
+ * On-brand placeholder shown for a speaker whose headshot hasn't arrived yet.
+ * A dark quantum tile with a glowing atom glyph — reads as an intentional
+ * "photo coming soon" rather than a broken/generic avatar. Applies anywhere
+ * a speaker has no `photo`.
+ */
+function SpeakerPhotoFallback({ name }: { name: string }) {
+  return (
+    <div
+      aria-label={`${name} — photo coming soon`}
+      className="relative flex h-full w-full items-center justify-center overflow-hidden bg-gradient-to-br from-[#0b1733] via-[#0a1024] to-[#161022]"
+    >
+      {/* soft glow */}
+      <div className="absolute size-40 rounded-full bg-[#00E5FF]/10 blur-3xl" />
+      <div className="absolute size-28 rounded-full bg-[#6929C4]/15 blur-2xl" />
+      {/* orbiting-atom glyph */}
+      <Atom className="relative size-20 text-[#00E5FF] drop-shadow-[0_0_12px_rgba(0,229,255,0.5)]" strokeWidth={1.25} />
+      <span className="absolute bottom-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/50">
+        Photo coming soon
+      </span>
+    </div>
+  )
+}
 
 // Confirmed featured speakers (Oct 27).
 const SPEAKERS: Organizer[] = [
@@ -99,12 +124,16 @@ export function Speakers() {
                     className="forge-card group flex h-full cursor-pointer flex-col overflow-hidden p-0 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF006B]/50 sm:flex-row"
                   >
                     <div className="relative aspect-square w-full shrink-0 overflow-hidden sm:w-72 sm:aspect-auto">
-                      <img
-                        src={featured.photo || avatarUrl(featured.name)}
-                        alt={featured.name}
-                        loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
+                      {featured.photo ? (
+                        <img
+                          src={featured.photo}
+                          alt={featured.name}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      ) : (
+                        <SpeakerPhotoFallback name={featured.name} />
+                      )}
                       <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#060914] to-transparent sm:hidden" />
                     </div>
                     <div className="flex flex-1 flex-col justify-center p-6 sm:p-8">
@@ -143,12 +172,16 @@ export function Speakers() {
                     >
                       {/* Square photo — distinguishes speakers from the round team avatars */}
                       <div className="relative aspect-square w-full overflow-hidden">
-                        <img
-                          src={s.photo || avatarUrl(s.name)}
-                          alt={s.name}
-                          loading="lazy"
-                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
+                        {s.photo ? (
+                          <img
+                            src={s.photo}
+                            alt={s.name}
+                            loading="lazy"
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        ) : (
+                          <SpeakerPhotoFallback name={s.name} />
+                        )}
                         <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#060914] to-transparent" />
                       </div>
                       <div className="flex flex-1 flex-col p-5">
