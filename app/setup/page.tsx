@@ -24,17 +24,18 @@ const STEPS: Step[] = [
     title: 'Sign in to qBraid Lab',
     body: (
       <>
-        Open{' '}
+        Go to{' '}
         <a
-          href="https://lab.qbraid.com"
+          href="https://qbraid.com"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#00E5FF] underline-offset-4 hover:underline"
         >
-          lab.qbraid.com
+          qbraid.com
         </a>{' '}
-        and sign in. Launch a <span className="text-white">small CPU</span> instance, then open the
-        lab — it looks and behaves like a standard JupyterLab workspace.
+        and sign in. From there, open <span className="text-white">Lab</span> and launch a{' '}
+        <span className="text-white">small CPU</span> instance, then open the lab — it looks and
+        behaves like a standard JupyterLab workspace.
       </>
     ),
   },
@@ -173,42 +174,25 @@ export default function SetupPage() {
 
         <div className="mt-6" />
 
-        {/* Screenshot placeholders */}
+        {/* Video walkthrough */}
         <section className="mt-6 border-t border-white/10 pt-12">
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-white/50">
-            Walkthrough
-          </p>
-          <h2 className="mt-3 font-display text-2xl font-bold text-white">Step by step, in pictures</h2>
-          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {[
-              'Launching a CPU instance',
-              'Creating the environment',
-              'Pasting the package list',
-              'Selecting the fall-fest-sqd kernel',
-            ].map((label, i) => (
-              <figure key={label} className="overflow-hidden rounded-xl border border-white/10 bg-white/[0.03]">
-                <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-[#0b1733] to-[#161022]">
-                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-white/30">
-                    screenshot {String(i + 1).padStart(2, '0')}
-                  </span>
-                </div>
-                <figcaption className="px-4 py-3 text-sm text-white/70">{label}</figcaption>
-              </figure>
-            ))}
-          </div>
-        </section>
-
-        {/* Video placeholder */}
-        <section className="mt-14 border-t border-white/10 pt-12">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-white/50">Video</p>
           <h2 className="mt-3 font-display text-2xl font-bold text-white">Prefer to watch?</h2>
           <p className="mt-2 max-w-xl leading-relaxed text-white/75">
-            A full video walkthrough of the qBraid setup will be linked here.
+            A full walkthrough of the qBraid Lab setup, from sign-in to running your first cell.
           </p>
-          <div className="mt-6 flex aspect-video w-full items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-[#0b1733] to-[#161022]">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-white/30">
-              video coming soon
-            </span>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl shadow-black/40">
+            <div className="aspect-video w-full">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube-nocookie.com/embed/KLD1qdPWE24"
+                title="qBraid Lab setup walkthrough"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
           </div>
         </section>
 
