@@ -129,7 +129,7 @@ export default function SetupPage() {
         </Link>
 
         {/* Header */}
-        <header className="mt-10 border-b border-white/10 pb-10">
+        <header className="mt-10 rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-md">
           <p className="font-mono text-xs uppercase tracking-[0.35em] text-[#00E5FF]">
             Environment Setup
           </p>
