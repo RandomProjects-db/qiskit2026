@@ -107,7 +107,7 @@ const TEAM: Organizer[] = [
   },
 ]
 
-// Faculty advisors — confirmed by Godwin (Oct 20): list the first two only.
+// Faculty advisors.
 const ADVISORS: Organizer[] = [
   {
     name: 'Dr. Marwan Bikdash',
@@ -118,6 +118,12 @@ const ADVISORS: Organizer[] = [
     name: 'Dr. Kristen Rhinehardt',
     title: 'Faculty Advisor',
     affiliation: 'Associate Professor & Assistant Chair, Computational Data Science & Engineering, NC A&T',
+  },
+  {
+    name: 'Dr. Gurcan Comert',
+    title: 'Faculty Advisor',
+    affiliation: 'Computational Data Science & Engineering, NC A&T',
+    photo: '/advisor-comert.jpg',
   },
 ]
 
@@ -361,7 +367,7 @@ export function Team() {
             </p>
           </div>
 
-          <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
+          <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {ADVISORS.map((a, i) => (
               <Reveal key={a.name} delay={i * 0.08}>
                 <article className="forge-card flex h-full flex-col items-center p-6 text-center">
