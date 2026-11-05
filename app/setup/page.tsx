@@ -145,9 +145,9 @@ export default function SetupPage() {
         </header>
 
         {/* Steps as a numbered vertical timeline */}
-        <ol className="mt-12 space-y-0">
+        <ol className="mt-12 space-y-5">
           {STEPS.map((step, i) => (
-            <li key={step.n} className="group relative grid grid-cols-[auto_1fr] gap-x-6">
+            <li key={step.n} className="group relative grid grid-cols-[auto_1fr] gap-x-5">
               {/* Number + connecting rail */}
               <div className="flex flex-col items-center">
                 <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-[#00E5FF]/30 bg-[#00E5FF]/5 font-mono text-sm font-semibold text-[#00E5FF]">
@@ -157,8 +157,8 @@ export default function SetupPage() {
                   <span className="my-2 w-px flex-1 bg-gradient-to-b from-[#00E5FF]/30 to-transparent" />
                 )}
               </div>
-              {/* Content */}
-              <div className="pb-12">
+              {/* Content card — translucent, no blur */}
+              <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
                 <h2 className="font-display text-xl font-bold text-white">{step.title}</h2>
                 <p className="mt-2 leading-relaxed text-white/75">{step.body}</p>
                 {step.n === '03' && (
@@ -170,6 +170,8 @@ export default function SetupPage() {
             </li>
           ))}
         </ol>
+
+        <div className="mt-6" />
 
         {/* Screenshot placeholders */}
         <section className="mt-6 border-t border-white/10 pt-12">
