@@ -157,8 +157,8 @@ export default function SetupPage() {
                   <span className="my-2 w-px flex-1 bg-gradient-to-b from-[#00E5FF]/30 to-transparent" />
                 )}
               </div>
-              {/* Content card — translucent, no blur */}
-              <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+              {/* Content card — translucent with blur */}
+              <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md">
                 <h2 className="font-display text-xl font-bold text-white">{step.title}</h2>
                 <p className="mt-2 leading-relaxed text-white/75">{step.body}</p>
                 {step.n === '03' && (
