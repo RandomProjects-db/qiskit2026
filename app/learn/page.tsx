@@ -72,9 +72,11 @@ interface Lab {
   level: string
   body: string
   prereq: string
-  /** Optional download link. The button appears once this is set. */
-  url?: string
+  /** Google Drive file id (shared: anyone with the link). */
+  driveId: string
 }
+
+const driveDownload = (id: string) => `https://drive.google.com/uc?export=download&id=${id}`
 
 const LABS: Lab[] = [
   {
@@ -84,6 +86,7 @@ const LABS: Lab[] = [
     level: 'Beginner friendly',
     body: 'Find a system\u2019s lowest energy by measuring it, keeping the few bitstrings that matter, and diagonalizing that small piece classically.',
     prereq: 'Qubits, circuits, gates, and measurement in Qiskit. No chemistry needed.',
+    driveId: '1fhR6_5Ffqa98_TEe6axGDU8sEwR-XiVS',
   },
   {
     n: '02',
@@ -92,6 +95,7 @@ const LABS: Lab[] = [
     level: 'Beginner to intermediate',
     body: 'Turn the same idea toward chemistry: represent the configurations of a real molecule as bitstrings and watch the energy come out right.',
     prereq: 'Lab 1.',
+    driveId: '179sya2hmAYffnJzhcQ-yWMtEgFKbERgG',
   },
   {
     n: '03',
@@ -100,6 +104,7 @@ const LABS: Lab[] = [
     level: 'Intermediate',
     body: 'Run the whole workflow behind today\u2019s quantum chemistry experiments on stretched nitrogen: build the circuit, sample, repair noisy results, and diagonalize.',
     prereq: 'Labs 1 and 2.',
+    driveId: '1O_ECyHOg4HbNEEAcRJ5-FlgOl_3E_xik',
   },
 ]
 
@@ -210,21 +215,14 @@ export default function LearnPage() {
             ))}
           </div>
 
-          {/* Participants-only note */}
+          {/* How participants get the classroom notebooks */}
           <aside className={`${CARD} mt-6 p-6 md:p-8`}>
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-white/50">Getting the notebooks</p>
-            <h3 className="mt-3 font-display text-xl font-bold text-white">Why there is no download button</h3>
-            <div className="mt-3 space-y-3 text-sm leading-relaxed text-white/75">
-              <p>
-                These graded editions check your answers on IBM&apos;s grading server, which has limited
-                capacity. IBM asks that they go to event participants only, so we share them with
-                registered attendees directly.
-              </p>
-              <p>
-                You will need a free IBM Quantum account for the auto-grader. Want to start right now?
-                IBM publishes the standard versions of these modules openly.
-              </p>
-            </div>
+            <h3 className="mt-3 font-display text-xl font-bold text-white">Shared with registered participants</h3>
+            <p className="mt-3 text-sm leading-relaxed text-white/75">
+              We will share these notebooks with you once you register. The auto-grader needs a free IBM
+              Quantum account. Want to start right now? IBM publishes open modules you can try today.
+            </p>
             <a
               href={IBM_MODULES}
               target="_blank"
@@ -261,15 +259,13 @@ export default function LearnPage() {
                     <span className="font-mono text-xs uppercase tracking-[0.18em] text-white/40">Before you start </span>
                     {lab.prereq}
                   </p>
-                  {lab.url && (
-                    <a
-                      href={lab.url}
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#FDB927]/40 px-5 py-2.5 text-sm font-semibold text-[#FDB927] transition-colors hover:bg-[#FDB927]/10"
-                    >
-                      Download notebook <span className="font-mono text-xs text-[#FDB927]/70">.ipynb</span>
-                    </a>
-                  )}
+                  <a
+                    href={driveDownload(lab.driveId)}
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#FDB927]/40 px-5 py-2.5 text-sm font-semibold text-[#FDB927] transition-colors hover:bg-[#FDB927]/10"
+                  >
+                    Download notebook <span className="font-mono text-xs text-[#FDB927]/70">.ipynb</span>
+                  </a>
                 </div>
               </li>
             ))}
