@@ -159,9 +159,13 @@ interface Challenge {
   blurb: string
   meta: string
   firstPick?: boolean
+  /** Google Drive file id of the challenge notebook (shared: anyone with the link). */
+  driveId: string
   levels: [string, string][]
   diagram: React.ReactNode
 }
+
+const driveDownload = (id: string) => `https://drive.google.com/uc?export=download&id=${id}`
 
 const CHALLENGES: Challenge[] = [
   {
@@ -171,6 +175,7 @@ const CHALLENGES: Challenge[] = [
     blurb:
       'Find the lowest energy of a hydrogen molecule with a variational quantum eigensolver, then check your answer against the exact result.',
     meta: '4 qubits · H2 molecule',
+    driveId: '1GT_7NLnR4KWo4JTjuB-kKXoBpmZGEzm1',
     levels: [
       ['Beginner', 'Map the potential energy surface of HeH+'],
       ['Intermediate', 'Tackle larger molecules using fewer qubits'],
@@ -186,6 +191,7 @@ const CHALLENGES: Challenge[] = [
       'Split a small graph into two groups so that as many edges as possible cross between them, using the Quantum Approximate Optimization Algorithm.',
     meta: '5 qubits · 5-node graph',
     firstPick: true,
+    driveId: '194R4uTM-S6Y46Bi17O66vSqD0S4IClEU',
     levels: [
       ['Beginner', 'Portfolio selection under a budget constraint'],
       ['Intermediate', 'QAOA versus quantum machine learning'],
@@ -200,6 +206,7 @@ const CHALLENGES: Challenge[] = [
     blurb:
       'Watch a chain of quantum spins evolve over time using Trotterized time evolution, and compare the result to the exact answer.',
     meta: '4 qubits · transverse-field Ising chain',
+    driveId: '1Tl-4MtqRDCYXo2fU1AzpEYfWeO6QQrRN',
     levels: [
       ['Beginner', 'Correlations, Trotter step size, and higher-order formulas'],
       ['Intermediate', 'Add noise and error mitigation'],
@@ -286,6 +293,10 @@ export default function HackathonPage() {
           <h2 className="mt-3 font-display text-2xl font-bold text-white sm:text-3xl">
             Choose your problem
           </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/65">
+            Download the notebook for the challenge you want, then drag it into your qBraid Lab file
+            browser. Each notebook walks you through the basics, and its levels are the challenge.
+          </p>
           <div className="mt-8 space-y-6">
             {CHALLENGES.map((c, i) => (
               <article key={c.n} className={`${CARD} overflow-hidden`}>
@@ -326,6 +337,14 @@ export default function HackathonPage() {
                         </li>
                       ))}
                     </ul>
+
+                    <a
+                      href={driveDownload(c.driveId)}
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#FDB927]/40 px-5 py-2.5 text-sm font-semibold text-[#FDB927] transition-colors hover:bg-[#FDB927]/10"
+                    >
+                      Download notebook <span className="font-mono text-xs text-[#FDB927]/70">.ipynb</span>
+                    </a>
                   </div>
                 </div>
               </article>
