@@ -16,7 +16,7 @@ const SUBMISSION_URL = ''
 const CARD = 'rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md'
 
 /* ------------------------------------------------------------------ */
-/* Diagrams: each one draws the actual problem its challenge solves.   */
+/* Diagrams: each one draws what its challenge is about.               */
 /* ------------------------------------------------------------------ */
 
 function MoleculeDiagram() {
@@ -195,7 +195,7 @@ const CHALLENGES: Challenge[] = [
     levels: [
       ['Beginner', 'Portfolio selection under a budget constraint'],
       ['Intermediate', 'QAOA versus quantum machine learning'],
-      ['Advanced', 'Utility-scale problems and barren plateaus'],
+      ['Advanced', 'Utility-scale challenges and barren plateaus'],
     ],
     diagram: <MaxCutDiagram />,
   },
@@ -291,7 +291,7 @@ export default function HackathonPage() {
         <section className="mt-16">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-white/50">The challenges</p>
           <h2 className="mt-3 font-display text-2xl font-bold text-white sm:text-3xl">
-            Choose your problem
+            Choose your challenge
           </h2>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/65">
             Download the notebook for the challenge you want, then drag it into your qBraid Lab file
