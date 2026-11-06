@@ -10,7 +10,10 @@ qiskit-addon-sqd==0.12.1
 ffsim>=0.0.81
 pyscf==2.14.0
 matplotlib==3.11.1
-pylatexenc==2.10`
+pylatexenc==2.10
+qiskit-nature
+qiskit-algorithms
+rustworkx`
 
 interface Step {
   n: string
@@ -58,7 +61,8 @@ const STEPS: Step[] = [
         in the upper right), then choose <span className="text-white">Add → Create Environment</span>.
         Name it <span className="font-mono text-[#FDB927]">fall-fest-sqd</span>, open{' '}
         <span className="text-white">Advanced Customizations</span>, and paste the package list below
-        into the <span className="text-white">Python packages</span> field.
+        into the <span className="text-white">Python packages</span> field. This one list covers the
+        learning labs and all three hackathon challenges.
       </>
     ),
   },
@@ -82,7 +86,9 @@ const STEPS: Step[] = [
         Open the notebook and, in the kernel selector at the top right, choose{' '}
         <span className="font-mono text-[#FDB927]">fall-fest-sqd</span>. Leave the{' '}
         <span className="font-mono text-white">%pip install</span> line commented out — the
-        environment already has everything it needs. Run the cells and you are set.
+        environment already has everything it needs. Run the cells and you are set. You may see
+        yellow messages called <span className="font-mono text-white">SparseEfficiencyWarning</span>;
+        they are harmless, so keep going.
       </>
     ),
   },
