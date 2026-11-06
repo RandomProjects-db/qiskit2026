@@ -3,17 +3,18 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-const PACKAGES = `numpy>=2.3.2
+const PACKAGES = `numpy==2.5.4
+scipy==1.18.1
 qiskit==2.5.1
 qiskit-aer==0.17.2
 qiskit-addon-sqd==0.12.1
-ffsim>=0.0.81
+qiskit-nature==0.8.0
+qiskit-algorithms==0.4.0
+rustworkx==0.18.1
+ffsim==0.0.85
 pyscf==2.14.0
 matplotlib==3.11.1
-pylatexenc==2.10
-qiskit-nature
-qiskit-algorithms
-rustworkx`
+pylatexenc==2.10`
 
 interface Step {
   n: string
