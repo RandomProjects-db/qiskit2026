@@ -60,7 +60,7 @@ const STEPS: Step[] = [
       <>
         Open the <span className="text-white">Environments</span> panel (the stacked-layers control
         in the upper right), then choose <span className="text-white">Add → Create Environment</span>.
-        Name it <span className="font-mono text-[#FDB927]">fall-fest-sqd</span>, open{' '}
+        Name it <span className="font-mono text-[#FDB927]">qiskit-fallfest2026</span>, open{' '}
         <span className="text-white">Advanced Customizations</span>, and paste the package list below
         into the <span className="text-white">Python packages</span> field. This one list covers the
         learning labs and all three hackathon challenges.
@@ -84,8 +84,9 @@ const STEPS: Step[] = [
     title: 'Pick the kernel and run',
     body: (
       <>
-        Open the notebook and, in the kernel selector at the top right, choose{' '}
-        <span className="font-mono text-[#FDB927]">fall-fest-sqd</span>. Leave the{' '}
+        Open the notebook and, in the kernel selector at the top right, choose the environment name
+        you picked, for example{' '}
+        <span className="font-mono text-[#FDB927]">qiskit-fallfest2026</span>. Leave the{' '}
         <span className="font-mono text-white">%pip install</span> line commented out — the
         environment already has everything it needs. Run the cells and you are set. You may see
         yellow messages called <span className="font-mono text-white">SparseEfficiencyWarning</span>;
