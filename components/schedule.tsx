@@ -48,12 +48,12 @@ const DAYS: {
       {
         time: '4:40 – 5:20 PM',
         title: 'Featured Talk',
-        desc: 'Quantum research and education.',
-        speaker: 'Dr. Raymond Samuel',
+        desc: 'The importance of quantum computing and its role in science and engineering.',
+        speaker: 'Dr. Quinton Rice',
       },
       {
         time: '5:20 – 6:00 PM',
-        title: 'Featured Talk — IBM Quantum',
+        title: 'Qiskit 101',
         desc: 'Introduction to quantum computing, the IBM Quantum Platform, and opportunities for students.',
         speaker: 'Dr. Carolyn Hartley (IBM)',
       },
@@ -80,8 +80,8 @@ const DAYS: {
     events: [
       {
         time: '4:00 – 4:30 PM',
-        title: 'Registration',
-        desc: 'Check in and get settled.',
+        title: 'Registration & Hackathon Meetup',
+        desc: 'Check in, register for the hackathon, and meet potential teammates.',
         speaker: 'Organizing Team',
       },
       {
@@ -93,14 +93,20 @@ const DAYS: {
       {
         time: '4:40 – 5:20 PM',
         title: 'Featured Talk',
-        desc: 'To be announced.',
-        speaker: 'TBD',
-      },
-      {
-        time: '5:20 – 6:00 PM',
-        title: 'Featured Talk',
         desc: 'Quantum AI: where quantum computing meets machine learning.',
         speaker: 'Dr. Olusola T. Odeyomi',
+      },
+      {
+        time: '5:20 – 5:40 PM',
+        title: 'Featured Talk',
+        desc: 'Quantum machine learning.',
+        speaker: 'Temitope Odeyomi Adeniyi',
+      },
+      {
+        time: '5:40 – 6:00 PM',
+        title: 'Session TBD',
+        desc: 'To be confirmed.',
+        speaker: 'TBD',
       },
       {
         time: '6:00 – 6:20 PM',
@@ -111,7 +117,7 @@ const DAYS: {
       {
         time: '6:20 – 7:00 PM',
         title: 'Hackathon Orientation',
-        desc: 'Hackathon rules, challenges, platform walkthrough, and team formation.',
+        desc: 'Set up your qBraid account and environment, upload your notebooks, and get the challenges. Team formation too.',
         speaker: 'Organizing Team',
       },
     ],
@@ -154,9 +160,15 @@ const DAYS: {
         speaker: 'All',
       },
       {
-        time: '12:30 – 1:30 PM',
-        title: 'Featured Sessions',
-        desc: 'To be announced.',
+        time: '12:30 – 1:00 PM',
+        title: 'Featured Talk',
+        desc: 'To be confirmed.',
+        speaker: 'Dr. Ross',
+      },
+      {
+        time: '1:00 – 1:30 PM',
+        title: 'Session TBD',
+        desc: 'To be confirmed.',
         speaker: 'TBD',
       },
       {
@@ -167,13 +179,13 @@ const DAYS: {
       },
       {
         time: '2:30 – 3:10 PM',
-        title: 'Panel Session with Speakers',
+        title: 'Panel Session',
         desc: 'Q&A and discussion with our speakers while the judges deliberate.',
-        speaker: 'Speaker Panel',
+        speaker: 'Dr. Ross, Dr. Rachel Noek, Dr. Katanya Kuntz, Dr. Carolyn Hartley',
       },
       {
         time: '3:30 PM – End',
-        title: 'Awards Ceremony',
+        title: 'Awards & Prizes',
         desc: 'Recognition and awards for the winning hackathon teams.',
         speaker: 'Organizing Team',
       },
@@ -205,6 +217,7 @@ const SPEAKER_PHOTOS: { match: string; photo: string }[] = [
   { match: 'Katanya', photo: '/speaker-katanya.png' },
   { match: 'Olusola', photo: '/speaker-olusola.png' },
   { match: 'Krystal', photo: '/speaker-krystal.png' },
+  { match: 'Temitope', photo: '/team-temitope.jpg' },
 ]
 
 function speakerPhoto(speaker: string): string | null {
