@@ -218,6 +218,7 @@ const SPEAKER_PHOTOS: { match: string; photo: string }[] = [
   { match: 'Olusola', photo: '/speaker-olusola.png' },
   { match: 'Krystal', photo: '/speaker-krystal.png' },
   { match: 'Temitope', photo: '/team-temitope.jpg' },
+  { match: 'Quinton Rice', photo: '/speaker-rice.png' },
 ]
 
 function speakerPhoto(speaker: string): string | null {

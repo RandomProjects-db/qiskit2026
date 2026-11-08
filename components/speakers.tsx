@@ -82,6 +82,7 @@ const SPEAKERS: Organizer[] = [
     affiliation: 'North Carolina A&T State University',
     talkTitle: 'The importance of quantum computing and its role in science and engineering',
     bio: 'Dr. Quinton Rice is a Teaching Assistant Professor of Electrical and Computer Engineering at North Carolina A&T State University. He received his Ph.D. in Physics from Hampton University and has taught undergraduate physics for nine years. His work connects foundational physics with engineering problem solving through educational hardware demonstrations. His background in optics, condensed matter, and quantum cryptography has led to the development of experimental hardware involving charge-trapping and optical systems to encourage undergraduate interest in quantum technologies. Dr. Rice believes that quantum computing is the intersection of science and engineering, and that accessible education is critical to the growth of the field.',
+    photo: '/speaker-rice.png',
   },
 ]
 
