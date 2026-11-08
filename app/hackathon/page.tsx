@@ -392,6 +392,62 @@ export default function HackathonPage() {
           </div>
         </section>
 
+        {/* How you're judged */}
+        <section className="mt-16">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-white/50">How you're judged</p>
+          <h2 className="mt-3 font-display text-2xl font-bold text-white sm:text-3xl">100 points, four parts</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/65">
+            Every team submits a notebook, a short report, and slides, then presents live on Saturday.
+            Here is how the points break down.
+          </p>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                pts: '40',
+                title: 'Presentation',
+                body: 'Your 7-minute talk: understanding of the problem and approach, results and evidence it works, clarity and delivery, and honesty about what you learned and what did not work.',
+              },
+              {
+                pts: '20',
+                title: 'Notebook',
+                body: 'Runs top to bottom and reproduces, correctness checked against a reference, and clear, readable code.',
+              },
+              {
+                pts: '20',
+                title: 'Written report',
+                body: 'A 3–4 page PDF: problem and background, formulation and method, results with figures, what did not work, and an AI-usage statement.',
+              },
+              {
+                pts: '10',
+                title: 'Level & originality',
+                body: 'Credit for the level you complete (beginner, intermediate, advanced) and for extending beyond the tutorial with your own idea.',
+              },
+              {
+                pts: '10',
+                title: 'Live Q&A',
+                body: 'Any teammate can explain the work, walk through the code, and discuss limitations and next steps. "The model wrote it" is not an answer.',
+              },
+            ].map((c) => (
+              <div key={c.title} className={`${CARD} flex gap-5 p-6`}>
+                <div className="shrink-0">
+                  <span className="font-display text-3xl font-bold text-[#FDB927]">{c.pts}</span>
+                  <span className="ml-1 text-sm text-white/40">pts</span>
+                </div>
+                <div>
+                  <h3 className="font-display font-bold text-white">{c.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-white/70">{c.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 text-sm leading-relaxed text-white/55">
+            Judges score independently, and the presentation and Q&A are averaged across the panel, so
+            no single judge decides the result. People's Choice is awarded separately.
+          </p>
+        </section>
+
         {/* Get ready + submit */}
         <section className="mt-6 grid gap-6 md:grid-cols-2">
           <div className={`${CARD} p-6 md:p-8`}>
