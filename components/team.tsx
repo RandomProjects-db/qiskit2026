@@ -102,7 +102,6 @@ const TEAM: Organizer[] = [
     affiliation: 'PhD in Chemistry, University of North Carolina at Chapel Hill',
     bio: 'Materials scientist with a PhD in Chemistry from UNC Chapel Hill and past President of the UNC Materials Research Society, where he organized multi-university research conferences. He serves as co-organizer and master of ceremonies for Fall Fest.',
     photo: '/team-don.jpg',
-    email: 'donmctaggart15@gmail.com',
     linkedin: 'https://www.linkedin.com/in/don-mctaggart/',
   },
 ]
