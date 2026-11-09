@@ -104,9 +104,9 @@ const DAYS: {
       },
       {
         time: '5:40 – 6:00 PM',
-        title: 'Session TBD',
-        desc: 'To be confirmed.',
-        speaker: 'TBD',
+        title: 'Featured Talk',
+        desc: 'The physics behind quantum computing for non-physicists, and photonic quantum entanglement coupled to an optical resonator.',
+        speaker: 'Dr. Patrick Flanigan',
       },
       {
         time: '6:00 – 6:20 PM',
@@ -219,6 +219,7 @@ const SPEAKER_PHOTOS: { match: string; photo: string }[] = [
   { match: 'Krystal', photo: '/speaker-krystal.png' },
   { match: 'Temitope', photo: '/team-temitope.jpg' },
   { match: 'Quinton Rice', photo: '/speaker-rice.png' },
+  { match: 'Flanigan', photo: '/speaker-flanigan.jpg' },
 ]
 
 function speakerPhoto(speaker: string): string | null {

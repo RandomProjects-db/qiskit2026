@@ -84,6 +84,14 @@ const SPEAKERS: Organizer[] = [
     bio: 'Dr. Quinton Rice is a Teaching Assistant Professor of Electrical and Computer Engineering at North Carolina A&T State University. He received his Ph.D. in Physics from Hampton University and has taught undergraduate physics for nine years. His work connects foundational physics with engineering problem solving through educational hardware demonstrations. His background in optics, condensed matter, and quantum cryptography has led to the development of experimental hardware involving charge-trapping and optical systems to encourage undergraduate interest in quantum technologies. Dr. Rice believes that quantum computing is the intersection of science and engineering, and that accessible education is critical to the growth of the field.',
     photo: '/speaker-rice.png',
   },
+  {
+    name: 'Dr. Patrick Flanigan',
+    title: 'Postdoctoral Researcher',
+    affiliation: 'North Carolina Central University',
+    talkTitle: 'The Physics of Quantum Computing & Photonic Entanglement',
+    bio: 'Part 1 of this presentation will go over some of the basic physics underlying quantum computing, such as the Schrodinger equation, superposition, entanglement, and qubits; the material will be geared towards non-physics students so that they get a better understanding of the fundamental concepts that make quantum computing possible. Part 2 will go over an example of a system with photonic quantum entanglement that has been coupled to an optical resonator for increased efficiency. Patrick Flanigan is a postdoctoral researcher at North Carolina Central University. He obtained his Ph.D. from Brown University and Bachelor\u2019s from UC Berkeley. His research focuses on photonic simulations and component design optimization, with applications to quantum computing.',
+    photo: '/speaker-flanigan.jpg',
+  },
 ]
 
 export function Speakers() {
