@@ -52,9 +52,9 @@ const TEAM: Organizer[] = [
   },
   {
     name: 'Fahed Daibes',
-    title: 'Hackathon Coordinator · Web',
+    title: 'Technical Lead · Hackathon Coordinator',
     affiliation: 'Lebanese American University',
-    bio: 'Qiskit developer in charge of the hackathon, and handling the event website and technical platform decisions.',
+    bio: 'DevOps and systems engineer and certified Qiskit developer. Coordinates the hackathon and leads the event\u2019s technical side — the website, registration system, and platform — along with flyers, brochures, and promotional design.',
     photo: '/team-fahed.png',
     linkedin: 'https://www.linkedin.com/in/fahed-daibes',
   },
