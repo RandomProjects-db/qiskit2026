@@ -172,9 +172,13 @@ export function Speakers() {
                 </Reveal>
               )}
 
-              <div className="mx-auto mt-6 grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mx-auto mt-6 flex max-w-6xl flex-wrap justify-center gap-6">
                 {rest.map((s, i) => (
-                  <Reveal key={s.name} delay={(i % 3) * 0.08}>
+                  <Reveal
+                    key={s.name}
+                    delay={(i % 4) * 0.08}
+                    className="flex w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
+                  >
                     <article
                       onClick={() => setSelected(s)}
                       onKeyDown={(e) => {
