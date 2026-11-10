@@ -51,6 +51,13 @@ const TEAM: Organizer[] = [
     linkedin: 'https://www.linkedin.com/in/emmanuel-umukoro-415373127',
   },
   {
+    name: 'Opeyemi Akanbi',
+    title: 'Co-host',
+    affiliation: 'University of Massachusetts Lowell',
+    bio: 'PhD Candidate in Physics, Department of Physics and Applied Physics, University of Massachusetts Lowell.',
+    photo: '/team-opeyemi.jpg',
+  },
+  {
     name: 'Fahed Daibes',
     title: 'Technical Lead · Hackathon Coordinator',
     affiliation: 'Lebanese American University',
