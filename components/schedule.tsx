@@ -167,9 +167,9 @@ const DAYS: {
       },
       {
         time: '1:00 – 1:30 PM',
-        title: 'Session TBD',
-        desc: 'To be confirmed.',
-        speaker: 'TBD',
+        title: 'Featured Talk',
+        desc: 'Qubit control research at NCAT: custom hardware modules for precision timing of laser pulses, using reconfigurable computing.',
+        speaker: 'Dr. Christopher C. Doss',
       },
       {
         time: '1:30 – 2:30 PM',
@@ -220,6 +220,7 @@ const SPEAKER_PHOTOS: { match: string; photo: string }[] = [
   { match: 'Temitope', photo: '/team-temitope.jpg' },
   { match: 'Quinton Rice', photo: '/speaker-rice.png' },
   { match: 'Flanigan', photo: '/speaker-flanigan.jpg' },
+  { match: 'Christopher C. Doss', photo: '/speaker-doss.png' },
 ]
 
 function speakerPhoto(speaker: string): string | null {

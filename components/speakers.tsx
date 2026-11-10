@@ -92,6 +92,14 @@ const SPEAKERS: Organizer[] = [
     bio: 'Part 1 of this presentation will go over some of the basic physics underlying quantum computing, such as the Schrodinger equation, superposition, entanglement, and qubits; the material will be geared towards non-physics students so that they get a better understanding of the fundamental concepts that make quantum computing possible. Part 2 will go over an example of a system with photonic quantum entanglement that has been coupled to an optical resonator for increased efficiency. Patrick Flanigan is a postdoctoral researcher at North Carolina Central University. He obtained his Ph.D. from Brown University and Bachelor\u2019s from UC Berkeley. His research focuses on photonic simulations and component design optimization, with applications to quantum computing.',
     photo: '/speaker-flanigan.jpg',
   },
+  {
+    name: 'Dr. Christopher C. Doss',
+    title: 'Associate Professor of Electrical & Computer Engineering · Director, Mobile Health Interoperability Lab',
+    affiliation: 'North Carolina A&T State University',
+    talkTitle: 'Qubit Control Research at NCAT',
+    bio: 'Dr. Christopher C. Doss received his Bachelor of Science degree in Computer Engineering in Spring, 1994 from USF. He received his M.S. and Ph.D. degrees in Computer Engineering from NCSU in Spring, 1997 and 2001, respectively. Dr. Doss currently holds an Associate Professor position at NCAT. He is currently serving as Assistant Department Chair for the Department of Electrical and Computer Engineering. Dr. Doss\u2019 current research interests focus on the design and implementation of applications on reconfigurable computing systems, including biomimetic inspired design, adaptive controls, and quantum control.',
+    photo: '/speaker-doss.png',
+  },
 ]
 
 export function Speakers() {
