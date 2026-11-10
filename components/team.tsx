@@ -312,9 +312,13 @@ export function Team() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 flex flex-wrap justify-center gap-6">
           {TEAM.map((m, i) => (
-            <Reveal key={m.name} delay={(i % 3) * 0.08}>
+            <Reveal
+              key={m.name}
+              delay={(i % 4) * 0.08}
+              className="flex w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
+            >
               <article
                 onClick={() => setSelected(m)}
                 onKeyDown={(e) => {
