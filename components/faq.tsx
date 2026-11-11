@@ -1,3 +1,4 @@
+import { Plus } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 
 /**
@@ -90,18 +91,12 @@ export function Faq() {
                   <span>{item.q}</span>
                   <span
                     aria-hidden="true"
-                    className="font-[family-name:var(--font-mono-label)] text-lg text-[#FDB927] group-open:hidden"
+                    className="flex size-9 shrink-0 items-center justify-center rounded-full border border-[#00E5FF]/40 bg-[#00E5FF]/10 text-[#00E5FF] transition-all duration-300 group-hover:border-[#00E5FF] group-hover:bg-[#00E5FF]/20 group-open:rotate-45 group-open:border-[#FF006B] group-open:bg-[#FF006B] group-open:text-white"
                   >
-                    [+]
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className="hidden font-[family-name:var(--font-mono-label)] text-lg text-[#FDB927] group-open:inline"
-                  >
-                    [-]
+                    <Plus className="size-5" strokeWidth={2.25} />
                   </span>
                 </summary>
-                <div className="px-5 pb-5 text-sm leading-relaxed text-white/85">{item.a}</div>
+                <div className="px-5 pb-5 text-base leading-relaxed text-white/85">{item.a}</div>
               </details>
             </Reveal>
           ))}

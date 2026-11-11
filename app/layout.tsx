@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Space_Grotesk, Inter, Intel_One_Mono } from 'next/font/google'
+import { Space_Grotesk, Inter, Intel_One_Mono, Newsreader } from 'next/font/google'
 import { ParticleBackground } from '@/components/particle-background'
 import './globals.css'
 
@@ -21,6 +21,13 @@ const intelOneMono = Intel_One_Mono({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-mono-label',
+  display: 'swap',
+})
+
+// Refined editorial serif for speaker and team member names.
+const newsreader = Newsreader({
+  subsets: ['latin'],
+  variable: '--font-name',
   display: 'swap',
 })
 
@@ -77,7 +84,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} ${intelOneMono.variable} scroll-smooth`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${intelOneMono.variable} ${newsreader.variable} scroll-smooth`}
     >
       <body className="font-sans antialiased bg-[#060914]">
         {/* Persistent particle background, fixed behind all content (z-0). */}

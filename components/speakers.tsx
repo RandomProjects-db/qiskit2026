@@ -107,7 +107,7 @@ export function Speakers() {
 
   return (
     <section id="speakers" className="scroll-mt-20 bg-[#060914]/20 py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-4 md:px-6">
+      <div className="mx-auto max-w-7xl px-4 md:px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
             Speakers
@@ -158,21 +158,21 @@ export function Speakers() {
                       <span className="mb-2 w-fit rounded-full bg-[#FF006B]/15 px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#FF4D8F]">
                         Featured Speaker
                       </span>
-                      <h3 className="font-display text-xl font-bold text-white sm:text-2xl">{featured.name}</h3>
-                      <p className="mt-1 text-sm font-semibold text-[#FF4D8F]">{featured.title}</p>
-                      <p className="mt-1 text-xs leading-relaxed text-white/85">{featured.affiliation}</p>
+                      <h3 className="font-[family-name:var(--font-name)] text-3xl font-semibold leading-tight text-white sm:text-4xl">{featured.name}</h3>
+                      <p className="mt-1.5 text-base font-semibold text-[#FF4D8F]">{featured.title}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-white/85">{featured.affiliation}</p>
                       {featured.talkTitle && (
-                        <p className="mt-3 text-sm italic leading-relaxed text-white/90">
+                        <p className="mt-3 text-base italic leading-relaxed text-white/90">
                           “{featured.talkTitle}”
                         </p>
                       )}
-                      <span className="mt-4 text-xs font-semibold text-[#FF4D8F]">Read bio →</span>
+                      <span className="mt-4 text-sm font-semibold text-[#FF4D8F]">Read bio →</span>
                     </div>
                   </article>
                 </Reveal>
               )}
 
-              <div className="mx-auto mt-6 flex max-w-6xl flex-wrap justify-center gap-6">
+              <div className="mx-auto mt-6 flex max-w-7xl flex-wrap justify-center gap-6">
                 {rest.map((s, i) => (
                   <Reveal
                     key={s.name}
@@ -207,15 +207,15 @@ export function Speakers() {
                         <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#060914] to-transparent" />
                       </div>
                       <div className="flex flex-1 flex-col p-5">
-                        <h3 className="font-display text-lg font-bold text-white">{s.name}</h3>
-                        <p className="mt-0.5 text-sm font-semibold text-[#FF4D8F]">{s.title}</p>
-                        <p className="mt-1 text-xs leading-relaxed text-white/85">{s.affiliation}</p>
+                        <h3 className="font-[family-name:var(--font-name)] text-2xl font-semibold leading-tight text-white">{s.name}</h3>
+                        <p className="mt-1 text-base font-semibold leading-snug text-[#FF4D8F]">{s.title}</p>
+                        <p className="mt-1 text-sm leading-relaxed text-white/85">{s.affiliation}</p>
                         {s.talkTitle && (
-                          <p className="mt-3 text-sm italic leading-relaxed text-white/90">
+                          <p className="mt-3 text-base italic leading-relaxed text-white/90">
                             “{s.talkTitle}”
                           </p>
                         )}
-                        <span className="mt-auto pt-3 text-xs font-semibold text-[#FF4D8F]">
+                        <span className="mt-auto pt-3 text-sm font-semibold text-[#FF4D8F]">
                           Read bio →
                         </span>
                       </div>

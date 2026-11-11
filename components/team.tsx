@@ -263,17 +263,17 @@ export function MemberModal({ member, onClose }: { member: Organizer; onClose: (
           )}
         </div>
 
-        <h3 id="member-modal-name" className="mt-5 font-display text-2xl font-bold text-cream">
+        <h3 id="member-modal-name" className="mt-5 font-[family-name:var(--font-name)] text-3xl font-semibold text-cream">
           {member.name}
         </h3>
-        <p className="mt-1 text-sm font-semibold text-[#FF006B]">{member.title}</p>
-        <p className="mt-1 text-xs text-cream/85">{member.affiliation}</p>
+        <p className="mt-1 text-base font-semibold text-[#FF006B]">{member.title}</p>
+        <p className="mt-1 text-sm text-cream/85">{member.affiliation}</p>
         {member.talkTitle && (
-          <p className="mt-3 rounded-lg border border-[#FF006B]/30 bg-[#FF006B]/10 px-3 py-2 text-sm font-semibold text-cream">
+          <p className="mt-3 rounded-lg border border-[#FF006B]/30 bg-[#FF006B]/10 px-3 py-2 text-base font-semibold text-cream">
             “{member.talkTitle}”
           </p>
         )}
-        {member.bio && <p className="mt-4 text-sm leading-relaxed text-cream/85">{member.bio}</p>}
+        {member.bio && <p className="mt-4 text-base leading-relaxed text-cream/85">{member.bio}</p>}
 
         <div className="mt-6 flex flex-col items-center gap-3">
           <SocialLinks member={member} size="lg" />
@@ -298,7 +298,7 @@ export function Team() {
 
   return (
     <section id="team" className="scroll-mt-20 bg-[#060914]/25 py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-4 md:px-6">
+      <div className="mx-auto max-w-7xl px-4 md:px-6">
         {/* The Team */}
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
@@ -349,10 +349,10 @@ export function Team() {
                   />
                 </div>
 
-                <h3 className="mt-4 font-display text-lg font-bold text-white">{m.name}</h3>
-                <p className="mt-0.5 text-sm font-semibold text-[#FF4D8F]">{m.title}</p>
-                <p className="mt-0.5 text-xs text-white/85">{m.affiliation}</p>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-white/85">{m.bio ?? ''}</p>
+                <h3 className="mt-4 font-[family-name:var(--font-name)] text-2xl font-semibold leading-tight text-white">{m.name}</h3>
+                <p className="mt-1 text-base font-semibold leading-snug text-[#FF4D8F]">{m.title}</p>
+                <p className="mt-1 text-sm leading-snug text-white/85">{m.affiliation}</p>
+                <p className="mt-3 flex-1 text-[15px] leading-relaxed text-white/85">{m.bio ?? ''}</p>
 
                 {/* Social links */}
                 <div className="mt-5">
@@ -392,9 +392,9 @@ export function Team() {
                       className="relative size-24 rounded-full border-2 border-white/20 object-cover"
                     />
                   </div>
-                  <h4 className="mt-4 font-display text-lg font-bold text-white">{a.name}</h4>
-                  <p className="mt-0.5 text-sm font-semibold text-[#FF4D8F]">{a.title}</p>
-                  <p className="mt-1 text-xs leading-relaxed text-white/85">{a.affiliation}</p>
+                  <h4 className="mt-4 font-[family-name:var(--font-name)] text-2xl font-semibold leading-tight text-white">{a.name}</h4>
+                  <p className="mt-1 text-base font-semibold text-[#FF4D8F]">{a.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-white/85">{a.affiliation}</p>
                 </article>
               </Reveal>
             ))}
