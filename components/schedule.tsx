@@ -1,6 +1,6 @@
 'use client'
 
-import { Calendar, MapPin, Clock, User, Code2, Cpu, Wrench, Heart } from 'lucide-react'
+import { Calendar, MapPin, Clock, User } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Reveal } from '@/components/reveal'
 import {
@@ -187,12 +187,90 @@ const DAYS: {
   },
 ]
 
-const PREREQS = [
-  { icon: Code2, title: 'Programming', desc: 'Basic Python is helpful but not required.' },
-  { icon: Cpu, title: 'Hardware', desc: 'A laptop; we run everything in the cloud.' },
-  { icon: Wrench, title: 'Software', desc: 'Just a browser — no local install needed.' },
-  { icon: Heart, title: 'Enthusiasm', desc: 'Curiosity is the only real prerequisite.' },
+type PrerequisiteIconKind = 'programming' | 'hardware' | 'software' | 'enthusiasm'
+
+const PREREQS: {
+  icon: PrerequisiteIconKind
+  title: string
+  desc: string
+  accent: string
+}[] = [
+  {
+    icon: 'programming',
+    title: 'Programming',
+    desc: 'Basic Python is helpful but not required.',
+    accent: '#00E5FF',
+  },
+  {
+    icon: 'hardware',
+    title: 'Hardware',
+    desc: 'A laptop; we run everything in the cloud.',
+    accent: '#FDB927',
+  },
+  {
+    icon: 'software',
+    title: 'Software',
+    desc: 'Just a browser. No local install needed.',
+    accent: '#FF006B',
+  },
+  {
+    icon: 'enthusiasm',
+    title: 'Enthusiasm',
+    desc: 'Curiosity is the only real prerequisite.',
+    accent: '#00E5FF',
+  },
 ]
+
+function PrerequisiteIcon({ kind }: { kind: PrerequisiteIconKind }) {
+  const common = {
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+    strokeWidth: 1.6,
+  }
+
+  switch (kind) {
+    case 'programming':
+      return (
+        <svg className="size-7" viewBox="0 0 32 32" aria-hidden="true" {...common}>
+          <path d="m12 9-6 7 6 7M20 9l6 7-6 7" />
+          <path d="M16 6v4m0 12v4M4 16h4m16 0h4" />
+          <circle cx="16" cy="16" r="3" />
+          <circle cx="16" cy="4" r="1" fill="currentColor" stroke="none" />
+          <circle cx="16" cy="28" r="1" fill="currentColor" stroke="none" />
+        </svg>
+      )
+    case 'hardware':
+      return (
+        <svg className="size-7" viewBox="0 0 32 32" aria-hidden="true" {...common}>
+          <rect x="5" y="4" width="22" height="17" rx="2" />
+          <path d="M3 25h26l-3-4H6l-3 4Z" />
+          <rect x="12" y="9" width="8" height="7" rx="1" />
+          <path d="M14 12.5h4M16 10.5v4" />
+        </svg>
+      )
+    case 'software':
+      return (
+        <svg className="size-7" viewBox="0 0 32 32" aria-hidden="true" {...common}>
+          <rect x="4" y="5" width="24" height="22" rx="2" />
+          <path d="M4 11h24M8 8h.01M11 8h.01" />
+          <path d="m10 17 3 2.5-3 2.5m6 0h6" />
+        </svg>
+      )
+    case 'enthusiasm':
+      return (
+        <svg className="size-7" viewBox="0 0 32 32" aria-hidden="true" {...common}>
+          <ellipse cx="16" cy="16" rx="12" ry="5" transform="rotate(-35 16 16)" />
+          <ellipse cx="16" cy="16" rx="12" ry="5" transform="rotate(35 16 16)" />
+          <circle cx="16" cy="16" r="2.5" fill="currentColor" stroke="none" />
+          <path d="M25 5v5m-2.5-2.5h5" />
+        </svg>
+      )
+    default:
+      return null
+  }
+}
 
 function LevelBadge({ level }: { level: Level }) {
   return (
@@ -308,7 +386,7 @@ export function Schedule() {
                 <AccordionContent className="px-5 pb-5 sm:px-6">
                   <div className="grid grid-cols-1 gap-3 border-t border-border pt-4 lg:grid-cols-2">
                     {d.events.map((e) => (
-                      <SubEvent key={e.title} e={e} />
+                      <SubEvent key={`${e.time}-${e.title}`} e={e} />
                     ))}
                   </div>
                 </AccordionContent>
@@ -360,27 +438,41 @@ export function Schedule() {
           </Reveal>
 
           <Reveal delay={0.1} className="lg:col-span-2">
-            <div className="h-full rounded-2xl bg-gradient-to-br from-[#4c1d95]/40 via-[#6d28d9]/40 to-[#1b365d]/40 p-6 shadow-xl sm:p-8">
-              <h3 className="font-display text-lg font-bold text-cream sm:text-xl">
+            <div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-[#060914]/60 p-6 shadow-xl backdrop-blur-xl sm:p-8">
+              <span aria-hidden="true" className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[#00E5FF]/70 to-transparent" />
+              <h3 className="font-display text-xl font-bold text-white sm:text-2xl">
                 Prerequisites
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-cream/85">
-                Come as you are — here&apos;s all you really need.
+              <p className="mt-2 text-base leading-relaxed text-white/80">
+                Come as you are. Here&apos;s all you really need.
               </p>
-              <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
+              <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
                 {PREREQS.map((p) => (
-                  <div
+                  <article
                     key={p.title}
-                    className="rounded-xl border border-white/15 bg-white/5 p-4"
+                    className="rounded-xl border border-white/10 bg-white/[0.035] p-4 transition-colors hover:border-white/20 sm:p-5"
                   >
-                    <span className="flex size-9 items-center justify-center rounded-lg bg-white/15 text-cream">
-                      <p.icon className="size-5" />
-                    </span>
-                    <h4 className="mt-3 font-display text-sm font-bold text-cream">
-                      {p.title}
-                    </h4>
-                    <p className="mt-1 text-xs leading-relaxed text-cream/85">{p.desc}</p>
-                  </div>
+                    <div className="flex items-start gap-3">
+                      <span
+                        className="flex size-12 shrink-0 items-center justify-center rounded-xl border"
+                        style={{
+                          color: p.accent,
+                          borderColor: `${p.accent}45`,
+                          backgroundColor: `${p.accent}12`,
+                        }}
+                      >
+                        <PrerequisiteIcon kind={p.icon} />
+                      </span>
+                      <div className="pt-0.5">
+                        <h4 className="font-display text-base font-bold text-white sm:text-lg">
+                          {p.title}
+                        </h4>
+                        <p className="mt-1 text-sm leading-relaxed text-white/80 sm:text-base">
+                          {p.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
                 ))}
               </div>
             </div>

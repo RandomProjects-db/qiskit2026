@@ -1,220 +1,167 @@
 'use client'
 
-import React from 'react'
-import { CircuitBoard, Users, Trophy, Layers, Atom, BriefcaseBusiness, Zap, FlaskConical, Handshake, Swords } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 
 const FEATURES = [
   {
-    icon: CircuitBoard,
     title: 'Hands-on Qiskit',
-    desc: 'Hands-on, browser-based Qiskit labs — write and run real quantum circuits.',
-    gradient: 'from-[#6929C4] to-[#4C1D95]',
-    glow: 'rgba(105,41,196,0.25)',
+    desc: 'Hands-on, browser-based Qiskit labs: write and run real quantum circuits.',
+    accent: '#00E5FF',
   },
   {
-    icon: Users,
     title: 'Community',
     desc: 'Meet students, faculty, and researchers exploring quantum.',
-    gradient: 'from-[#00E5FF] to-[#0084BD]',
-    glow: 'rgba(0,229,255,0.25)',
+    accent: '#FDB927',
   },
   {
-    icon: Trophy,
     title: 'Competition',
-    desc: 'Team up for a friendly quantum coding challenge — hackathon recognition and awards.',
-    gradient: 'from-[#FF006B] to-[#C4004E]',
-    glow: 'rgba(255,0,107,0.25)',
+    desc: 'Team up for a friendly quantum coding challenge, with hackathon recognition and awards.',
+    accent: '#FF006B',
   },
   {
-    icon: Layers,
     title: 'All Levels',
     desc: 'Curated tracks for beginners through advanced builders.',
-    gradient: 'from-[#F5A623] to-[#D48806]',
-    glow: 'rgba(245,166,35,0.25)',
+    accent: '#00E5FF',
   },
 ]
 
 const ACCOMPLISH = [
   {
-    icon: FlaskConical,
     title: 'Workshops',
     desc: 'Guided labs walk you from your first qubit to multi-gate algorithms using Qiskit.',
-    gradient: 'from-[#00E5FF] to-[#0084BD]',
+    accent: '#00E5FF',
   },
   {
-    icon: Handshake,
     title: 'Networking',
-    desc: 'Connect with the quantum community — peers, mentors, and IBM Quantum advocates.',
-    gradient: 'from-[#6929C4] to-[#4C1D95]',
+    desc: 'Connect with the quantum community: peers, mentors, and IBM Quantum advocates.',
+    accent: '#FDB927',
   },
   {
-    icon: Swords,
     title: 'Competition',
-    desc: 'Put your new skills to the test in a timed challenge — hackathon recognition and awards.',
-    gradient: 'from-[#FF006B] to-[#C4004E]',
+    desc: 'Put your new skills to the test in a timed challenge, with hackathon recognition and awards.',
+    accent: '#FF006B',
   },
 ]
 
 const WHY = [
   {
-    icon: Atom,
     title: 'The Next Frontier',
     desc: 'Quantum computing is reshaping cryptography, chemistry, and optimization.',
-    gradient: 'from-[#6929C4] to-[#4C1D95]',
+    accent: '#00E5FF',
   },
   {
-    icon: BriefcaseBusiness,
     title: 'Career Ready',
     desc: 'Early quantum skills set you apart as the industry scales rapidly.',
-    gradient: 'from-[#F5A623] to-[#D48806]',
+    accent: '#FDB927',
   },
   {
-    icon: Zap,
     title: 'Real Impact',
     desc: 'Tackle problems classical computers simply cannot solve efficiently.',
-    gradient: 'from-[#FF006B] to-[#C4004E]',
+    accent: '#FF006B',
   },
 ]
 
 const PARTNERS = [
-  { name: 'IBM Quantum', href: 'https://quantum.ibm.com', brand: '#0F62FE' },
-  { name: 'Qiskit', href: 'https://qiskit.org', brand: '#6929C4' },
-  { name: 'NC A&T', href: 'https://www.ncat.edu', brand: '#004684' },
-  { name: 'JSNN', href: 'https://jsnn.ncat.uncg.edu/', brand: '#DF8738' },
-  { name: 'College of Engineering', href: 'https://www.ncat.edu/coe/index.php', brand: '#BC5C45' },
-  { name: 'Computational Data Science & Engineering', href: 'https://www.ncat.edu/coe/departments/cdse/index.php', brand: '#BC5C45' },
+  { name: 'IBM Quantum', href: 'https://quantum.ibm.com', accent: '#00E5FF' },
+  { name: 'Qiskit', href: 'https://qiskit.org', accent: '#FF006B' },
+  { name: 'NC A&T', href: 'https://www.ncat.edu', accent: '#FDB927' },
+  { name: 'JSNN', href: 'https://jsnn.ncat.uncg.edu/', accent: '#00E5FF' },
+  { name: 'College of Engineering', href: 'https://www.ncat.edu/coe/index.php', accent: '#FF006B' },
+  { name: 'Computational Data Science & Engineering', href: 'https://www.ncat.edu/coe/departments/cdse/index.php', accent: '#FDB927' },
 ]
 
 export function About() {
   return (
     <section id="about" className="scroll-mt-20 bg-[#060914]/30 py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <Reveal className="mx-auto max-w-2xl text-center">
+      <div className="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-[#060914]/25 px-4 py-10 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl md:px-8 md:py-12">
+        <Reveal className="max-w-3xl text-center md:text-left">
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
             About the Event
           </p>
-          <h2 className="mt-3 text-balance font-display text-2xl font-bold text-white sm:text-4xl">
+          <h2 className="mt-3 text-balance font-display text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
             Three days to take your quantum leap
           </h2>
-          <p className="mt-4 text-pretty leading-relaxed text-white/85">
+          <p className="mt-4 max-w-2xl text-pretty text-lg leading-relaxed text-white/85">
             Qiskit Fall Fest is a global celebration of quantum computing run by students,
             for students. At NC A&amp;T, we&apos;re bringing the Aggie community together
             for a hybrid experience packed with learning, building, and connecting.
           </p>
         </Reveal>
 
-        {/* Feature cards */}
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Four quick highlights */}
+        <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURES.map((f, i) => (
-            <Reveal key={f.title} delay={i * 0.08}>
+            <Reveal key={f.title} delay={i * 0.06}>
               <article
-                className="forge-card group relative h-full overflow-hidden p-6"
-                style={{ '--glow': f.glow } as React.CSSProperties}
+                className="h-full rounded-xl border border-white/10 bg-white/[0.035] p-4 sm:p-5"
+                style={{ borderTopColor: `${f.accent}80` }}
               >
-                {/* Hover glow */}
-                <div
-                  className="pointer-events-none absolute -right-8 -top-8 size-28 rounded-full opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100"
-                  style={{ background: `radial-gradient(circle, var(--glow), transparent 70%)` }}
-                />
-                {/* Gradient accent bar */}
-                <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${f.gradient}`} />
-
-                <span className={`relative flex size-12 items-center justify-center rounded-xl bg-gradient-to-br ${f.gradient} text-white shadow-md transition-transform duration-300 group-hover:scale-110`}>
-                  <f.icon className="size-6" />
-                </span>
-                <h3 className="relative mt-4 font-display text-lg font-bold text-white">{f.title}</h3>
-                <p className="relative mt-2 text-sm leading-relaxed text-white/85">{f.desc}</p>
+                <h3 className="font-display text-lg font-bold text-white">{f.title}</h3>
+                <p className="mt-2 text-base leading-relaxed text-white/80">{f.desc}</p>
               </article>
             </Reveal>
           ))}
         </div>
 
-        {/* Accomplish + Why */}
-        <div className="mt-16 grid grid-cols-1 gap-10 md:mt-20 md:grid-cols-2 md:gap-12">
+        <div className="mt-16 space-y-14 md:mt-20 md:space-y-16">
           <Reveal>
-            <div className="flex items-center gap-3">
-              <span className="h-8 w-1 rounded-full bg-gradient-to-b from-[#00E5FF] to-[#6929C4]" />
-              <h3 className="font-display text-xl font-bold text-white sm:text-2xl">
-                What Will We Accomplish?
-              </h3>
-            </div>
-            <div className="mt-6 flex flex-col gap-4">
+            <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
+              What Will We Accomplish?
+            </h3>
+            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
               {ACCOMPLISH.map((a) => (
-                <div
-                  key={a.title}
-                  className="forge-card group flex gap-4 p-5 hover:translate-x-1"
-                >
-                  <span className={`flex size-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${a.gradient} text-white shadow-md transition-transform duration-300 group-hover:scale-110`}>
-                    <a.icon className="size-5" />
-                  </span>
-                  <div>
-                    <h4 className="font-display font-bold text-white">{a.title}</h4>
-                    <p className="mt-1 text-sm leading-relaxed text-white/85">
-                      {a.desc}
-                    </p>
-                  </div>
-                </div>
+                <article key={a.title} className="border-t border-white/15 pt-4">
+                  <span className="mb-3 block h-1 w-10 rounded-full" style={{ backgroundColor: a.accent }} />
+                  <h4 className="font-display text-xl font-bold text-white">{a.title}</h4>
+                  <p className="mt-2 text-base leading-relaxed text-white/80">{a.desc}</p>
+                </article>
               ))}
             </div>
           </Reveal>
 
-          <Reveal delay={0.1}>
-            <div className="flex items-center gap-3">
-              <span className="h-8 w-1 rounded-full bg-gradient-to-b from-[#FF006B] to-[#F5A623]" />
-              <h3 className="font-display text-xl font-bold text-white sm:text-2xl">
+          <Reveal>
+            <div className="grid gap-6 border-t border-white/10 pt-8 md:grid-cols-[0.7fr_1.3fr] md:gap-10">
+              <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
                 Why Quantum?!
               </h3>
-            </div>
-            <div className="mt-6 flex flex-col gap-4">
-              {WHY.map((w) => (
-                <div
-                  key={w.title}
-                  className="forge-card group flex gap-4 p-5 hover:translate-x-1"
-                >
-                  <span className={`flex size-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${w.gradient} text-white shadow-md transition-transform duration-300 group-hover:scale-110`}>
-                    <w.icon className="size-5" />
-                  </span>
-                  <div>
-                    <h4 className="font-display font-bold text-white">{w.title}</h4>
-                    <p className="mt-1 text-sm leading-relaxed text-white/85">
-                      {w.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-8">
+                {WHY.map((w) => (
+                  <article key={w.title}>
+                    <h4 className="font-display text-lg font-bold" style={{ color: w.accent }}>{w.title}</h4>
+                    <p className="mt-2 text-base leading-relaxed text-white/80">{w.desc}</p>
+                  </article>
+                ))}
+              </div>
             </div>
           </Reveal>
         </div>
 
-        {/* Partners - Infinite scroll marquee */}
-        <Reveal className="mt-16 md:mt-20">
-          <p className="text-center text-sm font-medium uppercase tracking-[0.2em] text-white/85">
-            Supported By
-          </p>
-          <div className="mx-auto max-w-3xl flex relative overflow-hidden mt-6 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:bg-gradient-to-r before:from-[#060914] before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-10 after:bg-gradient-to-l after:from-[#060914] after:to-transparent after:content-['']">
-            <div className="animate-marquee flex flex-none gap-16 pr-16">
-              {[...new Array(2)].fill(0).map((_, index) => (
-                <React.Fragment key={index}>
-                  {PARTNERS.map((p) => (
-                    <a
-                      key={`${p.name}-${index}`}
-                      href={p.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        backgroundColor: `${p.brand}26`,
-                        borderColor: `${p.brand}66`,
-                      }}
-                      className="group flex shrink-0 items-center gap-3 rounded-full border px-6 py-3 font-display font-semibold text-white transition-all duration-300 hover:shadow-lg"
-                    >
-                      <span className="transition-colors">{p.name}</span>
-                      <span className="opacity-70" style={{ color: p.brand }}>•</span>
-                    </a>
-                  ))}
-                </React.Fragment>
-              ))}
-            </div>
+        {/* Partner links stay still for easier reading and reduced motion. */}
+        <Reveal className="mt-14 border-t border-white/10 pt-8 md:mt-16">
+          <div className="flex items-center justify-center gap-3">
+            <span aria-hidden="true" className="h-px w-8 bg-gradient-to-r from-transparent to-[#FF006B]" />
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.24em] text-[#00E5FF]">
+              Supported By
+            </p>
+            <span aria-hidden="true" className="h-px w-8 bg-gradient-to-l from-transparent to-[#FDB927]" />
+          </div>
+          <div className="mx-auto mt-5 flex max-w-5xl flex-wrap items-center justify-center gap-3">
+            {PARTNERS.map((p) => (
+              <a
+                key={p.name}
+                href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center rounded-full border px-4 py-2 font-display text-base font-semibold transition-all hover:-translate-y-0.5 hover:brightness-125 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                style={{
+                  color: p.accent,
+                  borderColor: `${p.accent}55`,
+                  backgroundColor: `${p.accent}0D`,
+                }}
+              >
+                {p.name}
+              </a>
+            ))}
           </div>
         </Reveal>
       </div>
