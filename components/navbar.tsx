@@ -18,6 +18,7 @@ const NAV_LINKS = [
   { label: 'Speakers', href: '#speakers' },
   { label: 'Schedule', href: '#schedule' },
   { label: 'Team', href: '#team' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Register', href: '#register' },
 ]
 

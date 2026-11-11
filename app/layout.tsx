@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Space_Grotesk, Inter } from 'next/font/google'
+import { Space_Grotesk, Inter, Intel_One_Mono } from 'next/font/google'
 import { ParticleBackground } from '@/components/particle-background'
 import './globals.css'
 
@@ -13,6 +13,14 @@ const spaceGrotesk = Space_Grotesk({
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-body',
+  display: 'swap',
+})
+
+// Monospace for small labels, times, and tags (technical feel).
+const intelOneMono = Intel_One_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono-label',
   display: 'swap',
 })
 
@@ -69,7 +77,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} scroll-smooth`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${intelOneMono.variable} scroll-smooth`}
     >
       <body className="font-sans antialiased bg-[#060914]">
         {/* Persistent particle background, fixed behind all content (z-0). */}
