@@ -59,7 +59,7 @@ export function Navbar() {
 
         {/* Desktop links */}
         <div className="hidden items-center gap-1 md:flex">
-          {NAV_LINKS.slice(0, 4).map((link) => (
+          {NAV_LINKS.filter((link) => link.href !== '#register').map((link) => (
             <a
               key={link.href}
               href={link.href}

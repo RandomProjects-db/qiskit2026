@@ -45,7 +45,28 @@ const FAQS: QA[] = [
   },
   {
     q: 'Do I need real quantum hardware?',
-    a: 'No. qBraid is the main platform, and simulator-only submissions are fully fine. Real hardware is optional and is not assumed to be available.',
+    a: (
+      <>
+        No. Real hardware is optional, and simulator-only submissions are fully fine and scored the
+        same way. qBraid is the main platform.
+        <br />
+        <br />
+        If your team wants to try real hardware, Open Quantum gives you access to IonQ, Rigetti, IQM,
+        and AQT through one account, and it works with Qiskit. Sign-up takes about a minute with no
+        credit card, and the site advertises $50 of free compute. Free simulators are available too,
+        and the same circuit runs on the real QPUs. Queues can get busy close to the deadline, so test
+        early and keep a simulator result on qBraid as your fallback.{' '}
+        <a
+          href="https://www.openquantum.com/signup?referral_code=ZX3F8VJK"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-[#00E5FF] underline underline-offset-2 hover:text-white"
+        >
+          Sign up on Open Quantum
+        </a>
+        .
+      </>
+    ),
   },
   {
     q: 'Where do I get help or find teammates?',
