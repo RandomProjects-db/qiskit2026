@@ -303,16 +303,22 @@ export default function LearnPage() {
                 →
               </span>
             </Link>
-            <Link href="/hackathon" className={`${CARD} group p-6 transition-colors hover:border-[#FDB927]/40`}>
-              <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#FDB927]">Hackathon</p>
+            <div
+              aria-disabled="true"
+              className={`${CARD} cursor-not-allowed select-none p-6 opacity-60 grayscale`}
+            >
+              <div className="flex items-center justify-between gap-3">
+                <p className="font-mono text-xs uppercase tracking-[0.25em] text-white/60">Hackathon</p>
+                <span className="rounded-full border border-white/25 px-2.5 py-0.5 font-mono text-[11px] uppercase tracking-[0.15em] text-white/80">
+                  Coming soon
+                </span>
+              </div>
               <h3 className="mt-3 font-display text-lg font-bold text-white">Put it to work</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/65">
                 Three challenges, three levels each. Pick one and build something quantum.
               </p>
-              <span className="mt-4 inline-block font-mono text-sm text-[#FDB927] transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </Link>
+              <span className="mt-4 inline-block font-mono text-sm text-white/60">→</span>
+            </div>
           </div>
         </section>
 
