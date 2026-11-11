@@ -3,6 +3,7 @@ import { Hero } from '@/components/hero'
 import { About } from '@/components/about'
 import { Speakers } from '@/components/speakers'
 import { Schedule } from '@/components/schedule'
+import { HackathonTeaser } from '@/components/hackathon-teaser'
 import { Team } from '@/components/team'
 import { Faq } from '@/components/faq'
 import { Register } from '@/components/register'
@@ -17,6 +18,7 @@ export default function Page() {
         <About />
         <Speakers />
         <Schedule />
+        <HackathonTeaser />
         <Team />
         <Faq />
         <Register />

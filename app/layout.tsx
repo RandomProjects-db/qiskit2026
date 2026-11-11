@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Space_Grotesk, Inter, Intel_One_Mono, Newsreader } from 'next/font/google'
 import { ParticleBackground } from '@/components/particle-background'
+import { BackToTop } from '@/components/back-to-top'
 import './globals.css'
 
 const spaceGrotesk = Space_Grotesk({
@@ -91,6 +92,7 @@ export default function RootLayout({
         <ParticleBackground />
         {/* All page content sits above the canvas. */}
         <div className="relative z-10">{children}</div>
+        <BackToTop />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

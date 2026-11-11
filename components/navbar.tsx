@@ -17,6 +17,7 @@ const NAV_LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Speakers', href: '#speakers' },
   { label: 'Schedule', href: '#schedule' },
+  { label: 'Hackathon', href: '/#hackathon' },
   { label: 'Team', href: '#team' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Setup', href: '/setup' },
@@ -65,7 +66,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-full px-3 py-2 text-sm font-medium text-cream/80 transition-colors hover:text-cream active:text-cream xl:px-4"
+              className="rounded-full px-2.5 py-2 text-sm font-medium text-cream/80 transition-colors hover:text-cream active:text-cream xl:px-4"
             >
               {link.label}
             </a>
