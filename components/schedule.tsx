@@ -174,7 +174,7 @@ const DAYS: {
       {
         time: '2:15 – 2:50 PM',
         title: 'Closing Session',
-        desc: 'A closing talk while the judges deliberate.',
+        desc: 'Something from Nothing: Amplifying the Quantum Vacuum with Two Trapped Ions.',
         speaker: 'Lu Qi (Duke Quantum Center)',
       },
       {

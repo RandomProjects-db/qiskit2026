@@ -111,7 +111,9 @@ const SPEAKERS: Organizer[] = [
   {
     name: 'Lu Qi',
     title: 'Research Scientist',
-    affiliation: 'Duke Quantum Center (DQC) · Durham, North Carolina',
+    affiliation: 'Duke Quantum Center, Duke University',
+    talkTitle: 'Something from Nothing: Amplifying the Quantum Vacuum with Two Trapped Ions',
+    bio: 'Lu Qi is a Research Scientist at the Duke Quantum Center, Duke University, working with Prof. Kenneth R. Brown. Lu\u2019s research has two parts. The first uses trapped ions, both atomic and molecular, for quantum simulation, computing, and sensing, and treats the shared motion of the ions as a quantum resource alongside their qubits. The second uses AI to help develop and operate quantum hardware. Lu received a Ph.D. from Beihang University and worked at RAL Space in the UK before joining Duke in 2018.',
     photo: '/speaker-luqi.jpg',
   },
 ]
