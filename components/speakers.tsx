@@ -105,7 +105,7 @@ const SPEAKERS: Organizer[] = [
     title: 'PhD Candidate in Computer Science',
     affiliation: 'Cleveland State University',
     talkTitle: 'Quantum Machine Learning',
-    bio: 'Temitope Odeyomi Adeniyi is a PhD candidate in Computer Science at Cleveland State University, working on quantum computing, quantum sensing, and artificial intelligence. She helped develop and teach Cleveland State\u2019s first Quantum Machine Learning course, and since 2023 she has led summer quantum computing and machine learning workshops for Cleveland high school students and faculty. She is Program Director at the Africa Quantum Consortium and was selected as one of 20 researchers worldwide, from 629 applicants, for the 2026 Falling Walls Female Science Talents Intensive Track.',
+    bio: 'Temitope Odeyomi Adeniyi is a PhD candidate in Computer Science at Cleveland State University, working on quantum computing, quantum sensing, and artificial intelligence. She helped develop and teach Cleveland State\u2019s first Quantum Machine Learning course, and since 2023 she has led summer quantum computing and machine learning workshops for Cleveland high school students and faculty. She is Program Director at the Africa Quantum Consortium and was selected as one of 20 researchers worldwide, from 629 applicants, for the 2026 Falling Walls Female Science Talents Intensive Track. She was honoured as a UNESCO Quantum 100 honoree during the International Year of Quantum (IYQ).',
     photo: '/team-temitope.jpg',
   },
   {
