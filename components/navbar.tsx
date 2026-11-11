@@ -19,6 +19,8 @@ const NAV_LINKS = [
   { label: 'Schedule', href: '#schedule' },
   { label: 'Team', href: '#team' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'Setup', href: '/setup' },
+  { label: 'Learn', href: '/learn' },
   { label: 'Register', href: '#register' },
 ]
 
@@ -58,12 +60,12 @@ export function Navbar() {
         </a>
 
         {/* Desktop links */}
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           {NAV_LINKS.filter((link) => link.href !== '#register').map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-cream/80 transition-colors hover:text-cream active:text-cream"
+              className="rounded-full px-3 py-2 text-sm font-medium text-cream/80 transition-colors hover:text-cream active:text-cream xl:px-4"
             >
               {link.label}
             </a>
@@ -94,7 +96,7 @@ export function Navbar() {
               <button
                 type="button"
                 aria-label="Open menu"
-                className="inline-flex size-11 items-center justify-center rounded-xl text-cream transition-colors hover:bg-white/10 active:bg-white/20 md:hidden"
+                className="inline-flex size-11 items-center justify-center rounded-xl text-cream transition-colors hover:bg-white/10 active:bg-white/20 lg:hidden"
               />
             }
           >
