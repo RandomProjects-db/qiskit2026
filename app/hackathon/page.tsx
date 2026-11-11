@@ -265,7 +265,7 @@ export default function HackathonPage() {
           <p className="font-mono text-xs uppercase tracking-[0.35em] text-[#FDB927]">Hackathon</p>
           <h1 className="mt-4 font-display text-4xl font-bold leading-[1.05] text-white sm:text-6xl">
             Build something quantum.
-            <span className="block text-white/40">Then explain it.</span>
+            <span className="block text-white/65">Then explain it.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-pretty leading-relaxed text-white/75">
             Three guided challenges, each with a beginner, intermediate, and advanced level. Pick the
@@ -280,7 +280,7 @@ export default function HackathonPage() {
               ['Presentations', 'Saturday, 1:30 PM'],
             ].map(([k, v]) => (
               <div key={k} className="bg-[#080c18] px-5 py-4">
-                <dt className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-white/45">{k}</dt>
+                <dt className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-white/65">{k}</dt>
                 <dd className="mt-1 font-display text-sm font-semibold text-white">{v}</dd>
               </div>
             ))}
@@ -325,7 +325,7 @@ export default function HackathonPage() {
                     </div>
                     <h3 className="mt-3 font-display text-2xl font-bold text-white">{c.title}</h3>
                     <p className="mt-2 leading-relaxed text-white/75">{c.blurb}</p>
-                    <p className="mt-3 font-mono text-xs text-white/45">{c.meta}</p>
+                    <p className="mt-3 font-mono text-xs text-white/65">{c.meta}</p>
 
                     <ul className="mt-6 divide-y divide-white/10 border-t border-white/10">
                       {c.levels.map(([level, text]) => (
@@ -432,7 +432,7 @@ export default function HackathonPage() {
               <div key={c.title} className={`${CARD} flex gap-5 p-6`}>
                 <div className="shrink-0">
                   <span className="font-display text-3xl font-bold text-[#FDB927]">{c.pts}</span>
-                  <span className="ml-1 text-sm text-white/40">pts</span>
+                  <span className="ml-1 text-sm text-white/65">pts</span>
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-white">{c.title}</h3>

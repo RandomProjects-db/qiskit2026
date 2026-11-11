@@ -32,7 +32,7 @@ const COLUMNS = [
       { label: 'Contact Us', href: 'mailto:fallfest@aggies.ncat.edu' },
       { label: 'Code of Conduct', href: '#' },
       { label: 'Accessibility', href: '#' },
-      { label: 'FAQ', href: '#' },
+      { label: 'FAQ', href: '#faq' },
     ],
   },
 ]

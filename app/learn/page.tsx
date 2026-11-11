@@ -159,7 +159,7 @@ export default function LearnPage() {
           <p className="font-mono text-xs uppercase tracking-[0.35em] text-[#00E5FF]">Learn</p>
           <h1 className="mt-4 font-display text-4xl font-bold leading-[1.05] text-white sm:text-6xl">
             Start from zero.
-            <span className="block text-white/40">Go as far as you like.</span>
+            <span className="block text-white/65">Go as far as you like.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-pretty leading-relaxed text-white/75">
             Whether quantum is brand new or you already write Qiskit, these paths take you from a first
@@ -173,7 +173,7 @@ export default function LearnPage() {
               ['Pace', '1 to 2 hours per module'],
             ].map(([k, v]) => (
               <div key={k} className="bg-[#080c18] px-5 py-4">
-                <dt className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-white/45">{k}</dt>
+                <dt className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-white/65">{k}</dt>
                 <dd className="mt-1 font-display text-sm font-semibold text-white">{v}</dd>
               </div>
             ))}
@@ -251,12 +251,12 @@ export default function LearnPage() {
                 <div>
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-xs uppercase tracking-[0.2em]">
                     <span className="text-[#00E5FF]">{lab.time}</span>
-                    <span className="text-white/45">{lab.level}</span>
+                    <span className="text-white/65">{lab.level}</span>
                   </div>
                   <h3 className="mt-2 font-display text-xl font-bold text-white">{lab.title}</h3>
                   <p className="mt-2 leading-relaxed text-white/75">{lab.body}</p>
                   <p className="mt-3 text-sm text-white/55">
-                    <span className="font-mono text-xs uppercase tracking-[0.18em] text-white/40">Before you start </span>
+                    <span className="font-mono text-xs uppercase tracking-[0.18em] text-white/65">Before you start </span>
                     {lab.prereq}
                   </p>
                   <a

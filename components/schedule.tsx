@@ -265,8 +265,7 @@ export function Schedule() {
             Three days, one quantum leap
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-white/85">
-            Tap any day to explore its sessions and speakers. Final dates will be
-            confirmed closer to the event.
+            Tap any day to explore its sessions and speakers.
           </p>
         </Reveal>
 

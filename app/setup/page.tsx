@@ -144,7 +144,7 @@ export default function SetupPage() {
           </p>
           <h1 className="mt-4 font-display text-4xl font-bold leading-[1.05] text-white sm:text-6xl">
             qBraid Lab
-            <span className="block text-white/40">Setup Guide</span>
+            <span className="block text-white/65">Setup Guide</span>
           </h1>
           <p className="mt-6 max-w-xl text-pretty leading-relaxed text-white/75">
             qBraid Lab is a JupyterLab environment that runs entirely in your browser — free tier, no
