@@ -110,7 +110,7 @@ export function Navbar() {
             <SheetHeader className="border-b border-white/10">
               <SheetTitle className="font-display text-cream">Menu</SheetTitle>
             </SheetHeader>
-            <div className="flex flex-1 flex-col gap-1 px-4 py-4">
+            <div className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto overscroll-contain px-4 py-4">
               {NAV_LINKS.filter((link) => link.href !== '#register').map((link) => (
                 <SheetClose
                   key={link.href}
@@ -118,7 +118,7 @@ export function Navbar() {
                   render={
                     <a
                       href={link.href}
-                      className="rounded-xl px-4 py-4 font-display text-xl font-semibold text-cream/90 transition-colors hover:bg-white/10 active:bg-white/20"
+                      className="rounded-xl px-4 py-3 font-display text-xl font-semibold text-cream/90 transition-colors hover:bg-white/10 active:bg-white/20"
                     />
                   }
                 >
@@ -127,7 +127,7 @@ export function Navbar() {
               ))}
             </div>
             <div className="border-t border-white/10 p-4">
-              <div className="mb-6 flex justify-center">
+              <div className="mb-6 hidden justify-center [@media(min-height:760px)]:flex">
                 <img src="/badge-pink.svg" alt="Qiskit Fall Fest 2026" className="size-28 opacity-80" />
               </div>
               <SheetClose
