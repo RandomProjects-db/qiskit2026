@@ -43,7 +43,7 @@ const DAYS: {
         time: '4:30 – 4:40 PM',
         title: 'Event Opening Speech',
         desc: 'Welcome and overview of the three-day program.',
-        speaker: 'Organizing Team',
+        speaker: 'Dr. Kristen Rhinehardt and Dr. Marwan Bikdash',
       },
       {
         time: '4:40 – 5:20 PM',
@@ -127,7 +127,7 @@ const DAYS: {
     date: 'Saturday, Nov. 14, 2026 · 10:00 AM',
     format: 'In-Person',
     level: 'Intermediate',
-    desc: 'Final talks, hackathon presentations, judging, a panel session, and awards.',
+    desc: 'Final talks, hackathon presentations, judging, a closing session, and awards.',
     events: [
       {
         time: '10:00 – 10:30 AM',
@@ -142,43 +142,43 @@ const DAYS: {
         speaker: 'Organizing Team',
       },
       {
-        time: '10:40 – 11:20 AM',
+        time: '10:40 – 11:15 AM',
         title: 'Featured Talk',
         desc: 'A Quantum Advantage Computer as an NSF Funded National Resource.',
         speaker: 'Dr. Rachel Noek',
       },
       {
-        time: '11:20 – 11:50 AM',
+        time: '11:15 – 11:50 AM',
         title: 'Featured Talk',
         desc: 'Quantum-safe cryptography at the intersection of quantum computing and number theory.',
-        speaker: 'Dr. Krystal Maughan',
+        speaker: 'Dr. Krystal Maughan (online)',
       },
       {
-        time: '11:50 AM – 12:30 PM',
+        time: '11:50 AM – 12:25 PM',
         title: 'Featured Talk',
         desc: 'Qubit control research at NCAT: custom hardware modules for precision timing of laser pulses, using reconfigurable computing.',
         speaker: 'Dr. Christopher Doss',
       },
       {
-        time: '12:30 – 1:30 PM',
-        title: 'Hackathon Presentations',
-        desc: 'Teams present their quantum projects to judges and the audience.',
-        speaker: 'Hackathon Teams',
-      },
-      {
-        time: '1:30 – 2:00 PM',
+        time: '12:30 – 1:15 PM',
         title: 'Networking & Lunch',
         desc: 'Boxed lunch and conversation with speakers and mentors.',
         speaker: 'All',
       },
       {
-        time: '2:00 – 2:30 PM',
-        title: 'Panel Session',
-        desc: 'Q&A and discussion with our speakers while the judges deliberate.',
-        speaker: 'Dr. Doss, Dr. Rachel Noek, Dr. Carolyn Hartley, Dr. Flanigan',
+        time: '1:15 – 2:15 PM',
+        title: 'Hackathon Presentations',
+        desc: 'Teams present their quantum projects to judges and the audience.',
+        speaker: 'Hackathon Teams',
       },
       {
-        time: '2:30 PM – End',
+        time: '2:15 – 2:50 PM',
+        title: 'Closing Session',
+        desc: 'A closing talk while the judges deliberate.',
+        speaker: 'Lu Qi (Duke Quantum Center)',
+      },
+      {
+        time: '2:50 PM – End',
         title: 'Awards & Photo Session',
         desc: 'Recognition and awards for the winning hackathon teams, followed by a photo session.',
         speaker: 'Organizing Team',
@@ -293,6 +293,7 @@ const SPEAKER_PHOTOS: { match: string; photo: string }[] = [
   { match: 'Quinton Rice', photo: '/speaker-rice.png' },
   { match: 'Flanigan', photo: '/speaker-flanigan.jpg' },
   { match: 'Doss', photo: '/speaker-doss.png' },
+  { match: 'Lu Qi', photo: '/speaker-luqi.jpg' },
 ]
 
 function speakerPhoto(speaker: string): string | null {

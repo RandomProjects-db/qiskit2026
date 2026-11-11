@@ -100,6 +100,20 @@ const SPEAKERS: Organizer[] = [
     bio: 'Dr. Christopher C. Doss received his Bachelor of Science degree in Computer Engineering in Spring, 1994 from USF. He received his M.S. and Ph.D. degrees in Computer Engineering from NCSU in Spring, 1997 and 2001, respectively. Dr. Doss currently holds an Associate Professor position at NCAT. He is currently serving as Assistant Department Chair for the Department of Electrical and Computer Engineering. Dr. Doss\u2019 current research interests focus on the design and implementation of applications on reconfigurable computing systems, including biomimetic inspired design, adaptive controls, and quantum control.',
     photo: '/speaker-doss.png',
   },
+  {
+    name: 'Temitope Odeyomi Adeniyi',
+    title: 'PhD Candidate in Computer Science',
+    affiliation: 'Cleveland State University',
+    talkTitle: 'Quantum Machine Learning',
+    bio: 'Temitope Odeyomi Adeniyi is a PhD candidate in Computer Science at Cleveland State University, working on quantum computing, quantum sensing, and artificial intelligence. She helped develop and teach Cleveland State\u2019s first Quantum Machine Learning course, and since 2023 she has led summer quantum computing and machine learning workshops for Cleveland high school students and faculty. She is Program Director at the Africa Quantum Consortium and was selected as one of 20 researchers worldwide, from 629 applicants, for the 2026 Falling Walls Female Science Talents Intensive Track.',
+    photo: '/team-temitope.jpg',
+  },
+  {
+    name: 'Lu Qi',
+    title: 'Research Scientist',
+    affiliation: 'Duke Quantum Center (DQC) · Durham, North Carolina',
+    photo: '/speaker-luqi.jpg',
+  },
 ]
 
 export function Speakers() {
@@ -172,12 +186,12 @@ export function Speakers() {
                 </Reveal>
               )}
 
-              <div className="mx-auto mt-6 flex max-w-7xl flex-wrap justify-center gap-6">
+              <div className="mx-auto mt-6 flex max-w-6xl flex-wrap justify-center gap-6">
                 {rest.map((s, i) => (
                   <Reveal
                     key={s.name}
-                    delay={(i % 4) * 0.08}
-                    className="flex w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
+                    delay={(i % 3) * 0.08}
+                    className="flex w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
                   >
                     <article
                       onClick={() => setSelected(s)}
