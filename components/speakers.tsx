@@ -109,7 +109,7 @@ const SPEAKERS: Organizer[] = [
     photo: '/team-temitope.jpg',
   },
   {
-    name: 'Lu Qi',
+    name: 'Dr. Lu Qi',
     title: 'Research Scientist',
     affiliation: 'Duke Quantum Center, Duke University',
     talkTitle: 'Something from Nothing: Amplifying the Quantum Vacuum with Two Trapped Ions',
