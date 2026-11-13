@@ -116,6 +116,14 @@ const SPEAKERS: Organizer[] = [
     bio: 'Lu Qi is a Research Scientist at the Duke Quantum Center, Duke University, working with Prof. Kenneth R. Brown. Lu\u2019s research has two parts. The first uses trapped ions, both atomic and molecular, for quantum simulation, computing, and sensing, and treats the shared motion of the ions as a quantum resource alongside their qubits. The second uses AI to help develop and operate quantum hardware. Lu received a Ph.D. from Beihang University and worked at RAL Space in the UK before joining Duke in 2018.',
     photo: '/speaker-luqi.jpg',
   },
+  {
+    name: 'Dr. Nate Earnest-Noble',
+    title: 'Member of Technical Staff',
+    affiliation: 'IBM Quantum, IBM T. J. Watson Research Center',
+    talkTitle: 'Qiskit 102: From IBM Quantum Hardware to Your First Workflow',
+    bio: 'Nate Earnest-Noble is a Member of Technical Staff at IBM Quantum, based at the IBM T. J. Watson Research Center. He studied the design and control of superconducting quantum hardware at the University of Chicago. His work now covers quantum algorithms, quantum simulation, and hardware-aware circuit compilation, with a focus on getting the most out of IBM\u2019s software tools and quantum hardware. Away from work, he loves being out in nature, usually hiking with his wife and their energetic kid and even more energetic cattle dog.',
+    photo: '/speaker-nate.jpg',
+  },
 ]
 
 export function Speakers() {

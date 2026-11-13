@@ -218,7 +218,7 @@ const CHALLENGES: Challenge[] = [
 
 const FLOW: { when: string; title: string; body: string }[] = [
   {
-    when: 'Fri · 6:20 PM',
+    when: 'Fri · 6:40 PM',
     title: 'Hackathon orientation',
     body: 'Rules, challenges, platform walkthrough, and team formation.',
   },

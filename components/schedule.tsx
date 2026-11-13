@@ -109,16 +109,22 @@ const DAYS: {
         speaker: 'Dr. Patrick Flanigan, Department of Maths and Physics',
       },
       {
-        time: '6:00 – 6:20 PM',
+        time: '6:00 – 6:40 PM',
+        title: 'Qiskit 102',
+        desc: 'From IBM Quantum hardware to your first workflow.',
+        speaker: 'Dr. Nate Earnest-Noble, IBM Quantum (online)',
+      },
+      {
+        time: '6:40 – 7:00 PM',
+        title: 'qBraid Setup',
+        desc: 'Set up your qBraid account and environment, upload your notebooks, and get the challenges. Team formation too.',
+        speaker: 'Organizing Team (Fahed, online)',
+      },
+      {
+        time: '7:00 – 7:15 PM',
         title: 'Networking & Photo Session',
         desc: 'Connect with speakers and fellow attendees.',
         speaker: 'All',
-      },
-      {
-        time: '6:20 – 7:00 PM',
-        title: 'Hackathon Orientation',
-        desc: 'Set up your qBraid account and environment, upload your notebooks, and get the challenges. Team formation too.',
-        speaker: 'Organizing Team (Fahed, online)',
       },
     ],
   },
@@ -294,6 +300,7 @@ const SPEAKER_PHOTOS: { match: string; photo: string }[] = [
   { match: 'Flanigan', photo: '/speaker-flanigan.jpg' },
   { match: 'Doss', photo: '/speaker-doss.png' },
   { match: 'Lu Qi', photo: '/speaker-luqi.jpg' },
+  { match: 'Earnest-Noble', photo: '/speaker-nate.jpg' },
 ]
 
 function speakerPhoto(speaker: string): string | null {
