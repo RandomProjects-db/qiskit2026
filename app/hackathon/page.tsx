@@ -162,6 +162,8 @@ interface Challenge {
   /** Google Drive file id of the challenge notebook (shared: anyone with the link). */
   driveId: string
   levels: [string, string][]
+  /** Optional short line shown above the levels list. */
+  levelsNote?: string
   diagram: React.ReactNode
 }
 
@@ -192,9 +194,10 @@ const CHALLENGES: Challenge[] = [
     meta: '5 qubits · 5-node graph',
     firstPick: true,
     driveId: '194R4uTM-S6Y46Bi17O66vSqD0S4IClEU',
+    levelsNote: 'The levels move on to portfolio selection.',
     levels: [
       ['Beginner', 'Portfolio selection under a budget constraint'],
-      ['Intermediate', 'QAOA versus quantum machine learning'],
+      ['Intermediate', 'Choose your route: improved QAOA or quantum machine learning'],
       ['Advanced', 'Utility-scale challenges and barren plateaus'],
     ],
     diagram: <MaxCutDiagram />,
@@ -210,7 +213,7 @@ const CHALLENGES: Challenge[] = [
     levels: [
       ['Beginner', 'Correlations, Trotter step size, and higher-order formulas'],
       ['Intermediate', 'Add noise and error mitigation'],
-      ['Advanced', 'Kicked (Floquet) Ising models'],
+      ['Advanced', "Kicked (Floquet) Ising models, where you can't check against the exact answer"],
     ],
     diagram: <SpinChainDiagram />,
   },
@@ -327,7 +330,12 @@ export default function HackathonPage() {
                     <p className="mt-2 leading-relaxed text-white/75">{c.blurb}</p>
                     <p className="mt-3 font-mono text-xs text-white/65">{c.meta}</p>
 
-                    <ul className="mt-6 divide-y divide-white/10 border-t border-white/10">
+                    {c.levelsNote && (
+                      <p className="mt-6 text-sm leading-relaxed text-white/65">{c.levelsNote}</p>
+                    )}
+                    <ul
+                      className={`${c.levelsNote ? 'mt-3' : 'mt-6'} divide-y divide-white/10 border-t border-white/10`}
+                    >
                       {c.levels.map(([level, text]) => (
                         <li key={level} className="grid grid-cols-[7.5rem_1fr] gap-3 py-3 text-sm">
                           <span className="font-mono text-xs uppercase tracking-[0.18em] text-white/50">
