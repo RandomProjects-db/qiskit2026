@@ -1,19 +1,17 @@
+import Link from 'next/link'
 import { Reveal } from '@/components/reveal'
 
 const MONO = 'font-[family-name:var(--font-mono-label)]'
 
 const CHALLENGES = [
-  { n: '01', accent: '#00E5FF' },
-  { n: '02', accent: '#FF006B' },
-  { n: '03', accent: '#FDB927' },
+  { n: '01', accent: '#00E5FF', tag: 'Chemistry · VQE' },
+  { n: '02', accent: '#FF006B', tag: 'Optimization · QAOA' },
+  { n: '03', accent: '#FDB927', tag: 'Simulation · Trotterization' },
 ]
 
 const LEVELS = ['Beginner', 'Intermediate', 'Advanced']
 
-/**
- * Placeholder for the hackathon briefs. Shows the structure (three challenges,
- * three levels each) without revealing any content until it is ready.
- */
+/** Landing page summary of the hackathon, linking to the full /hackathon page. */
 export function HackathonTeaser() {
   return (
     <section id="hackathon" className="scroll-mt-20 bg-[#060914]/20 py-20 md:py-28">
@@ -26,8 +24,7 @@ export function HackathonTeaser() {
             Three challenges. Three levels each.
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-white/85">
-            The challenge briefs are being finalized. Pick a challenge, choose your level, and build
-            something quantum.
+            Pick a challenge, choose your level, and build something quantum.
           </p>
         </Reveal>
 
@@ -58,11 +55,11 @@ export function HackathonTeaser() {
                     <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#FDB927] opacity-70 motion-reduce:animate-none" />
                     <span className="relative inline-flex size-2 rounded-full bg-[#FDB927]" />
                   </span>
-                  Coming soon
+                  Now open
                 </span>
 
                 <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-white/90 sm:text-xl">
-                  The full briefs, starter notebooks, and level guides will appear here.
+                  Browse the three challenges, download the starter notebooks, and see how you are judged.
                 </p>
               </div>
 
@@ -87,11 +84,7 @@ export function HackathonTeaser() {
                       {c.n}
                     </p>
 
-                    {/* Placeholder lines */}
-                    <div aria-hidden="true" className="mt-5 space-y-2">
-                      <div className="h-2.5 w-4/5 rounded-full bg-white/10" />
-                      <div className="h-2.5 w-3/5 rounded-full bg-white/10" />
-                    </div>
+                    <p className="mt-5 text-sm font-semibold text-white/85">{c.tag}</p>
 
                     <div className="mt-5 flex flex-wrap gap-1.5">
                       {LEVELS.map((l) => (
@@ -107,14 +100,20 @@ export function HackathonTeaser() {
                 ))}
               </ul>
 
-              <div className="relative mt-10 flex flex-col items-center gap-3 text-center">
+              <div className="relative mt-10 flex flex-col items-center justify-center gap-3 text-center sm:flex-row">
+                <Link
+                  href="/hackathon"
+                  className="inline-flex min-h-11 items-center rounded-full bg-[#FDB927] px-6 py-2.5 text-sm font-semibold text-[#0b1024] transition-transform hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
+                  Open the hackathon page
+                </Link>
                 <a
                   href="https://discord.gg/MVGJmv3AC"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex min-h-11 items-center rounded-full border border-white/25 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:border-[#00E5FF] hover:text-[#00E5FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
-                  Get updates on Discord
+                  Join us on Discord
                 </a>
               </div>
             </div>

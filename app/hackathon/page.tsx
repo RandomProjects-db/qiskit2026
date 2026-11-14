@@ -11,7 +11,7 @@ export const metadata: Metadata = {
  * Where teams submit their notebook. Leave empty until the form is live;
  * the page shows a "opens during the event" state while this is blank.
  */
-const SUBMISSION_URL = ''
+const SUBMISSION_URL = 'https://airtable.com/appZdDXd4Fjl33Gsh/pagF89Mu5SC4ZEWr8/form'
 
 const CARD = 'rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md'
 
