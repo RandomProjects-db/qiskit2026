@@ -88,6 +88,14 @@ const TEAM: Organizer[] = [
     linkedin: 'https://www.linkedin.com/in/anika-akther/',
   },
   {
+    name: 'Anthonia Esan',
+    title: 'Event Operations & Participant Experience',
+    affiliation: 'PhD Student, Applied Science and Technology, NC A&T',
+    bio: 'Supports participant registration, attendee guidance, venue navigation, session coordination, guest assistance, and general on-site logistics throughout the three-day event.',
+    photo: '/team-anthonia.jpg',
+    linkedin: 'https://www.linkedin.com/in/anthonia-esan-a29710190',
+  },
+  {
     name: 'Timilehin Gloria Adedeji',
     title: 'Event Operations & Participant Experience',
     affiliation: 'Industrial & Systems Engineering, NC A&T',
